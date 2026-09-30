@@ -1,0 +1,49 @@
+LAVORO 15 - Alimentare i KPI e il cruscotto
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19.
+
+A che cosa servono questi file
+Sono i file che la richiesta del lavoro 15 cita: schede_kpi.csv, conto_economico.csv, venduto.csv, ore_reparto.csv, consegne.csv e kpi_precedente.csv. Servono per consegnare la richiesta allo strumento e fare il collaudo sui numeri che il libro già conosce.
+
+Come usarli
+1. Si apre una conversazione nuova con lo strumento.
+2. In testa si incolla il Protocollo universale del paragrafo 19.3 (fasi da 0 a 5).
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 15, così come è scritta nel libro.
+4. Si caricano i sei file CSV. Il margine del Conto Economico gestionale che la richiesta chiede di confrontare, 1.062.000 euro, è già scritto nella richiesta: non serve aggiungerlo.
+5. Si confronta la risposta con i numeri da ritrovare qui sotto.
+6. Per ricontrollare i file si esegue «python3 verifica.py» in questa cartella: stampa per ogni numero il valore atteso dal libro, il valore ricavato dai file e l'esito PASS o FAIL.
+
+Formato dei file
+CSV UTF-8, separatore virgola, punto per i decimali, intestazione nella prima riga, nessuna riga di totale.
+Esercizio del caso: l'esercizio chiuso 2025 (anno neutro scelto per l'esercitazione; il libro non indica l'anno). Gli obiettivi delle schede sono il budget del lavoro 8, cioè il budget 2026: come dice il paragrafo 19.3 («Budget e consuntivo»), il cruscotto usa come consuntivo i valori del dataset master, come se l'esercizio di budget si fosse chiuso così.
+Entità unica, tre linee di prodotto A, B e C, un reparto di lavorazione.
+In consegne.csv i clienti sono codici CL-..., gli stessi dei file dei lavori 5 e 6 (CL-014 è il cliente X, CL-027 il cliente Y).
+
+Valori che vengono dal libro (dataset master del paragrafo 19.3 e budget del lavoro 8)
+- Volumi, prezzi netti, costi variabili unitari e ore per unità: A 8.000 unità a 180 euro, costo variabile 117, 1,5 ore; B 12.000 a 114, 76, 0,5 ore; C 2.000 a 289, 238, 3 ore.
+- Ricavi 3.386.000 euro, margine di contribuzione 1.062.000 (A 504.000, B 456.000, C 102.000), 24.000 ore.
+- Struttura base 736.000 euro (gestione ordini 240.000, consegne 180.000, assistenza tecnica 150.000, costi indiretti di produzione 120.000, amministrazione 46.000), capacità acquistata all'esterno 84.000, costi della struttura 820.000, risultato operativo 242.000.
+- Capacità ordinaria del reparto 21.000 ore.
+- 6.000 consegne; canale diretto con 218 clienti e 3.600 consegne (X 300, Y 60, 32 clienti intermedi 1.440, 184 clienti minori 1.800); distributori 2.400.
+- Schede: obiettivi, soglie e direzione dell'elenco del lavoro 15 (budget: ricavi 3.392.100, margine 1.089.900, risultato 269.900; margine per ora 45, 43, 40; saturazione 85-95%, oltre 95%, oltre 100%; margine di sicurezza 20, 15, 10; puntualità 95, 92, 90).
+
+Righe costruite per l'esercitazione (tornano sui totali del libro ma il libro non le dà)
+- venduto.csv: 4.433 righe. Sono le stesse righe, con gli stessi identificativi, date, documenti, quantità e importi, di par_19_2/modello_excel/venduto.csv, portate alle colonne di questa cartella: prezzo_netto = importo / quantità (esatto al centesimo su ogni riga), costo variabile unitario e ore per unità della linea. Comprende le quattro righe di reso a quantità negativa (documenti RS-). Il venduto dell'esercizio chiuso è quindi uno solo in tutte le cartelle.
+- consegne.csv: è lo stesso file del lavoro 5 (6.000 righe, colonne consegna_id, codice_cliente, data, anno 2025): X 300 consegne, Y 60, e la ripartizione fra gli altri clienti è di esercitazione; nessun cliente ha più consegne delle unità che ha comprato nel venduto. Come dice il libro, il file non contiene date richieste o confermate.
+- ore_reparto.csv: 12 righe mensili con la serie mensile unica del caso (la stessa di par_19_2/modello_excel/ore.csv e dei mesi 2025 di lavoro_02/manutenzione_24m.csv): ogni mese supera le 1.750 ore, quindi 1.750 ore interne, le ore esterne sono l'eccedenza del mese (3.000 nell'anno) e la capacità ordinaria è 1.750 ore al mese. Il libro non dà le ore rilevate dal reparto: il file le pone uguali alle ore ricalcolate dal venduto con i tempi di ciclo, mese per mese (24.000 nell'anno), quindi lo scarto atteso è 0%.
+- schede_kpi.csv: le soglie in percentuale del libro sono scritte in euro (per esempio ricavi - 1% = 3.358.179, - 3% = 3.290.337; margine - 2% = 1.068.102, - 5% = 1.035.405; risultato - 5% = 256.405, - 10% = 242.910). L'obiettivo del margine percentuale è 32,13, il valore non arrotondato del libro. Frequenza, responsabili, peso_economico e ipotesi_verificata sono valori di esercitazione, perché il libro non li indica.
+- kpi_precedente.csv: tutti i valori sono N/D, perché il dataset del caso copre un solo esercizio chiuso. Nessun valore del periodo precedente è stato inventato: lo strumento deve dichiarare che la variazione non si può calcolare.
+
+Scelte fatte apposta, come nel libro
+- La scheda della saturazione ha soltanto le soglie superiori (95 e 100) e direzione RANGE: con la richiesta com'è lo strumento deve metterla fra i non calcolabili. La lettura del controller sulle sole soglie superiori dà 114,3%, critico.
+- La scheda della puntualità di consegna non ha formula: lo strumento deve elencarla fra i non calcolabili. L'88,5% del libro è un'ipotesi del caso e non si ricava da nessun file.
+
+Numeri da ritrovare nel collaudo
+- Margine per ora macchina: 1.062.000 / 24.000 = 44,25 euro (in linea, - 0,75 euro dall'obiettivo). La media semplice 45,00 è l'errore tipico: 45,00 x 24.000 = 1.080.000, cioè 18.000 euro di margine inesistenti.
+- Margine percentuale: 31,36%, arrotondato 31,4% (attenzione, - 0,8 punti).
+- Ricavi netti 3.386.000 euro, - 6.100 euro, - 0,2%, in linea.
+- Margine di contribuzione 1.062.000 euro, - 27.900 euro, - 2,6%, attenzione.
+- Risultato operativo 242.000 euro, - 27.900 euro, - 10,3%, critico.
+- Margine di sicurezza 30,7%, + 10,7 punti, in linea.
+- Quadrature: margine dal venduto = margine del conto economico = 1.062.000 euro; somma dei margini per linea = 1.062.000; ore ricalcolate 24.000 contro ore rilevate 24.000.
+- Non calcolabili: saturazione della capacità (la scheda ha direzione RANGE ma non le soglie inferiori) e puntualità di consegna (manca la formula), perché le loro schede sono incomplete.
+- Il 114,3%, cioè 24.000 / 21.000, non è un valore che lo strumento deve calcolare: è la lettura del controller sulle sole soglie superiori (critico, oltre il 100%).
