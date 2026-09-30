@@ -1,0 +1,30 @@
+LAVORO 6 - MISURARE IL COSTO DI SERVIZIO
+File di esercitazione per il libro «Controllo di gestione con l'intelligenza artificiale» (Tania Cilio), capitolo 19, lavoro 6.
+
+A CHE COSA SERVE
+È il file «clienti.csv» che la richiesta del lavoro 6 cita: con questo file si fa il collaudo della richiesta sui numeri noti dell'impresa guida, prima di usarla sui dati della propria impresa.
+
+I FILE
+clienti.csv: codice_cliente, canale, ricavi_netti, costi_variabili_prodotto, numero_ordini, numero_consegne, ore_assistenza. 258 righe, una per cliente: 218 del canale diretto e 40 dei distributori.
+verifica.py: script che rilegge il file e confronta ogni numero con il libro.
+Formato: CSV UTF-8, separatore virgola, punto decimale, intestazione alla prima riga, nessuna riga di totale.
+Esercizio del caso: esercizio chiuso dell'impresa guida, anno neutro 2025 (il file non contiene date).
+
+COME USARLO
+1. Si apre una conversazione nuova con lo strumento (per questo lavoro il libro indica Claude).
+2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 6 così come è stampata nel libro. Le tariffe, il costo attribuito di 570.000 euro, i volumi dei driver e i ricavi del Conto Economico gestionale, 3.386.000 euro, sono già scritti nella richiesta: non serve aggiungere nulla.
+3. Si carica clienti.csv e si confronta la risposta con i numeri da ritrovare qui sotto.
+4. Per controllare il file, dalla cartella: python3 verifica.py
+Lo stesso file serve anche per il secondo flusso del paragrafo 19.5 (redditività per cliente e per canale), che però chiede un file con un nome e colonne diverse («clienti_esercizio.csv», con la colonna settore): quel file non è in questa cartella.
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Vengono dal libro: i clienti X (CL-014) e Y (CL-027) con tutti i loro valori; i totali d'impresa (ricavi 3.386.000, costi variabili 2.324.000, margine 1.062.000; 12.000 ordini, 6.000 consegne, 7.500 ore; costo di servizio 570.000); i totali per canale (diretto 1.220.000 di ricavi e 459.000 di margine di prodotto, cioè il 37,6%, distributori 2.166.000 e 603.000, cioè il 27,8%) e i consumi dei driver per canale; i 218 clienti del canale diretto con i totali dei 32 clienti intermedi (400.000 di ricavi, 155.000 di margine di prodotto, 2.250 ordini, 1.440 consegne, 3.160 ore) e dei 184 clienti minori (340.000, 136.000 cioè il 40,0%, 3.000, 1.800, 1.800; costi variabili 204.000).
+Sono costruiti per l'esercitazione, e sommano esattamente ai totali del libro: i valori dei singoli clienti diversi da X e Y e il numero dei distributori (40). I ricavi e i costi variabili di ogni cliente sono quelli del venduto 2025 riga per riga (par_19_2/modello_excel/venduto.csv), sommato per cliente. Rispettano anche le altre indicazioni del libro: X e Y restano i più redditizi del canale diretto; tutti gli altri 216 clienti del diretto hanno un margine cliente sotto il 5% dei ricavi (740.000 euro, il 21,9% dei ricavi); nessun distributore scende sotto il 5%; nessun cliente ha ricavi nulli o negativi; nessun cliente ha più consegne delle unità che ha comprato nel venduto 2025.
+Codici cliente: i 32 intermedi sono CL-001 - CL-034 senza CL-014 e CL-027; i 184 minori sono CL-035 - CL-218; i distributori sono CL-219 - CL-258. Sono gli stessi clienti dei file del lavoro 5.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Cliente X: 600 x 20,00 + 300 x 30,00 + 250 x 20,00 = 26.000 euro di costo di servizio e 58.000 euro di margine cliente, pari al 24,2%.
+Cliente Y: 5.600 euro di costo di servizio e 78.400 euro di margine cliente, pari al 32,7%.
+Quadrature: ricavi 3.386.000 euro; costi di servizio 570.000 euro; 12.000 ordini, 6.000 consegne, 7.500 ore.
+Canali (libro, paragrafo 19.5): diretto margine di prodotto 459.000 (37,6%), costo di servizio 333.000, margine di canale 126.000 (10,3%); distributori 603.000 (27,8%), 237.000, 366.000 (16,9%). Gruppi del diretto: 32 intermedi margine cliente 3.600 (0,9%); 184 minori margine di prodotto 136.000 (40,0%), margine cliente - 14.000 (- 4,1%); resto del canale (216 clienti) - 10.400.
+Leve applicate a X (esempio del libro): costo di servizio da 26.000 a 11.720 euro, margine cliente 72.280 euro (30,1%); dei 14.280 euro, 6.348 sono minore spesa e 7.932 capacità liberata.
