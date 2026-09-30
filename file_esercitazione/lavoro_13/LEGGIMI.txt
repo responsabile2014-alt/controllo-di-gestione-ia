@@ -1,0 +1,21 @@
+LAVORO 13 - Comporre il mix quando una risorsa è satura
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19.
+
+Per questo lavoro NON servono file.
+La richiesta contiene già tutti i dati («Descrizione dei dati, che ti fornisco e che non devi integrare») e vieta di aggiungerne altri. La prova del libro è stata fatta con il protocollo in testa e senza altri file, su una versione della richiesta che differiva da quella stampata soltanto in due formulazioni, descritte nel libro.
+
+Come usarla
+1. Si apre una conversazione nuova con lo strumento.
+2. In testa si incolla il Protocollo universale del paragrafo 19.3.
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 13, così come è scritta nel libro.
+4. Si confronta la risposta con i numeri qui sotto.
+
+Numeri da ritrovare nel collaudo (tutti dal libro)
+- Graduatoria per margine per ora macchina: B 76, A 42, C 17 euro.
+- Il riempimento si interrompe sulla linea C, con 1.000 unità su 2.000.
+- Mix entro le 21.000 ore: 12.000 unità di B, 8.000 di A, 1.000 di C.
+- Margine di contribuzione del mix: 1.011.000 euro (456.000 + 504.000 + 51.000).
+- Fatturato del mix: 3.097.000 euro (1.368.000 + 1.440.000 + 289.000).
+- Risultato operativo: 275.000 euro contro 242.000 della domanda piena.
+- Mix composto per margine unitario: 834.000 euro, cioè 177.000 euro in meno.
+- Prezzo di indifferenza della capacità esterna: 17 euro l'ora.
