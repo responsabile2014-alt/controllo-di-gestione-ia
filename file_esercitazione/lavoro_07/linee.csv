@@ -1,0 +1,4 @@
+linea,volume,prezzo_netto_unitario,costo_variabile_unitario,ore_macchina_per_unita,costi_indiretti_allocati
+A,8000,180,117,1.5,60000
+B,12000,114,76,0.5,30000
+C,2000,289,238,3,30000

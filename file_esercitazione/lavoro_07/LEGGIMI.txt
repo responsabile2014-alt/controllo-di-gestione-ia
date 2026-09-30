@@ -1,0 +1,26 @@
+LAVORO 7 - CONFRONTARE COSTO PIENO E MARGINE SULLA STESSA DECISIONE
+File di esercitazione per il libro «Controllo di gestione con l'intelligenza artificiale» (Tania Cilio), capitolo 19, lavoro 7.
+
+A CHE COSA SERVE
+È il file «linee.csv» che la richiesta del lavoro 7 cita. È lo stesso file, identico byte per byte, usato nella prova reale del 27 settembre 2026 descritta nel libro.
+
+I FILE
+linee.csv: linea, volume, prezzo_netto_unitario, costo_variabile_unitario, ore_macchina_per_unita, costi_indiretti_allocati. 3 righe, una per linea.
+verifica.py: script che rilegge il file e ricalcola i numeri del collaudo.
+Formato: CSV UTF-8, separatore virgola, punto decimale, intestazione alla prima riga, nessuna riga di totale.
+Esercizio del caso: esercizio chiuso dell'impresa guida (per le esercitazioni di questa raccolta si usa come anno neutro il 2025; il file non contiene date).
+
+COME USARLO
+1. Si apre una conversazione nuova con lo strumento (ChatGPT o Claude).
+2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 7 così come è stampata nel libro. Tutti gli altri dati (700.000 euro di struttura da ripartire, di cui 84.000 di capacità esterna; capacità ordinaria 21.000 ore; ore esterne 3.000; tariffa 28 euro; struttura base 736.000; criterio in proporzione ai ricavi netti; margine 1.062.000 e risultato operativo 242.000 da quadrare) sono già scritti nella richiesta.
+3. Si carica linee.csv e si confronta la risposta con i numeri qui sotto.
+4. Per controllare il file, dalla cartella: python3 verifica.py
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Tutti i valori vengono dal libro: volumi, prezzi netti, costi variabili unitari e ore per unità del dataset master, costi indiretti allocati nel lavoro 4. Non ci sono righe costruite.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Margini di contribuzione: A 504.000, B 456.000, C 102.000; totale 1.062.000 euro.
+Quote di struttura sui ricavi: A 297.696, B 282.812, C 119.492; totale 700.000 euro.
+Risultati a costo pieno: A +146.304, B +143.188, C -47.492 euro; somma 242.000 euro. Linea C: quasi -24 euro per unità (-23,75).
+Eliminando la linea C: 6.000 ore macchina liberate; risultato operativo 140.000 euro se la struttura resta invariata, 224.000 euro se si evitano gli 84.000 euro di capacità esterna.
