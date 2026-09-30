@@ -1,0 +1,37 @@
+LAVORO 4 - ALLOCARE I COSTI INDIRETTI
+File di esercitazione per il libro «Controllo di gestione con l'intelligenza artificiale» (Tania Cilio), capitolo 19, lavoro 4.
+
+A CHE COSA SERVONO
+Sono i tre file che la richiesta del lavoro 4 cita: con questi file si fa il collaudo della richiesta sui numeri noti dell'impresa guida, prima di usarla sui dati della propria impresa.
+
+I FILE
+costi_indiretti.csv: movimento_id, data, conto, descrizione, centro, importo. 48 righe, una per movimento mensile, per 120.000 euro.
+ore_centri.csv: centro, linea, ore_macchina_rilevate. 3 righe (reparto di Lavorazione, linee A, B e C).
+volumi.csv: linea, quantita_prodotta. 3 righe.
+Nota sul formato: il libro chiede file con una riga per movimento o per rilevazione, mai un prospetto già aggregato. costi_indiretti.csv rispetta la regola (48 movimenti mensili); ore_centri.csv e volumi.csv invece hanno una riga per linea con il totale dell'esercizio, per semplicità dell'esercitazione, e i totali coincidono con quelli del libro (24.000 ore macchina; 8.000, 12.000 e 2.000 unità). Sui dati della propria impresa si estraggono le singole rilevazioni delle ore e le singole registrazioni di produzione, e la loro somma deve dare i totali per linea.
+verifica.py: script che rilegge i file e confronta ogni numero con il libro.
+Formato: CSV UTF-8, separatore virgola, punto decimale, intestazione alla prima riga, nessuna riga di totale.
+Esercizio del caso: anno 2025 (anno neutro scelto per l'esercitazione, il libro dice soltanto «esercizio chiuso»).
+
+COME USARLI
+1. Si apre una conversazione nuova con lo strumento (per questo lavoro il libro indica Claude, dentro un progetto).
+2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 4 così come è stampata nel libro.
+3. La richiesta dice che nel progetto sono già presenti alcune informazioni. Non sono file: si scrivono nelle istruzioni del progetto, o in testa alla richiesta, con i valori del libro:
+   piano dei centri: Manutenzione ausiliario, Programmazione e qualità ausiliario, Lavorazione produttivo;
+   ordine dei ribaltamenti a cascata: prima Manutenzione (25% a Programmazione e qualità, 75% a Lavorazione, sulle ore di intervento), poi Programmazione e qualità (interamente a Lavorazione);
+   base di Lavorazione: ore macchina, comprese per convenzione le 3.000 ore coperte da straordinari e lavorazioni esterne;
+   tabella prodotti con i tempi di ciclo: A 1,5 ore per unità, B 0,5, C 3,0.
+   La soglia dello scarto fra ore rilevate e ore teoriche la sceglie chi fa la prova (la richiesta dice «la soglia che ti indico»).
+4. Si caricano i tre file CSV e si confronta la risposta con i numeri da ritrovare qui sotto.
+5. Per controllare i file, dalla cartella: python3 verifica.py
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Vengono dal libro: il totale di 120.000 euro; il costo diretto dei centri (Manutenzione 36.000, Programmazione e qualità 18.000, Lavorazione 66.000); i due conti e i loro saldi del lavoro 1 (Ammortamento impianti di reparto 74.000, Retribuzioni della produzione indiretta 46.000); le ore macchina per linea (12.000, 6.000, 6.000); le quantità (8.000, 12.000, 2.000).
+Sono costruiti per l'esercitazione, e sommano esattamente ai totali del libro: i singoli movimenti mensili del 2025 e la ripartizione dei due conti fra i centri (Lavorazione 66.000 di ammortamento; Manutenzione 8.000 di ammortamento e 28.000 di retribuzioni; Programmazione e qualità 18.000 di retribuzioni; la mensilità di dicembre delle retribuzioni di Programmazione e qualità è più alta). Il costo mensile del centro Manutenzione (ammortamento più retribuzioni) è lo stesso, mese per mese, dei dodici mesi 2025 di lavoro_02/manutenzione_24m.csv: il luglio 2025 è più alto perché è il mese di carico massimo del reparto (vedi il lavoro 2). Le ore rilevate coincidono con le ore teoriche, come nel caso del libro, quindi lo scarto è zero.
+Le lavorazioni esterne e gli straordinari di reparto (84.000 euro) non sono nel file, perché la richiesta li esclude dal perimetro.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Coefficiente di 5,00 euro per ora macchina, cioè 120.000 diviso 24.000.
+Linea A 60.000 euro, cioè 7,50 per unità; linea B 30.000 euro, cioè 2,50; linea C 30.000 euro, cioè 15,00.
+Ribaltamenti: Manutenzione 9.000 a Programmazione e qualità e 27.000 a Lavorazione; Programmazione e qualità 27.000 a Lavorazione; Lavorazione dopo i ribaltamenti 120.000; nessun costo residuo nei centri ausiliari.
+Errore tipico da riconoscere: sulle unità prodotte il coefficiente diventa 5,4545 euro, il prospetto quadra ancora a 120.000 e la linea C riceve 19.091 euro in meno.

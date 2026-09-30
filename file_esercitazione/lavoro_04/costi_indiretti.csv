@@ -1,0 +1,49 @@
+movimento_id,data,conto,descrizione,centro,importo
+CI-0001,2025-01-31,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione gennaio 2025,Lavorazione,5500
+CI-0002,2025-01-31,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione gennaio 2025,Manutenzione,667
+CI-0003,2025-01-31,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione gennaio 2025,Manutenzione,2120
+CI-0004,2025-01-31,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità gennaio 2025,Programmazione e qualità,1380
+CI-0005,2025-02-28,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione febbraio 2025,Lavorazione,5500
+CI-0006,2025-02-28,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione febbraio 2025,Manutenzione,667
+CI-0007,2025-02-28,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione febbraio 2025,Manutenzione,2084
+CI-0008,2025-02-28,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità febbraio 2025,Programmazione e qualità,1380
+CI-0009,2025-03-31,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione marzo 2025,Lavorazione,5500
+CI-0010,2025-03-31,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione marzo 2025,Manutenzione,667
+CI-0011,2025-03-31,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione marzo 2025,Manutenzione,2177
+CI-0012,2025-03-31,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità marzo 2025,Programmazione e qualità,1380
+CI-0013,2025-04-30,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione aprile 2025,Lavorazione,5500
+CI-0014,2025-04-30,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione aprile 2025,Manutenzione,667
+CI-0015,2025-04-30,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione aprile 2025,Manutenzione,2189
+CI-0016,2025-04-30,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità aprile 2025,Programmazione e qualità,1380
+CI-0017,2025-05-31,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione maggio 2025,Lavorazione,5500
+CI-0018,2025-05-31,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione maggio 2025,Manutenzione,667
+CI-0019,2025-05-31,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione maggio 2025,Manutenzione,2130
+CI-0020,2025-05-31,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità maggio 2025,Programmazione e qualità,1380
+CI-0021,2025-06-30,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione giugno 2025,Lavorazione,5500
+CI-0022,2025-06-30,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione giugno 2025,Manutenzione,667
+CI-0023,2025-06-30,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione giugno 2025,Manutenzione,2150
+CI-0024,2025-06-30,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità giugno 2025,Programmazione e qualità,1380
+CI-0025,2025-07-31,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione luglio 2025,Lavorazione,5500
+CI-0026,2025-07-31,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione luglio 2025,Manutenzione,667
+CI-0027,2025-07-31,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione luglio 2025,Manutenzione,4781
+CI-0028,2025-07-31,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità luglio 2025,Programmazione e qualità,1380
+CI-0029,2025-08-31,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione agosto 2025,Lavorazione,5500
+CI-0030,2025-08-31,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione agosto 2025,Manutenzione,667
+CI-0031,2025-08-31,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione agosto 2025,Manutenzione,1984
+CI-0032,2025-08-31,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità agosto 2025,Programmazione e qualità,1380
+CI-0033,2025-09-30,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione settembre 2025,Lavorazione,5500
+CI-0034,2025-09-30,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione settembre 2025,Manutenzione,667
+CI-0035,2025-09-30,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione settembre 2025,Manutenzione,2094
+CI-0036,2025-09-30,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità settembre 2025,Programmazione e qualità,1380
+CI-0037,2025-10-31,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione ottobre 2025,Lavorazione,5500
+CI-0038,2025-10-31,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione ottobre 2025,Manutenzione,667
+CI-0039,2025-10-31,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione ottobre 2025,Manutenzione,2171
+CI-0040,2025-10-31,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità ottobre 2025,Programmazione e qualità,1380
+CI-0041,2025-11-30,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione novembre 2025,Lavorazione,5500
+CI-0042,2025-11-30,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione novembre 2025,Manutenzione,667
+CI-0043,2025-11-30,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione novembre 2025,Manutenzione,2062
+CI-0044,2025-11-30,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità novembre 2025,Programmazione e qualità,1380
+CI-0045,2025-12-31,Ammortamento impianti di reparto,Quota ammortamento impianti di lavorazione dicembre 2025,Lavorazione,5500
+CI-0046,2025-12-31,Ammortamento impianti di reparto,Quota ammortamento attrezzature di manutenzione dicembre 2025,Manutenzione,663
+CI-0047,2025-12-31,Retribuzioni della produzione indiretta,Retribuzioni addetti manutenzione dicembre 2025,Manutenzione,2058
+CI-0048,2025-12-31,Retribuzioni della produzione indiretta,Retribuzioni addetti programmazione e qualità dicembre 2025,Programmazione e qualità,2820
