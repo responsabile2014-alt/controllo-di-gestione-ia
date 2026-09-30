@@ -1,0 +1,3 @@
+rettifica_id,conto,importo,motivo
+R001,6101,-6000.00,Lavorazioni a pezzo di dicembre registrate in contabilità generale sul conto dei materiali diretti: il controllo di gestione le riporta al conto di competenza
+R002,6102,6000.00,Contropartita della rettifica R001: lavorazioni a pezzo di dicembre riportate al conto di competenza
