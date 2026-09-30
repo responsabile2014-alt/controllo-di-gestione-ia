@@ -1,0 +1,4 @@
+attivita,driver,capacita_pratica_annua,fonte_stima
+Gestione ordini,numero di ordini,12000,ipotesi del caso: capacità pratica pari al volume rilevato (libro capitolo 10 e lavoro 5)
+Consegne,numero di consegne,6000,ipotesi del caso: capacità pratica pari al volume rilevato (libro capitolo 10 e lavoro 5)
+Assistenza tecnica,ore di assistenza,7500,ipotesi del caso: capacità pratica pari al volume rilevato (libro capitolo 10 e lavoro 5)
