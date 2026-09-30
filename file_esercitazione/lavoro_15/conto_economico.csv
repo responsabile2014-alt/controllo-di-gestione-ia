@@ -1,0 +1,13 @@
+voce_id,sezione,voce,linea,importo
+CE01,ricavi,Ricavi netti linea A,A,1440000.00
+CE02,ricavi,Ricavi netti linea B,B,1368000.00
+CE03,ricavi,Ricavi netti linea C,C,578000.00
+CE04,costi_variabili,Costi variabili linea A,A,936000.00
+CE05,costi_variabili,Costi variabili linea B,B,912000.00
+CE06,costi_variabili,Costi variabili linea C,C,476000.00
+CE07,struttura_base,Gestione ordini,comune,240000.00
+CE08,struttura_base,Consegne,comune,180000.00
+CE09,struttura_base,Assistenza tecnica,comune,150000.00
+CE10,struttura_base,Costi indiretti di produzione,comune,120000.00
+CE11,struttura_base,Amministrazione,comune,46000.00
+CE12,capacita_esterna,Capacità acquistata all'esterno (3.000 ore a 28 euro),comune,84000.00
