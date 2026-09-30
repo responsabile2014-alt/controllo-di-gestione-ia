@@ -1,0 +1,7 @@
+Note sui mesi non ordinari - centro Manutenzione - gennaio 2024 / dicembre 2025
+(dati di esercitazione del caso, costruiti per il lavoro 2 del capitolo 19)
+
+2024-08: fermo impianto di tre settimane per la revisione straordinaria programmata degli impianti del reparto; le ore macchina sono ridotte e il costo comprende la revisione.
+2024-12: chiusura del reparto per le festività di fine anno; ore ridotte, nessun intervento straordinario.
+2025-03: cambio del fornitore dei ricambi di manutenzione; nessun effetto atteso sul costo del mese.
+2025-07: mese di carico massimo dell'esercizio; il reparto ha lavorato molto oltre la propria capacità ordinaria con turni prolungati per coprire i volumi; interventi di manutenzione più frequenti, coperti con ore aggiuntive degli addetti alla manutenzione, che fanno salire le loro retribuzioni del mese.
