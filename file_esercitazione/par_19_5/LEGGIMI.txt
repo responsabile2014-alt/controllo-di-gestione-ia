@@ -1,0 +1,14 @@
+FILE DI ESERCITAZIONE - Paragrafo 19.5, «Processi completi»
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+Ogni sottocartella contiene i file di una richiesta, un LEGGIMI.txt e un verifica.py. Il verifica.py di questa cartella esegue tutti gli altri (python3 verifica.py).
+Anni: marzo e il progressivo sono del 2026, l'esercizio di budget, in corso nel primo flusso; la redditività per cliente è sull'esercizio di budget 2026, eseguita alla sua chiusura: per la convenzione del paragrafo 19.3 quell'esercizio chiude con i valori del dataset master, e le righe dei clienti sono costruite sul venduto dell'esercizio base 2025. Anni neutri scelti per l'esercitazione.
+Uso generale: conversazione nuova o progetto; in testa il riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3; sotto, la richiesta del libro così com'è; si allegano i file della cartella.
+
+FLUSSI E FILE
+Primo flusso, reporting gestionale di marzo - reporting_marzo/: venduto_marzo.csv, struttura_marzo.csv, ore_reparto_marzo.csv, capacita_esterna_marzo.csv, note_credito_marzo.csv, progressivo_febbraio.csv, struttura_febbraio.csv, forecast_precedente.csv, e budget_mensile.csv (la tabella che la richiesta dà per caricata nel progetto).
+- Controlli preliminari esplorativi con ChatGPT: il libro non dà una richiesta scritta; si usa venduto_marzo.csv.
+- Revisione umana e archiviazione con Gemini Notebook: lavorano sui verbali (la decisione di gennaio sulla linea C, il verbale di marzo sulla linea B) e sulle cartelle mensili. Sono documenti, non dati: NON costruiti.
+Secondo flusso, redditività per cliente e per canale - redditivita_clienti/: clienti_esercizio.csv.
+- Simulatore delle politiche di servizio (seconda richiesta del flusso): applicazione che non riceve file; i valori di partenza sono nella richiesta. Primo collaudo, con i valori di partenza: 333.000 euro di costo di servizio e 126.000 di margine di canale (10,3%). Secondo collaudo, la migrazione dei 184 clienti minori ai distributori con i valori del libro: sconto di canale 20% e consumo residuo di 160 ordini, 360 consegne e 360 ore di assistenza. L'applicazione deve dare ricavi da 340.000 a 272.000, costo variabile invariato a 204.000, margine di prodotto da 136.000 a 68.000 (- 68.000), costo di servizio da 150.000 a 21.200 (160 x 20,00 + 360 x 30,00 + 360 x 20,00; - 128.800), effetto netto + 60.800.
+- Verifica dell'effetto a distanza di un trimestre: NESSUN FILE. Il libro non scrive una richiesta propria e non nomina un file; dà solo i totali del trimestre (61.200 atteso, 69.300 conseguito, 13.950 di minor costo; spesa eliminata 6.300). I consumi trimestrali dei driver cliente per cliente non sono nel libro e la base trimestrale (5.250 ore / 4 = 1.312,5 ore) non è intera: non sono stati inventati. Gli impegni presi stanno nei verbali (Gemini Notebook).
