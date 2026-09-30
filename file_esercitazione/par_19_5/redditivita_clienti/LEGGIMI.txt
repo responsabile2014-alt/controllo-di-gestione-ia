@@ -1,0 +1,29 @@
+FILE DI ESERCITAZIONE - Paragrafo 19.5, «Il secondo flusso: la redditività per cliente e per canale»
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A CHE COSA SERVE
+È il file che la prima richiesta del secondo flusso cita. Esercizio: l'esercizio di budget 2026, dodici mesi, entità unica, che per la convenzione del paragrafo 19.3 chiude con i valori del dataset master; le righe dei clienti sono costruite sul venduto dell'esercizio base 2025.
+
+FILE
+clienti_esercizio.csv - 258 righe, una per cliente. Colonne, nell'ordine della richiesta: cliente_codice, canale, settore, ricavi_netti, costi_variabili_prodotto, numero_ordini, numero_consegne, ore_assistenza.
+I clienti e i loro valori sono gli stessi di lavoro_06/clienti.csv (stessi codici dei file del lavoro 5); qui si aggiunge la colonna settore, che la richiesta prevede e il lavoro 6 no.
+Codici: CL-014 cliente X; CL-027 cliente Y; i 32 clienti intermedi sono CL-001 - CL-034 senza CL-014 e CL-027; i 184 minori CL-035 - CL-218; i 40 distributori CL-219 - CL-258.
+
+COME SI USA
+Conversazione nuova o progetto con le tariffe dei driver; riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3; la richiesta del libro così com'è; si allega il file.
+La seconda richiesta del flusso (il simulatore nel browser) non riceve file: i suoi valori di partenza sono scritti nella richiesta. Si collauda due volte: con i valori di partenza deve dare 333.000 euro di costo di servizio e 126.000 di margine di canale; con la migrazione dei 184 clienti minori ai distributori, sconto di canale 20% e consumo residuo di 160 ordini, 360 consegne e 360 ore di assistenza, deve dare ricavi 272.000, margine di prodotto 68.000, costo di servizio 21.200 ed effetto netto + 60.800 euro (vedi par_19_5/LEGGIMI.txt).
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Dal libro: i totali (3.386.000 di ricavi, 2.324.000 di costi variabili, 12.000 ordini, 6.000 consegne, 7.500 ore); i totali per canale; i clienti X e Y con tutti i loro valori; i totali dei 32 intermedi e dei 184 minori; le tariffe 20,00, 30,00 e 20,00 euro.
+Costruiti per l'esercitazione: i valori dei singoli clienti diversi da X e Y (ricavi e costi variabili di ogni cliente tornano sul venduto 2025 riga per riga di par_19_2/modello_excel/venduto.csv), il numero dei distributori (40, il libro non lo indica) e il settore (sei settori generici). Rispettano l'ipotesi del libro: tutti i 216 clienti del diretto diversi da X e Y hanno margine cliente sotto il 5%, nessun distributore scende sotto il 5%, nessun cliente ha ricavi zero o negativi. Nessun cliente ha più consegne delle unità che ha comprato nel venduto 2025.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Per canale: diretto 1.220.000 di ricavi, 459.000 di margine di prodotto (37,6%), 333.000 di costo di servizio (27,3%), 126.000 di margine di canale (10,3%); distributori 2.166.000, 603.000 (27,8%), 237.000 (10,9%), 366.000 (16,9%); totale 3.386.000, 1.062.000 (31,4%), 570.000 (16,8%), 492.000 (14,5%).
+Raccordo: 492.000 - 250.000 non attribuiti = 242.000 di risultato operativo.
+Clienti: CL-014 costo di servizio 26.000, margine cliente 58.000 (24,2%); CL-027 5.600 e 78.400 (32,7%); 32 intermedi margine di prodotto 155.000 (38,8%), costo di servizio 151.400, margine cliente 3.600 (0,9%); 184 minori margine di prodotto 136.000 (40,0%, costi variabili 204.000), costo di servizio 150.000, margine cliente - 14.000 (- 4,1%), l'unico gruppo negativo; resto del canale diretto (216 clienti, 740.000 di ricavi) - 10.400; 218 clienti nel diretto.
+Indicatori: ricavi per ordine 203 (diretto), 361 (distributori), 282 (totale); quota dei ricavi dei clienti con margine cliente sotto il 5%: 740.000 su 3.386.000, 21,9%; margine di canale 14,5% complessivo, 10,3% sul diretto (sotto la soglia critica dell'11,0%: esito critico) e 16,9% sui distributori. Con le soglie dell'elenco del libro i quattro indicatori danno quattro esiti critici, tutti sul canale diretto (margine di canale 10,3%, costo di servizio 27,3%, ricavi per ordine 203 euro, quota sotto il 5% al 21,9%).
+
+VERIFICA
+python3 verifica.py (controlla anche che il file sia ancora allineato a lavoro_06/clienti.csv)
+
+Nota sugli ordini. Per ipotesi del caso (libro, paragrafo 19.5 e capitolo 10) il driver «ordini» conta tutte le pratiche gestite dall'ufficio ordini: gli ordini d'acquisto e le richieste che non portano a una consegna di prodotto, come modifiche, annullamenti e richieste di documentazione. Per questo i 184 clienti minori hanno 3.000 ordini ma meno unità acquistate nel venduto (par_19_2/modello_excel/venduto.csv): non è un errore dei file.
