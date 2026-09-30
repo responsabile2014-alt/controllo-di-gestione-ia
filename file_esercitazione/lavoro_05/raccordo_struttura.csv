@@ -1,0 +1,11 @@
+voce_id,voce_struttura,importo,perimetro
+RS-01,Retribuzioni ufficio ordini,186000,nel modello
+RS-02,Sistemi di gestione degli ordini,54000,nel modello
+RS-03,Trasporti su vendite,138000,nel modello
+RS-04,Personale di spedizione,42000,nel modello
+RS-05,Retribuzioni dei tecnici di assistenza,118000,nel modello
+RS-06,Ricambi e trasferte di assistenza,32000,nel modello
+RS-07,Ammortamento impianti di reparto (costi indiretti di produzione),74000,fuori perimetro
+RS-08,Retribuzioni della produzione indiretta (costi indiretti di produzione),46000,fuori perimetro
+RS-09,Retribuzioni amministrative,46000,fuori perimetro
+RS-10,Lavorazioni esterne e straordinari di reparto (capacità acquistata all'esterno),84000,fuori perimetro

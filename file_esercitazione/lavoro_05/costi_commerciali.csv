@@ -1,0 +1,89 @@
+movimento_id,data,conto,descrizione,centro,importo
+CC-0001,2025-01-31,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini gennaio 2025,Gestione ordini,14300
+CC-0002,2025-01-01,Sistemi di gestione degli ordini,Canone trimestrale sistemi di gestione degli ordini da gennaio 2025,Gestione ordini,13500
+CC-0003,2025-01-31,Trasporti su vendite,Fattura vettore VET-A gennaio 2025 (262 consegne),Consegne,6026
+CC-0004,2025-01-31,Trasporti su vendite,Fattura vettore VET-B gennaio 2025 (175 consegne),Consegne,4025
+CC-0005,2025-01-31,Personale di spedizione,Retribuzioni personale di spedizione gennaio 2025,Consegne,3230
+CC-0006,2025-01-31,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza gennaio 2025,Assistenza tecnica,9080
+CC-0007,2025-02-28,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini febbraio 2025,Gestione ordini,14300
+CC-0008,2025-02-28,Trasporti su vendite,Fattura vettore VET-A febbraio 2025 (273 consegne),Consegne,6279
+CC-0009,2025-02-28,Trasporti su vendite,Fattura vettore VET-B febbraio 2025 (182 consegne),Consegne,4186
+CC-0010,2025-02-28,Personale di spedizione,Retribuzioni personale di spedizione febbraio 2025,Consegne,3230
+CC-0011,2025-02-28,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza febbraio 2025,Assistenza tecnica,9080
+CC-0012,2025-03-31,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini marzo 2025,Gestione ordini,14300
+CC-0013,2025-03-31,Trasporti su vendite,Fattura vettore VET-A marzo 2025 (311 consegne),Consegne,7153
+CC-0014,2025-03-31,Trasporti su vendite,Fattura vettore VET-B marzo 2025 (207 consegne),Consegne,4761
+CC-0015,2025-03-31,Personale di spedizione,Retribuzioni personale di spedizione marzo 2025,Consegne,3230
+CC-0016,2025-03-31,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza marzo 2025,Assistenza tecnica,9080
+CC-0017,2025-04-30,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini aprile 2025,Gestione ordini,14300
+CC-0018,2025-04-01,Sistemi di gestione degli ordini,Canone trimestrale sistemi di gestione degli ordini da aprile 2025,Gestione ordini,13500
+CC-0019,2025-04-30,Trasporti su vendite,Fattura vettore VET-A aprile 2025 (299 consegne),Consegne,6877
+CC-0020,2025-04-30,Trasporti su vendite,Fattura vettore VET-B aprile 2025 (200 consegne),Consegne,4600
+CC-0021,2025-04-30,Personale di spedizione,Retribuzioni personale di spedizione aprile 2025,Consegne,3230
+CC-0022,2025-04-30,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza aprile 2025,Assistenza tecnica,9080
+CC-0023,2025-05-31,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini maggio 2025,Gestione ordini,14300
+CC-0024,2025-05-31,Trasporti su vendite,Fattura vettore VET-A maggio 2025 (295 consegne),Consegne,6785
+CC-0025,2025-05-31,Trasporti su vendite,Fattura vettore VET-B maggio 2025 (197 consegne),Consegne,4531
+CC-0026,2025-05-31,Personale di spedizione,Retribuzioni personale di spedizione maggio 2025,Consegne,3230
+CC-0027,2025-05-31,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza maggio 2025,Assistenza tecnica,9080
+CC-0028,2025-06-30,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini giugno 2025,Gestione ordini,14300
+CC-0029,2025-06-30,Trasporti su vendite,Fattura vettore VET-A giugno 2025 (313 consegne),Consegne,7199
+CC-0030,2025-06-30,Trasporti su vendite,Fattura vettore VET-B giugno 2025 (208 consegne),Consegne,4784
+CC-0031,2025-06-30,Personale di spedizione,Retribuzioni personale di spedizione giugno 2025,Consegne,3230
+CC-0032,2025-06-30,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza giugno 2025,Assistenza tecnica,9080
+CC-0033,2025-07-31,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini luglio 2025,Gestione ordini,14300
+CC-0034,2025-07-01,Sistemi di gestione degli ordini,Canone trimestrale sistemi di gestione degli ordini da luglio 2025,Gestione ordini,13500
+CC-0035,2025-07-31,Trasporti su vendite,Fattura vettore VET-A luglio 2025 (323 consegne),Consegne,7429
+CC-0036,2025-07-31,Trasporti su vendite,Fattura vettore VET-B luglio 2025 (215 consegne),Consegne,4945
+CC-0037,2025-07-31,Personale di spedizione,Retribuzioni personale di spedizione luglio 2025,Consegne,3230
+CC-0038,2025-07-31,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza luglio 2025,Assistenza tecnica,9080
+CC-0039,2025-08-31,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini agosto 2025,Gestione ordini,14300
+CC-0040,2025-08-31,Trasporti su vendite,Fattura vettore VET-A agosto 2025 (302 consegne),Consegne,6946
+CC-0041,2025-08-31,Trasporti su vendite,Fattura vettore VET-B agosto 2025 (202 consegne),Consegne,4646
+CC-0042,2025-08-31,Personale di spedizione,Retribuzioni personale di spedizione agosto 2025,Consegne,3230
+CC-0043,2025-08-31,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza agosto 2025,Assistenza tecnica,9080
+CC-0044,2025-09-30,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini settembre 2025,Gestione ordini,14300
+CC-0045,2025-09-30,Trasporti su vendite,Fattura vettore VET-A settembre 2025 (319 consegne),Consegne,7337
+CC-0046,2025-09-30,Trasporti su vendite,Fattura vettore VET-B settembre 2025 (212 consegne),Consegne,4876
+CC-0047,2025-09-30,Personale di spedizione,Retribuzioni personale di spedizione settembre 2025,Consegne,3230
+CC-0048,2025-09-30,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza settembre 2025,Assistenza tecnica,9080
+CC-0049,2025-10-31,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini ottobre 2025,Gestione ordini,14300
+CC-0050,2025-10-01,Sistemi di gestione degli ordini,Canone trimestrale sistemi di gestione degli ordini da ottobre 2025,Gestione ordini,13500
+CC-0051,2025-10-31,Trasporti su vendite,Fattura vettore VET-A ottobre 2025 (293 consegne),Consegne,6739
+CC-0052,2025-10-31,Trasporti su vendite,Fattura vettore VET-B ottobre 2025 (196 consegne),Consegne,4508
+CC-0053,2025-10-31,Personale di spedizione,Retribuzioni personale di spedizione ottobre 2025,Consegne,3230
+CC-0054,2025-10-31,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza ottobre 2025,Assistenza tecnica,9080
+CC-0055,2025-11-30,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini novembre 2025,Gestione ordini,14300
+CC-0056,2025-11-30,Trasporti su vendite,Fattura vettore VET-A novembre 2025 (284 consegne),Consegne,6532
+CC-0057,2025-11-30,Trasporti su vendite,Fattura vettore VET-B novembre 2025 (190 consegne),Consegne,4370
+CC-0058,2025-11-30,Personale di spedizione,Retribuzioni personale di spedizione novembre 2025,Consegne,3230
+CC-0059,2025-11-30,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza novembre 2025,Assistenza tecnica,9080
+CC-0060,2025-12-31,Retribuzioni ufficio ordini,Retribuzioni ufficio ordini dicembre 2025,Gestione ordini,28700
+CC-0061,2025-12-31,Trasporti su vendite,Fattura vettore VET-A dicembre 2025 (325 consegne),Consegne,7475
+CC-0062,2025-12-31,Trasporti su vendite,Fattura vettore VET-B dicembre 2025 (217 consegne),Consegne,4991
+CC-0063,2025-12-31,Personale di spedizione,Retribuzioni personale di spedizione dicembre 2025,Consegne,6470
+CC-0064,2025-12-31,Retribuzioni dei tecnici di assistenza,Retribuzioni tecnici di assistenza dicembre 2025,Assistenza tecnica,18120
+CC-0065,2025-01-31,Ricambi e trasferte di assistenza,Ricambi per interventi gennaio 2025,Assistenza tecnica,1500
+CC-0066,2025-01-31,Ricambi e trasferte di assistenza,Trasferte tecnici gennaio 2025,Assistenza tecnica,1228
+CC-0067,2025-02-28,Ricambi e trasferte di assistenza,Ricambi per interventi febbraio 2025,Assistenza tecnica,1418
+CC-0068,2025-02-28,Ricambi e trasferte di assistenza,Trasferte tecnici febbraio 2025,Assistenza tecnica,1161
+CC-0069,2025-03-31,Ricambi e trasferte di assistenza,Ricambi per interventi marzo 2025,Assistenza tecnica,1463
+CC-0070,2025-03-31,Ricambi e trasferte di assistenza,Trasferte tecnici marzo 2025,Assistenza tecnica,1197
+CC-0071,2025-04-30,Ricambi e trasferte di assistenza,Ricambi per interventi aprile 2025,Assistenza tecnica,1334
+CC-0072,2025-04-30,Ricambi e trasferte di assistenza,Trasferte tecnici aprile 2025,Assistenza tecnica,1092
+CC-0073,2025-05-31,Ricambi e trasferte di assistenza,Ricambi per interventi maggio 2025,Assistenza tecnica,1537
+CC-0074,2025-05-31,Ricambi e trasferte di assistenza,Trasferte tecnici maggio 2025,Assistenza tecnica,1258
+CC-0075,2025-06-30,Ricambi e trasferte di assistenza,Ricambi per interventi giugno 2025,Assistenza tecnica,1326
+CC-0076,2025-06-30,Ricambi e trasferte di assistenza,Trasferte tecnici giugno 2025,Assistenza tecnica,1085
+CC-0077,2025-07-31,Ricambi e trasferte di assistenza,Ricambi per interventi luglio 2025,Assistenza tecnica,1653
+CC-0078,2025-07-31,Ricambi e trasferte di assistenza,Trasferte tecnici luglio 2025,Assistenza tecnica,1353
+CC-0079,2025-08-31,Ricambi e trasferte di assistenza,Ricambi per interventi agosto 2025,Assistenza tecnica,1644
+CC-0080,2025-08-31,Ricambi e trasferte di assistenza,Trasferte tecnici agosto 2025,Assistenza tecnica,1345
+CC-0081,2025-09-30,Ricambi e trasferte di assistenza,Ricambi per interventi settembre 2025,Assistenza tecnica,1448
+CC-0082,2025-09-30,Ricambi e trasferte di assistenza,Trasferte tecnici settembre 2025,Assistenza tecnica,1184
+CC-0083,2025-10-31,Ricambi e trasferte di assistenza,Ricambi per interventi ottobre 2025,Assistenza tecnica,1437
+CC-0084,2025-10-31,Ricambi e trasferte di assistenza,Trasferte tecnici ottobre 2025,Assistenza tecnica,1176
+CC-0085,2025-11-30,Ricambi e trasferte di assistenza,Ricambi per interventi novembre 2025,Assistenza tecnica,1399
+CC-0086,2025-11-30,Ricambi e trasferte di assistenza,Trasferte tecnici novembre 2025,Assistenza tecnica,1144
+CC-0087,2025-12-31,Ricambi e trasferte di assistenza,Ricambi per interventi dicembre 2025,Assistenza tecnica,1440
+CC-0088,2025-12-31,Ricambi e trasferte di assistenza,Trasferte tecnici dicembre 2025,Assistenza tecnica,1178

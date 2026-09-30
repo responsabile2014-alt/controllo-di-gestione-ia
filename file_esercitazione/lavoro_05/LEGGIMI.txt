@@ -1,0 +1,41 @@
+LAVORO 5 - COSTRUIRE IL MODELLO PER ATTIVITÀ
+File di esercitazione per il libro «Controllo di gestione con l'intelligenza artificiale» (Tania Cilio), capitolo 19, lavoro 5.
+
+A CHE COSA SERVONO
+Sono i sei file che la richiesta del lavoro 5 cita: con questi file si fa il collaudo della richiesta sui numeri noti dell'impresa guida, prima di usarla sui dati della propria impresa.
+
+I FILE
+costi_commerciali.csv: movimento_id, data, conto, descrizione, centro, importo. 88 righe per 570.000 euro (sei conti, tre centri: Gestione ordini, Consegne, Assistenza tecnica). La data è l'ultimo giorno del mese per retribuzioni, fatture dei vettori, ricambi e trasferte, e il primo giorno del trimestre per il canone trimestrale dei sistemi.
+raccordo_struttura.csv: voce_id, voce_struttura, importo, perimetro. 10 righe, le dieci voci della struttura del lavoro 1: 570.000 euro «nel modello» e 250.000 euro «fuori perimetro», totale 820.000.
+ordini.csv: ordine_id, codice_cliente, canale, data. 12.000 righe, una per ordine.
+consegne.csv: consegna_id, codice_cliente, data. 6.000 righe, una per consegna.
+interventi.csv: intervento_id, codice_cliente, ore_intervento, data. 2.729 righe, una per intervento, per 7.500 ore. Come dice la richiesta, le ore_intervento comprendono tutte le ore di assistenza, sia di intervento tecnico sia di primo livello a distanza.
+capacita_driver.csv: attivita, driver, capacita_pratica_annua, fonte_stima. 3 righe.
+verifica.py: script che rilegge i file e confronta ogni numero con il libro.
+Formato: CSV UTF-8, separatore virgola, punto decimale, intestazione alla prima riga, nessuna riga di totale.
+Esercizio del caso: anno 2025 (anno neutro scelto per l'esercitazione, il libro dice soltanto «esercizio chiuso»). Le date cadono nei giorni lavorativi del 2025.
+
+COME USARLI
+1. Si apre una conversazione nuova con lo strumento (per questo lavoro il libro indica Claude, dentro un progetto).
+2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 5 così come è stampata nel libro.
+3. La richiesta dice che nel progetto sono già presenti alcune informazioni. Non sono file: si scrivono nelle istruzioni del progetto, o in testa alla richiesta, con i valori del libro:
+   attività: gestione ordini, consegne, assistenza tecnica;
+   driver: numero di ordini, numero di consegne, ore di assistenza;
+   regola di assegnazione dei conti: ogni conto va all'attività del centro su cui è registrato (Gestione ordini, Consegne, Assistenza tecnica);
+   costi che variano con il volume del driver: trasporti su vendite (con le consegne) e ricambi e trasferte di assistenza (con le ore di intervento tecnico; il primo livello a distanza, compreso nelle ore_intervento, non consuma ricambi né trasferte).
+4. Si caricano i sei file CSV e si confronta la risposta con i numeri da ritrovare qui sotto.
+5. Per controllare i file, dalla cartella: python3 verifica.py
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Vengono dal libro: i saldi dei sei conti del lavoro 1 (186.000, 54.000, 138.000, 42.000, 118.000, 32.000) e quindi i tre pool (240.000, 180.000, 150.000); le dieci voci della struttura e la loro divisione fra 570.000 nel modello e 250.000 fuori perimetro (120.000 di costi indiretti di produzione, 46.000 di amministrazione, 84.000 di capacità esterna); i volumi dei driver (12.000 ordini, 6.000 consegne, 7.500 ore) e la loro divisione per canale (diretto 6.000, 3.600, 5.250; distributori 6.000, 2.400, 2.250); le capacità pratiche uguali ai volumi; i consumi dei clienti X (CL-014: 600 ordini, 300 consegne, 250 ore) e Y (CL-027: 150, 60, 40) e i totali dei 32 clienti intermedi e dei 184 clienti minori del canale diretto; i trasporti a 23,00 euro per consegna.
+Sono costruiti per l'esercitazione, e sommano esattamente ai totali del libro: i singoli movimenti di costo (mensili, con la mensilità di dicembre più alta per le retribuzioni e un canone trimestrale per i sistemi; i trasporti di ogni mese sono 23 euro per le consegne del mese, divise fra due vettori); i singoli ordini, consegne e interventi con le loro date; i codici e i consumi dei singoli clienti diversi da X e Y. Nessun cliente ha più consegne delle unità che ha comprato nel venduto 2025 (par_19_2/modello_excel/venduto.csv, righe di reso escluse).
+Codici cliente usati: canale diretto CL-001 - CL-218 (CL-014 è il cliente X, CL-027 il cliente Y; i 32 intermedi sono CL-001 - CL-034 senza CL-014 e CL-027; i 184 minori sono CL-035 - CL-218); distributori CL-219 - CL-258 (40 clienti, numero scelto per l'esercitazione). Sono gli stessi clienti del file del lavoro 6.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Tariffe di 20,00 euro per ordine, 30,00 euro per consegna e 20,00 euro per ora di assistenza.
+Costo attribuito ai clienti 570.000 euro, capacità inutilizzata zero.
+570.000 euro nel modello più 250.000 euro fuori perimetro danno 820.000 euro.
+Nessun conto assegnato a due attività.
+Variante del libro: con una capacità pratica di 12.500 ordini la tariffa scende a 19,20 euro, ai clienti vanno 230.400 euro e 9.600 euro restano come capacità inutilizzata.
+
+Nota sugli ordini. Per ipotesi del caso (libro, paragrafo 19.5 e capitolo 10) il driver «ordini» conta tutte le pratiche gestite dall'ufficio ordini: gli ordini d'acquisto e le richieste che non portano a una consegna di prodotto, come modifiche, annullamenti e richieste di documentazione. Per questo i 184 clienti minori hanno 3.000 ordini ma meno unità acquistate nel venduto (par_19_2/modello_excel/venduto.csv): non è un errore dei file.
