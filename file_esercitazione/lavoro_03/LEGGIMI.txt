@@ -1,0 +1,41 @@
+FILE DI ESERCITAZIONE - Lavoro 3 «Riclassificare il Conto Economico a margine» (capitolo 19)
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A che cosa servono
+Questi file servono per provare la richiesta del lavoro 3: passare dal bilancio di verifica dell'impresa guida al prospetto a margine di contribuzione, senza modificare alcun valore.
+
+File della cartella (CSV UTF-8, separatore virgola, punto per i decimali, intestazione alla prima riga, nessuna riga di totale)
+bilancio_verifica.csv: conto, descrizione, saldo. Saldi dare positivi e saldi avere negativi, come chiede la richiesta. 27 conti: 6 patrimoniali e 21 economici.
+mappatura_conti.csv: conto, classe di destinazione, come dice la richiesta. Le classi sono quelle ammesse dalla richiesta. Contiene, tali e quali, le tre righe di esempio stampate nel libro: «6103,capacità acquistata all’esterno», «6202,capacità acquistata all’esterno», «6421,costi della struttura».
+Nota che accompagna la mappatura. La regola 1 della richiesta chiede che la mappatura dichiari il criterio applicato ai trasporti e ai servizi. Come dice il libro, il file ha soltanto le due colonne della richiesta e il criterio si scrive nella nota che accompagna la mappatura e che resta con essa nella cartella del lavoro: è questa, e non si allega, perché allo strumento basta la classe di destinazione, che applica già il criterio. Criteri:
+- 1101, 1201, 1301, 1401, 2101, 2201: conti patrimoniali, esclusi dal prospetto.
+- 4101, 4102, 4103: ricavi lordi, cioè ricavi a listino.
+- 4201, 4202, 4211, 4221: riduzioni di prezzo, cioè riduzioni del corrispettivo (sconti, premi di fine anno, concessioni contrattuali sul prezzo).
+- 6101, 6102, 6201: costi variabili di prodotto, che variano con le unità prodotte.
+- 6103 (lavorazioni esterne) e 6202 (straordinari di reparto): capacità acquistata all’esterno, cioè ore acquistate oltre la capacità ordinaria del reparto.
+- 6401, 6402, 6411, 6412, 6422, 6431, 6441: costi della struttura base.
+- 6421 (trasporti su vendite) e 6432 (ricambi e trasferte di assistenza): costi di servizio, non riduzioni del corrispettivo, perché il contratto non configura il trasporto o il servizio come concessione sul prezzo; restano fra i costi della struttura per l'ipotesi «Trasporti e ricambi» del paragrafo 19.3.
+rettifiche.csv: rettifica_id, conto, importo, motivo (importi con la stessa convenzione dei segni del bilancio di verifica).
+verifica.py: lo script che rilegge i file, rifà il prospetto e controlla i numeri del libro (si lancia con: python3 verifica.py).
+
+Come si usa
+1. Si apre una conversazione nuova, oppure si lavora in un progetto in cui il protocollo è già caricato.
+2. In testa si incolla il testo del riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3.
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 3 così com'è.
+4. Si allegano i tre file e si invia.
+5. I due valori che la richiesta chiede di confrontare, 3.386.000 euro di ricavi netti della contabilità generale e 1.062.000 euro di margine di contribuzione del Conto Economico gestionale approvato, sono già scritti nella richiesta: non serve aggiungerli. La tolleranza sui conti non mappati la sceglie chi fa la prova e la scrive in fondo al messaggio.
+
+Che cosa viene dal libro e che cosa è costruito
+Dal libro: ricavi netti 3.386.000 euro; listini 200, 120 e 305 euro e prezzi netti 180, 114 e 289 euro sulle 8.000, 12.000 e 2.000 unità, quindi ricavi lordi 3.650.000 euro e riduzioni di prezzo 264.000; per la linea A 16 euro di sconto commerciale (128.000 euro) e 4 euro di premio di fine anno e altre concessioni (32.000 euro); costi variabili 2.324.000; costi della struttura 820.000 di cui 84.000 di capacità esterna; i dieci conti della struttura con i loro importi (lavoro 1); acquisti 2.190.000 euro e personale 880.000 euro, con le quote di struttura 224.000 e 438.000; ammortamenti 74.000; crediti 646.600, scorte 286.500, immobilizzazioni nette 516.900 e debiti verso fornitori 360.000 euro a fine esercizio (paragrafo 19.3, saldi medi).
+Costruito per l'esercitazione: i codici dei conti; la divisione dei costi variabili in materiali diretti 1.614.000 e lavorazioni a pezzo 294.000 euro nei saldi contabili, cioè 1.608.000 e 300.000 dopo le rettifiche R001 e R002, e lavoro diretto variabile 416.000 euro (il libro dà solo il totale di 2.324.000 e le quote per natura); la divisione degli 84.000 euro in lavorazioni esterne 58.000 (conto 6103) e straordinari 26.000 (conto 6202), la stessa usata nel lavoro 1; la banca di 62.000 euro e il patrimonio netto iniziale di 910.000 euro, che servono solo a far chiudere il bilancio di verifica (62.000 euro è la cassa generata: 242.000 di risultato operativo, meno 180.000 di aumento dei crediti, più 74.000 di ammortamenti, meno 74.000 di investimenti); le due rettifiche R001 e R002, che spostano 6.000 euro dal conto dei materiali diretti a quello delle lavorazioni a pezzo e hanno totale zero, così che nessun numero del libro cambi. Le riduzioni di prezzo delle linee B e C sono su un solo conto per linea, perché il lavoro 3 non ne dà le componenti. L'esercizio chiuso è il 2025, anno neutro scelto per l'esercitazione. Nel caso le classi «proventi e oneri non operativi», «imposte sul reddito» e «costi variabili di servizio» restano vuote: nessun conto del bilancio di verifica vi appartiene (per i costi variabili di servizio lo dice il libro, perché trasporti e ricambi stanno nella struttura).
+Tutti i conti sono mappati. Chi vuole provare il controllo sui conti non mappati può togliere una riga da mappatura_conti.csv: lo strumento deve elencare quel conto a parte e non attribuirlo.
+
+Numeri da ritrovare nel collaudo
+Bilancio di verifica: totale dare 4.920.000 euro uguale al totale avere 4.920.000 euro.
+Conti patrimoniali esclusi dal prospetto: 6.
+Ricavi netti 3.386.000 euro; costi variabili 2.324.000; margine di contribuzione 1.062.000 euro, pari al 31,4%; costi della struttura 820.000, di cui 84.000 di capacità acquistata all'esterno; risultato operativo 242.000 euro.
+Nel prospetto, per la convenzione dei segni della richiesta (ricavi positivi, costi negativi), i costi compaiono con il segno meno: - 2.324.000 euro di costi variabili e - 820.000 euro di costi della struttura, di cui - 84.000 di capacità acquistata all'esterno.
+Incidenze sui ricavi: costi variabili 68,6%, costi della struttura 24,2%, risultato operativo 7,1% (sommano a 99,9% per l'arrotondamento).
+Totale delle rettifiche: zero. Conti non mappati: nessuno, totale zero. Nessun conto in due classi.
+Ricavi netti contro contabilità generale e margine contro Conto Economico gestionale approvato: differenza zero.
+Se i 32.000 euro di premi e concessioni della linea A finissero sotto la riga del margine, il margine percentuale salirebbe al 32,0%: è l'errore che la regola 1 della richiesta impedisce.

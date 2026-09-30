@@ -1,0 +1,28 @@
+conto,descrizione,saldo
+1101,Immobilizzazioni tecniche nette,516900.00
+1201,Rimanenze di prodotti e materie,286500.00
+1301,Crediti verso clienti,646600.00
+1401,Banca conto corrente,62000.00
+2101,Debiti verso fornitori,-360000.00
+2201,Patrimonio netto iniziale (capitale e riserve),-910000.00
+4101,Ricavi lordi di vendita linea A (a listino),-1600000.00
+4102,Ricavi lordi di vendita linea B (a listino),-1440000.00
+4103,Ricavi lordi di vendita linea C (a listino),-610000.00
+4201,Sconti commerciali linea A,128000.00
+4202,Premi di fine anno e altre concessioni contrattuali sul corrispettivo linea A,32000.00
+4211,"Sconti, premi di fine anno e altre concessioni contrattuali sul corrispettivo linea B",72000.00
+4221,"Sconti, premi di fine anno e altre concessioni contrattuali sul corrispettivo linea C",32000.00
+6101,Materiali diretti,1614000.00
+6102,Lavorazioni a pezzo,294000.00
+6103,Lavorazioni esterne di reparto a ore,58000.00
+6201,Lavoro diretto variabile,416000.00
+6202,Straordinari di reparto,26000.00
+6401,Ammortamento impianti di reparto,74000.00
+6402,Retribuzioni della produzione indiretta,46000.00
+6411,Retribuzioni ufficio ordini,186000.00
+6412,Sistemi di gestione degli ordini,54000.00
+6421,Trasporti su vendite,138000.00
+6422,Personale di spedizione,42000.00
+6431,Retribuzioni dei tecnici di assistenza,118000.00
+6432,Ricambi e trasferte di assistenza,32000.00
+6441,Retribuzioni amministrative,46000.00
