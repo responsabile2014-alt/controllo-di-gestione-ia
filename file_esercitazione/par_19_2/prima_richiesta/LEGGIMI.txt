@@ -1,0 +1,33 @@
+FILE DI ESERCITAZIONE - Paragrafo 19.2, «La prima richiesta»
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A CHE COSA SERVE
+Il file serve alla prima richiesta del capitolo 19 (paragrafo 19.2): contare le righe del partitario dei costi della struttura, sommare la colonna importo e confrontare i due numeri con quelli letti nell'estrazione e con il Conto Economico gestionale. È la richiesta corta che controlla soltanto che il partitario sia completo e che il totale torni. Il libro dice che i numeri sono quelli del lavoro 1 e che il file si trova fra quelli di esercitazione: per questo il file è una copia identica di lavoro_01/partitario_costi.csv (lo stesso file, così i due lavori usano gli stessi movimenti; è identico anche a modello_excel/costi.csv). Questa è l'unica cartella della prima richiesta.
+
+FILE
+partitario_costi.csv - 4.812 righe di dati più l'intestazione.
+Colonne, in quest'ordine: movimento_id, data, conto, descrizione, centro di costo, importo. CSV UTF-8, separatore virgola, punto decimale, nessuna riga di totale.
+Esercizio chiuso: anno 2025 (anno neutro scelto per l'esercitazione).
+I conti e i centri sono codici, spiegati in lavoro_01/piano_conti.csv e lavoro_01/piano_centri.csv:
+6401 ammortamento impianti di reparto; 6402 retribuzioni della produzione indiretta; 6403 lavorazioni esterne e straordinari di reparto; 6411 retribuzioni ufficio ordini; 6412 sistemi di gestione degli ordini; 6421 trasporti su vendite; 6422 personale di spedizione; 6431 retribuzioni dei tecnici di assistenza; 6432 ricambi e trasferte di assistenza; 6441 retribuzioni amministrative.
+CC10 Reparto di lavorazione; CC20 Gestione ordini; CC30 Consegne; CC40 Assistenza tecnica; CC50 Amministrazione.
+
+COME SI USA
+1. Si apre una conversazione nuova con lo strumento (ChatGPT o Claude).
+2. Si incolla la richiesta del libro così com'è: i numeri scritti nella richiesta sono già quelli di questo file. Questa richiesta non contiene il Blocco standard; chi vuole può comunque incollare in testa il riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3, come per tutte le altre richieste del capitolo.
+3. Si allega partitario_costi.csv e si invia.
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Dal libro: il numero di righe (4.812), il totale (820.000 euro), i dieci conti con i loro saldi e i loro centri (elenco «Dati in entrata e risultato» del lavoro 1): 74.000, 46.000, 84.000, 186.000, 54.000, 138.000, 42.000, 118.000, 32.000 e 46.000 euro; le 3.000 ore di capacità esterna a 28 euro l'ora di media.
+Costruiti per l'esercitazione: i singoli movimenti, cioè date, descrizioni, codici fornitore e importi riga per riga, che sommano esattamente ai saldi del libro. Fornitori e clienti sono solo codici (FOR-..., CL-...).
+
+NUMERI DA RITROVARE NEL COLLAUDO
+La risposta giusta mostra il codice e poi i tre confronti: 4.812 righe contro 4.812; 820.000 euro contro gli 820.000 letti nell'estrazione e contro gli 820.000 dei costi della struttura del Conto Economico gestionale; differenza zero in tutti e tre.
+In Excel: =CONTA.VALORI(A:A)-1 dà 4.812, =SOMMA(F:F) dà 820.000, =CONTA.NUMERI(F:F) dà 4.812.
+Se lo strumento dà i numeri senza il codice, o scrive un numero diverso senza dichiarare la differenza (per esempio 4.790 righe senza dire che mancano 22 righe), la risposta non va usata: è l'omissione descritta nel paragrafo 19.3.
+
+VERIFICA
+Da questa cartella: python3 verifica.py
+Stampa, per ogni controllo, il valore atteso con il riferimento al libro, il valore letto dal file e l'esito PASS o FAIL. Segnala anche se il file è ancora identico a quello del lavoro 1.
+
+Come aprire i file CSV in Excel italiano. I file usano la virgola come separatore e il punto per i decimali. Con un doppio clic Excel italiano li mette spesso tutti nella colonna A e le formule danno zero. Si aprono invece con l'importazione da testo o CSV di Excel, indicando la virgola come separatore dei campi e il punto come separatore dei decimali; dopo l'importazione si controlla che =CONTA.NUMERI sulla colonna degli importi dia lo stesso numero delle righe. Per le somme in euro vale la tolleranza di un centesimo, come nel libro.
