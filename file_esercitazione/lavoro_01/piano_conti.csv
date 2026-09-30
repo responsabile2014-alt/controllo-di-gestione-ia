@@ -1,0 +1,11 @@
+conto,descrizione,descrizione estesa
+6401,Ammortamento impianti di reparto,"Quote di ammortamento degli impianti del reparto di lavorazione, calcolate a quote costanti mensili per impianto."
+6402,Retribuzioni della produzione indiretta,"Retribuzioni, contributi e TFR del personale di produzione non assegnato alle linee (capireparto, programmazione, qualità, manutenzione interna)."
+6403,Lavorazioni esterne e straordinari di reparto,"Lavorazioni affidate a terzi a ore e ore di straordinario del reparto, acquistate quando le ore richieste dai volumi superano la capacità ordinaria di 21.000 ore annue; prezzo medio 28 euro l'ora. Voce gestionale che riunisce i conti di contabilità generale 6103 lavorazioni esterne e 6202 straordinari di reparto."
+6411,Retribuzioni ufficio ordini,"Retribuzioni, contributi e TFR del personale dell'ufficio che riceve, inserisce e segue gli ordini dei clienti."
+6412,Sistemi di gestione degli ordini,"Canone del sistema di gestione degli ordini, regolato da un accordo operativo pluriennale a canone fisso mensile."
+6421,Trasporti su vendite,"Trasporti delle merci vendute affidati a vettori, fatturati per documento di trasporto."
+6422,Personale di spedizione,"Retribuzioni, contributi e TFR del personale che prepara e spedisce le consegne."
+6431,Retribuzioni dei tecnici di assistenza,"Retribuzioni, contributi e TFR dei tecnici che eseguono gli interventi di assistenza presso i clienti."
+6432,Ricambi e trasferte di assistenza,"Ricambi utilizzati negli interventi di assistenza e trasferte dei tecnici presso i clienti, acquistati da fornitori."
+6441,Retribuzioni amministrative,"Retribuzioni, contributi e TFR del personale amministrativo."
