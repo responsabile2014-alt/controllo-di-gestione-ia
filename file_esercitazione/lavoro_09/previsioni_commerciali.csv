@@ -1,0 +1,7 @@
+mese,linea,quantita_attesa,probabilita
+10,A,200,0.6
+11,A,250,0.6
+12,A,125,0.8
+10,C,50,0.8
+11,C,60,0.5
+12,C,60,0.5

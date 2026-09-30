@@ -1,0 +1,47 @@
+LAVORO 9 - AGGIORNARE IL FORECAST DI CHIUSURA
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19, lavoro 9.
+
+A COSA SERVONO
+Sono i sette file che la «Richiesta da consegnare allo strumento» del lavoro 9 cita: consuntivo_9m.csv, costi_struttura_mensili.csv, budget_anno.csv, portafoglio.csv, previsioni_commerciali.csv, azioni.csv, forecast_precedenti.csv. Descrivono l'esercizio di budget alla fine del nono mese (settembre).
+
+COME USARLI
+1. Si apre una conversazione nuova con lo strumento (il libro usa Claude, in un progetto).
+2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 9 così com'è.
+3. Si allegano i sette file.
+4. La richiesta dice «Conto Economico dei nove mesi che ti fornisco» e «totale del portafoglio ordini del gestionale che ti fornisco»: questi due dati non sono file. In fondo al messaggio si aggiunge questa riga:
+   Conto Economico gestionale dei nove mesi: ricavi netti 2.539.500 euro, margine di contribuzione 796.500 euro, costi della struttura 616.124 euro, risultato operativo 180.376 euro. Totale del portafoglio ordini del gestionale: 5.200 unità (A 1.700, B 3.100, C 400).
+5. Si confronta la risposta con i numeri qui sotto. Per ricontrollare i file si può eseguire «python3 verifica.py» nella cartella.
+
+ANNI E MESI
+L'esercizio in corso, quello del budget del lavoro 8, è il 2026 (mesi da 1 a 12); l'esercizio chiuso, con i valori del dataset master, è il 2025. I mesi da 1 a 9 del 2026 sono chiusi, i mesi da 10 a 12 sono da prevedere. I file non contengono date. Sono gli stessi anni di tutte le altre cartelle (vedi il LEGGIMI generale).
+
+CHE COSA VIENE DAL LIBRO
+- Il budget dell'anno è il budget del lavoro 8: 21.500 unità, ricavi 3.392.100, margine 1.089.900, costi della struttura 820.000 (capacità esterna 84.000 compresa), risultato operativo 269.900; prezzi 180, 118, 289 e costi variabili 117, 76, 238 in tutti i mesi; ore macchina per unità 1,5, 0,5 e 3,0, nella colonna ore_macchina_per_unita di budget_anno.csv, come chiede la richiesta.
+- Marzo, a budget: 600, 1.000 e 200 unità, ricavi 283.800, margine 90.000, struttura 69.200 (62.200 di base, 10.000 dei quali di costi indiretti di produzione, più 7.000 di capacità esterna per 250 ore), risultato 20.800.
+- Marzo, a consuntivo: 600, 1.100 e 170 unità, ricavi 282.530, margine 88.270, struttura 68.400 (62.884 di base più 5.516 di capacità esterna per 197 ore), risultato 19.870, cioè 930 euro sotto il budget.
+- Primo trimestre a consuntivo: ricavi 842.300, margine 262.900, struttura 204.500, risultato 58.400. Primo trimestre a budget: ricavi 846.500, margine 268.000, risultato 62.500.
+- La struttura di budget dei nove mesi dopo il trimestre è 614.500 euro (i 611.700 del paragrafo 19.2 più i 2.800 delle 100 ore esterne in meno).
+- L'azione approvata a marzo: sconti oltre il 5% sulla linea B autorizzati dalla direzione commerciale, dal mese 4 al mese 6, 950 euro al mese, cioè 2.850 nel trimestre. A fine settembre non ha più mesi di effetto.
+- Le tre versioni precedenti del forecast dei ricavi di chiusura: giugno 3.520.000, luglio 3.480.000, agosto 3.450.000 (la colonna «valore» sono i ricavi di chiusura previsti, «mese» è il mese della versione).
+- Il consuntivo finale per convenzione è il dataset master: ricavi 3.386.000 euro, usati come se l'esercizio 2026 si fosse chiuso così (paragrafo 19.3, «Budget e consuntivo»).
+- La quota di marzo dei costi indiretti di produzione, 10.000 euro (2.000 ore di budget x 5,00 euro), è l'ipotesi del caso del capitolo 14.
+
+CHE COSA È COSTRUITO PER L'ESERCITAZIONE
+Il libro non dà il dettaglio mese per mese, quindi queste righe sono dati di esercitazione, costruiti per tornare sui numeri del libro:
+- la ripartizione del budget nei mesi diversi da marzo. È la stessa, riga per riga, di par_19_2/previsione_chiusura/budget_anno.csv e di par_19_5/reporting_marzo/budget_mensile.csv: un solo budget mensile 2026 per tutto il caso. Le ore di ogni mese restano sopra le 1.750 di capacità mensile, così la capacità esterna dell'anno fa 3.000 ore e 84.000 euro;
+- il consuntivo dei mesi 1 e 2, che è lo stesso di par_19_2/previsione_chiusura/progressivo_3m.csv (A 680 e 688 unità, B 850 e 859, C 200 e 200), e quello dei mesi da 4 a 9. Nei nove mesi: A 6.168, B 8.566, C 1.556 unità; prezzo netto della linea B 116 euro a gennaio, circa 115,6 a febbraio e 114 da marzo;
+- la struttura di budget e di consuntivo per mese e centro, diversa da marzo. I centri sono quelli del paragrafo 19.3 più «capacita esterna»; la struttura di budget è quella di par_19_2/previsione_chiusura/struttura_budget_anno.csv raggruppata in questi centri (costi indiretti di produzione = CC10, pari alle ore di budget del mese x 5,00 euro; attività commerciali e logistiche = CC20 + CC30 + CC40; amministrazione = CC50), e il consuntivo dei mesi 1-3 è quello di par_19_2/previsione_chiusura/struttura_consuntiva_3m.csv, con la capacità esterna tolta dal CC10 e messa sulla sua riga. Gli importi di budget hanno i centesimi, perché la capacità esterna di budget di alcuni mesi viene da ore con decimali. Nei mesi 10-12 la colonna consuntivo è vuota perché quei mesi non sono chiusi;
+- i 24 ordini del portafoglio (mesi 10-12, prezzi 180, 114, 289), le sei previsioni commerciali con probabilità (solo linee A e C: la linea B è coperta dagli ordini e risulterà senza previsione), le altre tre azioni (una approvata, due proposte, di cui una partita a luglio e quindi con metà dei mesi ormai persi);
+- il Conto Economico dei nove mesi e il totale del portafoglio indicati al punto 4.
+I dati sono costruiti in modo che il forecast di settembre senza azioni (consuntivo dei nove mesi + ordini + quantità attese per probabilità al prezzo di budget) dia 3.410.000 euro di ricavi, cioè la versione di settembre del libro. Per arrivarci la linea A sale a 8.238 unità nell'anno (6.168 di consuntivo, 1.700 di ordini e 370 attese) e la C a 2.056 (1.556, 400 e 100), oltre la domanda massima di 8.000 e 2.000 unità del paragrafo 19.3; la B si ferma a 11.666. È una scelta dell'esercitazione, fatta solo per ritrovare i 3.410.000 euro: l'esempio del libro è ipotetico (lavoro 9, punto 6).
+
+UN LIMITE DA SAPERE
+Il margine di budget del primo trimestre, 268.000 euro, non si può ottenere da unità intere con i margini unitari di budget: 63, 42 e 51 euro sono tutti multipli di 3 e 268.000 no. Per questo alcune quantità di budget hanno decimali (linea A di gennaio e dicembre 691,111111 e 628,888889; linea B di febbraio e dicembre 844,5 e 875,5): sono le stesse di par_19_2/previsione_chiusura, e l'anno torna comunque a 8.000, 11.400 e 2.100 unità. Moltiplicando, alcuni importi escono con frazioni di centesimo (per esempio la struttura di budget del trimestre è 205.499,9967 euro, cioè 205.500 al centesimo).
+
+NUMERI DA RITROVARE NEL COLLAUDO
+- La somma dei nove mesi di consuntivo coincide con il Conto Economico dei nove mesi (2.539.500 / 796.500 / 616.124 / 180.376); nessun mese contato due volte; il portafoglio somma 5.200 unità.
+- I tre mesi residui restano in colonne separate: per loro non esiste quadratura.
+- Ricavi di chiusura previsti senza azioni: 3.410.000 euro.
+- A esercizio chiuso, contro 3.386.000: versioni di giugno, luglio, agosto e settembre sopra il consuntivo del 4,0%, 2,8%, 1,9% e 0,7%; errore medio assoluto 2,3%; tutte e quattro con lo stesso segno.
+- Marzo: risultato 19.870 contro 20.800 (- 930). Primo trimestre: risultato 58.400 contro 62.500 di budget.
+- Rifacendo con questi file lo scenario di prosecuzione del paragrafo 19.2: 100 ore esterne in meno nei nove mesi residui (2.800 euro), struttura dei nove mesi 611.700, ricavi 3.375.300, margine 1.069.200, struttura 816.200, risultato 253.000 (numeri del libro, al centinaio; senza arrotondare 99,71 ore). La richiesta del lavoro 9 non chiede questo scenario: verifica.py lo rifà solo per controllare che i file siano coerenti con il paragrafo 19.2.

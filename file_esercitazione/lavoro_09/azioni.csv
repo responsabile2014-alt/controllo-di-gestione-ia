@@ -1,0 +1,5 @@
+azione,stato,misura_impattata,segno,periodicita,mese_inizio,mese_fine,effetto_atteso,responsabile
+Autorizzazione degli sconti oltre il 5% sulla linea B alla direzione commerciale,approvata,prezzo netto medio linea B,+,mensile,4,6,950,direzione commerciale
+Riduzione dei premi di fine anno sui nuovi ordini della linea B,approvata,margine di contribuzione linea B,+,mensile,10,12,1000,direzione commerciale
+Campagna di riordino sui clienti della linea A,proposta,margine di contribuzione linea A,+,mensile,11,12,1500,direzione commerciale
+Rinegoziazione delle lavorazioni esterne del reparto,proposta,costi della struttura capacita esterna,+,mensile,7,12,800,responsabile acquisti
