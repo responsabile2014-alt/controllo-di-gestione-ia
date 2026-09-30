@@ -1,0 +1,30 @@
+FILE DI ESERCITAZIONE - Lavoro 2 «Stimare il comportamento di un costo» (capitolo 19)
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A che cosa servono
+Questi file servono per provare la richiesta del lavoro 2: separare la componente fissa da quella variabile del costo del centro Manutenzione, con il driver delle ore macchina del reparto Lavorazione, su ventiquattro mesi.
+
+File della cartella
+manutenzione_24m.csv: una riga per mese, da gennaio 2024 a dicembre 2025. Colonne: mese, costo di manutenzione in euro, ore macchina rilevate dal reparto. CSV UTF-8, separatore virgola, punto per i decimali, intestazione alla prima riga, nessuna riga di totale.
+note_mesi.txt: l'elenco dei mesi in cui è accaduto qualcosa di non ordinario, con la descrizione.
+verifica.py: lo script che rilegge i file e controlla i numeri (si lancia con: python3 verifica.py). Stampa anche, per informazione, i risultati della stima.
+
+Come si usa
+1. Si apre una conversazione nuova, oppure si lavora in un progetto in cui il protocollo è già caricato.
+2. In testa si incolla il testo del riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3.
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 2 così com'è.
+4. Si allegano i due file e si invia.
+5. Quando lo strumento chiede il costo del centro Manutenzione in contabilità e la tolleranza, si indicano: 2024 32.600 euro, 2025 36.000 euro; la tolleranza la sceglie chi fa la prova (il libro non la fissa).
+
+Che cosa viene dal libro e che cosa è costruito
+Dal libro: ventiquattro osservazioni mensili distinte e consecutive; il costo del centro Manutenzione dell'ultimo esercizio, 36.000 euro (capitolo 5 e lavoro 2); la capacità ordinaria di 21.000 ore, cioè circa 1.750 ore al mese, e le 24.000 ore richieste dai volumi.
+Costruito per l'esercitazione: tutti i valori mensili di costo e di ore; il costo 2024 del centro, 32.600 euro; il contenuto di note_mesi.txt. Le ore rilevate del 2025 sono la serie mensile unica del caso, la stessa di par_19_2/modello_excel/ore.csv e di lavoro_15/ore_reparto.csv: 24.000 ore in tutto, come il dataset master, e ogni mese sopra le 1.750 ore della capacità ordinaria mensile, quindi 1.750 ore interne al mese e 3.000 ore esterne nell'anno (il libro non dà le ore rilevate mese per mese). Le ore del 2024 restano tutte sotto le 1.750: così i ventiquattro mesi coprono sia mesi entro la capacità sia mesi oltre, come chiede la decisione del lavoro 2. L'esercizio chiuso è il 2025 e l'esercizio precedente il 2024, gli stessi anni di tutte le cartelle. I costi mensili del 2025 sono gli stessi del centro Manutenzione in lavoro_04/costi_indiretti.csv (ammortamento più retribuzioni del centro, mese per mese).
+I dati sono costruiti perché la prova sia istruttiva: due mesi si discostano dalla retta oltre due errori standard e sono entrambi nelle note. Il 2024-08 è un fermo impianto con revisione straordinaria (poche ore, costo alto): è il caso che il libro dice di escludere. Il 2025-07 è il mese di carico massimo, in cui il reparto ha lavorato molto oltre la capacità e la manutenzione è costata circa il doppio: è il caso che il libro dice di non escludere. Due mesi nelle note (2024-12 e 2025-03) non sono anomali, così si vede che una nota non basta a fare di un mese un'osservazione anomala. I mesi di ore massime e minime sono proprio i due anomali, e il metodo dei livelli massimo e minimo dà quindi un risultato molto diverso dai minimi quadrati.
+
+Numeri da ritrovare nel collaudo
+Osservazioni: 24, mesi distinti e consecutivi, nessun mese mancante o duplicato.
+Somma dei mesi 2025: 36.000 euro, uguale al costo del centro in contabilità. Somma dei mesi 2024: 32.600 euro, uguale al costo del centro in contabilità (dato di esercitazione).
+Ricostruzione dei dodici mesi 2025, con lo scarto dichiarato in percentuale: con la funzione stimata sui 24 mesi 34.640 euro, circa il 3,8% in meno dei 36.000 euro; con la funzione stimata senza il solo 2024-08, il fermo impianto, che è la stima che il libro adotta, 36.466 euro, circa l'1,3% in più. Se lo strumento esclude anche il 2024-12 (chiusura per le festività) la ricostruzione diventa 36.530 euro, circa l'1,5% in più; se esclude anche il 2025-07 (carico oltre la capacità), diventa 33.383 euro, circa il 7,3% in meno, oppure 33.391 euro, circa il 7,2% in meno, se esclude insieme 2024-12 e 2025-07: in questi casi non ha seguito il punto 5 della richiesta.
+Osservazioni oltre due errori standard: 2024-08 e 2025-07, entrambe nel file delle note.
+Intervallo di ore osservato: da 900 a 2.135 ore al mese sui 24 mesi, da 1.400 a 2.135 ore senza il 2024-08; fuori dall'intervallo della stima usata la stima non è verificata. Ricalcolo di controllo sui soli primi dodici mesi: i coefficienti cambiano molto (senza il 2024-08, costo variabile 0,3957 euro per ora contro 1,1966 sui 23 mesi), quindi con questi dati la relazione va dichiarata non stabile.
+I coefficienti delle stime non sono numeri del libro: verifica.py li stampa come INFO, per confrontarli con quelli dello strumento.
