@@ -1,0 +1,20 @@
+LAVORO 11 - Acquistare capacità esterna o rinunciare al volume
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19.
+
+Per questo lavoro NON servono file.
+La richiesta del libro contiene già tutti i dati («Dati, che ti fornisco e che non devi integrare») e vieta di aggiungerne altri. Anche la prova del libro è stata fatta così, con il protocollo in testa e senza altri file, su una versione della richiesta che differiva da quella stampata soltanto in tre formulazioni, descritte nel libro.
+
+Come usarla
+1. Si apre una conversazione nuova con lo strumento.
+2. In testa si incolla il Protocollo universale del paragrafo 19.3 (fasi da 0 a 5).
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 11, così come è scritta nel libro.
+4. Si confronta la risposta con i numeri qui sotto.
+
+Numeri da ritrovare nel collaudo (tutti dal libro)
+- Graduatoria per margine per ora macchina: B 76, A 42, C 17 euro.
+- Linea servita per ultima: C, 1.000 unità dipendono dalle 3.000 ore mancanti.
+- Margine rinunciato: 51.000 euro.
+- Costo della capacità esterna: 84.000 euro (3.000 ore x 28 euro).
+- Vantaggio della rinuncia: 33.000 euro (risultato operativo 275.000 contro 242.000).
+- Secondo procedimento: (17 - 28) x 3.000 = - 33.000 euro.
+- Prezzo di indifferenza: 17 euro l'ora.
