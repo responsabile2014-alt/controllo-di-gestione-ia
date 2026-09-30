@@ -1,0 +1,32 @@
+FILE DI ESERCITAZIONE - Paragrafo 19.2, «ChatGPT, secondo esempio: esplorare un'estrazione»
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A CHE COSA SERVONO
+Sono i tre file che la richiesta cita: il venduto del trimestre corrente, il venduto del trimestre precedente e le soglie per etichettare le anomalie.
+
+FILE
+venduto_trimestre_corrente.csv - 2.084 righe, gennaio-marzo 2026 (primo trimestre dell'esercizio in corso).
+venduto_trimestre_precedente.csv - 1.089 righe, ottobre-dicembre 2025 (ultimo trimestre dell'esercizio chiuso).
+Colonne di entrambi, nell'ordine della richiesta: id_riga (identificativo univoco della riga documento), data_documento, numero_documento, codice_cliente, canale, codice_prodotto, quantita, prezzo_listino, sconto_percentuale, importo_netto_riga.
+parametri_anomalie.csv - 8 righe. Colonne: parametro, ambito, valore_minimo, valore_massimo, unita, descrizione. Contiene: intervallo abituale del prezzo netto per prodotto (A 140-200, B 105-120, C 270-305 euro); scarto massimo dello sconto del cliente sulla media del suo canale (5 punti); quota massima della quantità di un prodotto nei tre documenti più grandi (30%); importo oltre il quale un documento è anomalo (15.000 euro); regola dei codici nuovi.
+
+COME SI USANO
+Conversazione nuova; riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3; sotto, la richiesta del libro così com'è; si allegano i tre file.
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Dal libro: i listini 200, 120 e 305 euro; il trimestre corrente torna sul progressivo dei primi tre mesi del paragrafo 19.2 (842.300 euro di ricavi netti e 262.900 di margine) una volta tolte le note di credito di marzo, - 650 euro, che stanno nel loro file (paragrafo 19.5); le righe di marzo sono le stesse 1.286 righe di par_19_5/reporting_marzo/venduto_marzo.csv, con listino e sconto aggiunti (283.180 euro prima delle note di credito). Il trimestre precedente è l'ultimo trimestre del venduto dell'esercizio chiuso della cartella modello_excel (stesse righe).
+Costruiti per l'esercitazione: tutte le singole righe, i documenti, i clienti per riga, le date, le soglie di parametri_anomalie.csv e le anomalie inserite perché lo strumento abbia qualcosa da trovare:
+- quattro unità della linea B a 99-100 euro, sotto l'intervallo abituale, nel documento FT-2026-09002 del cliente CL-150;
+- il documento FT-2026-09001 del distributore CL-231, oltre 15.000 euro;
+- tre codici cliente che compaiono per la prima volta, CL-259, CL-260 e CL-261 (altri codici del canale diretto risultano nuovi solo perché non hanno comprato nel trimestre precedente);
+- due righe a quantità zero con importo zero;
+- due righe con quantità negativa nel trimestre corrente (le due righe di marzo di cui parla il paragrafo 19.5) e due nel trimestre precedente (documenti RS-).
+Nessun codice prodotto nuovo. L'importo netto di riga fa fede; lo sconto in percentuale è ricavato dall'importo e arrotondato a due decimali.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Il libro non stampa un risultato per questa richiesta: l'esempio dei «quattro euro su 1.800 unità» è un esempio e non va cercato in questi file.
+Controlli che devono tornare: righe lette 2.084 (corrente) e 1.089 (precedente); somma delle righe per prodotto uguale al totale delle righe; somma dei ricavi per canale uguale al totale; resi dichiarati a parte (corrente: 2 righe per - 410,00 euro; precedente: 2 righe per - 626,96 euro); due righe a quantità zero nel corrente.
+Totale netto del trimestre corrente: 842.950 euro, cioè 842.300 + 650 di note di credito non comprese nel venduto. Trimestre precedente: 827.427,74 euro.
+
+VERIFICA
+python3 verifica.py

@@ -1,0 +1,9 @@
+parametro,ambito,valore_minimo,valore_massimo,unita,descrizione
+prezzo_netto_abituale,A,140.00,200.00,euro per unita,intervallo abituale del prezzo netto unitario del prodotto A
+prezzo_netto_abituale,B,105.00,120.00,euro per unita,intervallo abituale del prezzo netto unitario del prodotto B
+prezzo_netto_abituale,C,270.00,305.00,euro per unita,intervallo abituale del prezzo netto unitario del prodotto C
+scarto_sconto_cliente_su_media_canale,diretto,,5.00,punti percentuali,sconto complessivo medio del cliente oltre la media del canale diretto
+scarto_sconto_cliente_su_media_canale,distributori,,5.00,punti percentuali,sconto complessivo medio del cliente oltre la media del canale distributori
+quota_quantita_primi_3_documenti,tutti i prodotti,,30.00,percento,quota della quantita del prodotto concentrata nei tre documenti piu grandi
+importo_documento,tutti i documenti,,15000.00,euro,importo netto del documento oltre il quale il documento e anomalo
+codice_nuovo,clienti e prodotti,,,,codice presente nel trimestre corrente e assente nel trimestre precedente
