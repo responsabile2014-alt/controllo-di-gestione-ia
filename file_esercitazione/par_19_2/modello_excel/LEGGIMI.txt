@@ -1,0 +1,46 @@
+FILE DI ESERCITAZIONE - Paragrafo 19.2, «ChatGPT, primo esempio: il modello Excel di controllo di gestione»
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A CHE COSA SERVONO
+La richiesta del libro fa costruire allo strumento il modello Excel con dati di prova suoi. Questi tre file sono le estrazioni dell'esercizio chiuso dell'impresa guida e servono per il collaudo del modello, il passaggio 5 del procedimento del paragrafo 19.2, «Si collauda su un mese chiuso»: si incollano nei fogli «Venduto», «Costi» e «Ore» del file ottenuto e si controlla che il modello riproduca un Conto Economico già noto.
+Esercizio chiuso: anno 2025 (anno neutro scelto per l'esercitazione).
+
+QUALE PERIODO SI COLLAUDA
+La richiesta ammette come periodo dell'estrazione «un mese oppure il progressivo dall'inizio dell'esercizio». Con questi file il periodo collaudato è il progressivo da gennaio a dicembre 2025, cioè l'intero esercizio chiuso: nel foglio «Istruzioni» si scrive questo periodo e in «Parametri» vanno i valori dello stesso periodo, cioè capacità ordinaria 21.000 ore e struttura base 736.000 euro.
+Perché non un singolo mese del 2025: il collaudo si fa su un periodo di cui si conosce il Conto Economico, e il libro stampa il Conto Economico dell'esercizio chiuso intero (3.386.000 euro di ricavi, 1.062.000 di margine, 242.000 di risultato operativo) ma non quello di nessun mese del 2025. La divisione per mese di venduto, costi e ore è costruita per l'esercitazione, quindi un mese non avrebbe un numero del libro con cui confrontare il risultato. Chi vuole provare anche un mese può incollare le sole righe di quel mese e scrivere in «Parametri» 1.750 ore di capacità e la struttura base del mese letta in costi.csv: il modello deve funzionare, ma il confronto resta con i valori che si calcolano a mano dai file, non con il libro.
+
+FILE
+venduto.csv - 4.433 righe, 2.464 documenti. Colonne: id_riga (identificativo univoco della riga documento), data_documento, numero_documento, codice_cliente, canale, codice_prodotto, quantita, prezzo_listino, sconto_percentuale, importo_netto_riga.
+costi.csv - 4.812 righe: è il partitario del lavoro 1, copia identica di lavoro_01/partitario_costi.csv. Colonne: movimento_id, data, conto, descrizione, centro di costo, importo. Conti e centri sono codici (lavoro_01/piano_conti.csv e piano_centri.csv).
+ore.csv - 48 righe (quattro rilevazioni al mese). Colonne: rilevazione_id, mese, centro, ore_macchina_rilevate.
+La richiesta chiama le tre estrazioni «Venduto», «Costi» e «Ore» e ne descrive le colonne a parole: i nomi delle colonne di venduto e ore traducono in forma di colonna quelle descrizioni, nello stesso ordine. Il codice prodotto è la linea (A, B, C); il canale è «diretto» o «distributori»; i clienti sono codici (CL-001 ... CL-258, gli stessi dei lavori 5 e 6).
+
+COME SI USANO
+1. Conversazione nuova; si incolla il riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3 e sotto la richiesta del libro così com'è.
+2. Ottenuto il file .xlsx, si incollano venduto.csv, costi.csv e ore.csv nei fogli di incollatura.
+3. Nel foglio «Parametri» si scrivono i valori del libro, riferiti al periodo gennaio-dicembre 2025:
+   prodotti: A costo variabile 117, ore 1,5; B 76, ore 0,5; C 238, ore 3,0;
+   budget (lavoro 8): A 8.000 unità a 180 euro, costo 117; B 11.400 a 118, costo 76; C 2.100 a 289, costo 238;
+   capacità ordinaria 21.000 ore; struttura base 736.000 euro; capacità esterna 28 euro l'ora; obiettivo di risultato operativo 350.000 euro (lavoro 14);
+   ricavi netti da contabilità generale 3.386.000 euro; margine del Conto Economico gestionale approvato 1.062.000 euro;
+   mappatura del partitario: conto 6403 (lavorazioni esterne e straordinari di reparto) = capacità esterna; gli altri nove conti (6401, 6402, 6411, 6412, 6421, 6422, 6431, 6432, 6441) = struttura base; decorrenza 2025-01-01.
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Dal libro (dataset master, paragrafo 19.3, e capitolo 1): unità 8.000, 12.000 e 2.000; ricavi 1.440.000, 1.368.000 e 578.000 euro (prezzi netti medi 180, 114 e 289); costi variabili unitari 117, 76 e 238; listini 200, 120 e 305 euro; ore 24.000; canale diretto 1.220.000 euro di ricavi e 459.000 di margine (37,6%), distributori 2.166.000 e 603.000 (27,8%), con i prezzi realizzati del diretto sopra la media di ogni linea e quelli dei distributori sotto (capitolo 8); i clienti X e Y, i 32 clienti intermedi e i 184 clienti minori del paragrafo 19.5, che «comprano ai prezzi più alti del canale»; partitario 4.812 righe per 820.000 euro con i saldi del lavoro 1.
+Costruiti per l'esercitazione: i singoli documenti, le date, i clienti di ogni documento, la ripartizione per mese, quattro righe di reso (quantità negativa, documenti RS-), i prezzi e gli sconti di riga. L'importo netto di riga è già al netto di sconti, premi di fine anno e altre concessioni (ipotesi del caso): la colonna sconto_percentuale è calcolata dall'importo e arrotondata a due decimali, quindi l'importo netto è il dato che fa fede.
+Le ore rilevate sono costruite uguali alle ore richieste dai volumi di ogni mese (24.000 in tutto, scarto zero): il libro non riporta ore rilevate per l'esercizio chiuso. Ogni mese supera le 1.750 ore interne, così le ore esterne mese per mese sommano a 3.000. È la serie mensile unica del caso: la stessa di lavoro_15/ore_reparto.csv e dei mesi 2025 di lavoro_02/manutenzione_24m.csv. Anche il venduto è uno solo: lavoro_15/venduto.csv contiene le stesse righe, con le colonne della richiesta del lavoro 15.
+Il conto 6403 del partitario riporta nella descrizione di ogni movimento le ore e la tariffa: sommate per mese, le ore sono esattamente le ore esterne del mese della serie (195, 215, 320, 280, 345, 305, 385, 50, 320, 330, 205 e 50). L'importo del mese invece non è uguale alle ore per 28 euro, perché ogni mese ha un peso diverso di straordinari (26 euro l'ora) e lavorazioni esterne (29 euro l'ora): 28 euro è la media dell'anno, e sull'anno la capacità esterna calcolata dal modello, 3.000 ore per 28 euro, coincide con gli 84.000 euro del conto.
+Il venduto torna anche cliente per cliente su par_19_5/redditivita_clienti/clienti_esercizio.csv e lavoro_06/clienti.csv: per ogni cliente la somma delle righe dà i ricavi netti e le quantità per 117, 76 e 238 euro danno i costi variabili di prodotto. Nessun prezzo netto di riga supera il listino o scende sotto il costo variabile. Nel canale diretto i 184 clienti minori pagano in media i prezzi più alti su entrambe le linee che comprano, la A e la B, come dice il libro; i prezzi medi di ciascun gruppo sono costruiti.
+
+NUMERI DA RITROVARE NEL COLLAUDO (progressivo gennaio-dicembre 2025)
+Conto Economico: ricavi 3.386.000, costi variabili 2.324.000, margine 1.062.000 (31,4%), costi della struttura 820.000 di cui 84.000 di capacità esterna, risultato operativo 242.000 euro.
+Canali: diretto 1.220.000 di ricavi e 459.000 di margine (37,6%), distributori 2.166.000 e 603.000 (27,8%).
+Margini per linea: 504.000, 456.000, 102.000; margine per ora 42, 76 e 17 euro (graduatoria B, A, C).
+Capacità: 24.000 ore richieste, 24.000 rilevate (scarto 0%), capacità 21.000, saturazione 114,3%, 3.000 ore mancanti.
+Cruscotto: margine per ora macchina medio di mix 44,25 euro (non 45,00).
+Pareggio: fatturato di pareggio 2.346.606 euro, margine di sicurezza 30,7% (lavoro 14).
+Scostamenti: ricavi - 6.100 euro rispetto a 3.392.100; ponte del margine - 27.900 = + 25.347 quantità, - 5.247 mix, - 48.000 prezzo, 0 costo variabile (lavoro 10).
+Controlli: 4.433 righe di venduto, 4.812 righe di costi per 820.000 euro, 48 righe di ore per 24.000 ore; nessun codice prodotto non censito.
+
+VERIFICA
+python3 verifica.py
