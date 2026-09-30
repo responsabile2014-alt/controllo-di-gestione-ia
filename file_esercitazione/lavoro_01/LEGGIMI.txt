@@ -1,0 +1,36 @@
+FILE DI ESERCITAZIONE - Lavoro 1 «Classificare i costi» (capitolo 19)
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A che cosa servono
+Questi file servono per provare la richiesta del lavoro 1: classificare le voci del partitario dei costi della struttura dell'impresa guida e verificare quali costi variano rispetto a un driver e quali sono costi di capacità.
+
+File della cartella (CSV UTF-8, separatore virgola, punto per i decimali, intestazione alla prima riga, nessuna riga di totale)
+partitario_costi.csv: 4.812 movimenti per 820.000 euro. Colonne: movimento_id, data, conto, descrizione, centro di costo, importo. È identico a par_19_2/prima_richiesta/partitario_costi.csv e a par_19_2/modello_excel/costi.csv.
+saldi_conti.csv: conto e saldo del conto in contabilità generale (dieci conti).
+piano_conti.csv: conto, descrizione, descrizione estesa.
+piano_centri.csv: centro, descrizione, tipo (produttivo, commerciale e logistico, struttura).
+verifica.py: lo script che rilegge i file e controlla i numeri del libro (si lancia con: python3 verifica.py).
+
+Come si usa
+1. Si apre una conversazione nuova, oppure si lavora in un progetto in cui il protocollo è già caricato.
+2. In testa si incolla il testo del riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3.
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 1 così com'è: nomi dei file, colonne, righe e totale sono già quelli di questi file.
+4. Si allegano i quattro CSV e si invia.
+
+Che cosa viene dal libro e che cosa è costruito
+Dal libro: le 4.812 righe e gli 820.000 euro; i dieci conti con importo e centro (74.000, 46.000, 84.000, 186.000, 54.000, 138.000, 42.000, 118.000, 32.000, 46.000 euro); i cinque centri di piano_centri.csv, descritti più sotto; le 3.000 ore di capacità esterna a 28 euro l'ora di media.
+Costruito per l'esercitazione: i singoli movimenti (date, descrizioni, importi riga per riga), i codici dei conti (6401-6441) e dei centri (CC10-CC50), le descrizioni estese del piano dei conti. I movimenti sommano esattamente, conto per conto, agli importi del libro, e ogni movimento ha un centro valido. L'esercizio chiuso è il 2025, anno neutro scelto per l'esercitazione. Fornitori e clienti sono solo codici.
+Dentro la voce da 84.000 euro ogni movimento riporta le ore nella descrizione: 1.000 ore di straordinari a 26 euro (26.000 euro) e 2.000 ore di lavorazioni esterne a 29 euro (58.000 euro), cioè 3.000 ore a 28 euro di media. La divisione fra le due parti è un dato di esercitazione: il libro dà solo il totale e la media.
+Le ore scritte nelle descrizioni, sommate per mese, sono le ore esterne di ciascun mese della serie mensile unica del caso, cioè le ore oltre le 1.750 ore interne del mese (par_19_2/modello_excel/ore.csv e lavoro_15/ore_reparto.csv): 195, 215, 320, 280, 345, 305, 385, 50, 320, 330, 205 e 50 ore da gennaio a dicembre. L'importo del mese invece non è uguale alle ore per 28 euro, perché in ogni mese straordinari (26 euro l'ora) e lavorazioni esterne (29 euro l'ora) hanno un peso diverso: i 28 euro valgono come media dell'anno.
+Il conto 6403 è la voce gestionale che riunisce due conti di contabilità generale, 6103 lavorazioni esterne e 6202 straordinari (sono i conti del bilancio di verifica del lavoro 3): il saldo di 84.000 euro in saldi_conti.csv è la somma dei due.
+Come dice il libro, per questo lavoro piano_centri.csv elenca cinque centri: il Reparto di lavorazione, cioè il reparto nel suo insieme, come produttivo; Gestione ordini, Consegne e Assistenza tecnica come commerciali e logistici; l'Amministrazione come centro di struttura. I tre conti del reparto sono intestati al Reparto di lavorazione. La divisione del reparto nei tre centri del capitolo 5 (Manutenzione e Programmazione e qualità ausiliari, Lavorazione produttivo) serve al lavoro 4 e non compare in questi file.
+La descrizione estesa del conto 6403 contiene già la nota che il libro raccomanda (capacità acquistata a ore, 28 euro l'ora). Chi vuole vedere l'errore tipico del lavoro può toglierla e ripetere la richiesta.
+
+Numeri da ritrovare nel collaudo
+Righe in entrata: 4.812. Totale: 820.000 euro, uguale ai costi della struttura del Conto Economico gestionale.
+Somma per conto uguale al saldo di saldi_conti.csv per ciascuno dei dieci conti, differenza zero.
+Costi che variano rispetto a un driver: 254.000 euro (84.000 lavorazioni esterne e straordinari, 138.000 trasporti su vendite, 32.000 ricambi e trasferte).
+Costi di capacità: 566.000 euro. 254.000 più 566.000 fa 820.000.
+84.000 euro diviso 28 euro l'ora dà 3.000 ore, le ore mancanti al reparto (24.000 richieste meno 21.000 ordinarie).
+Movimenti non classificabili e senza centro valido: nessuno.
+Dentro gli 820.000: 570.000 euro delle tre attività commerciali e logistiche, 120.000 di costi indiretti di produzione, 46.000 di amministrazione, 84.000 di capacità acquistata all'esterno.

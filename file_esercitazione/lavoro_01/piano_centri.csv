@@ -1,0 +1,6 @@
+centro,descrizione,tipo
+CC10,Reparto di lavorazione (reparto nel suo insieme),produttivo
+CC20,Gestione ordini,commerciale e logistico
+CC30,Consegne,commerciale e logistico
+CC40,Assistenza tecnica,commerciale e logistico
+CC50,Amministrazione,struttura
