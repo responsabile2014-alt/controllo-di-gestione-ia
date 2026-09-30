@@ -1,0 +1,24 @@
+LAVORO 10 - LEGGERE GLI SCOSTAMENTI
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19, lavoro 10.
+
+A COSA SERVE
+budget_consuntivo.csv è il file che la richiesta del lavoro 10 cita. È lo stesso identico file usato nella prova reale del 26 settembre 2026 descritta nel libro: tre righe, una per linea.
+
+COME USARLO
+1. Si apre una conversazione nuova con lo strumento (il libro usa Claude per questo lavoro).
+2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 10 così com'è, con le quattro formule autorizzate.
+3. Si allega budget_consuntivo.csv, e nient'altro.
+4. Si confronta la risposta con i numeri qui sotto. Per ricontrollare i file si può eseguire «python3 verifica.py» nella cartella.
+
+ANNI
+Il file non contiene date. Il budget è quello del lavoro 8, cioè il budget 2026; il consuntivo sono i valori del dataset master, cioè dell'esercizio chiuso 2025, usati come se l'esercizio di budget si fosse chiuso così, per la convenzione del paragrafo 19.3 («Budget e consuntivo»).
+
+CHE COSA VIENE DAL LIBRO
+Tutti i valori del file vengono dal libro, nessuno è costruito: A 8.000 unità a 180 euro con costo variabile 117 in entrambi i periodi; B 11.400 unità a 118 euro a budget contro 12.000 a 114 a consuntivo, costo variabile 76; C 2.100 contro 2.000 unità a 289 euro, costo variabile 238.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Quantità totali 21.500 a budget e 22.000 a consuntivo.
+Margine di budget 1.089.900 euro, margine consuntivo 1.062.000, scostamento - 27.900.
+Effetto quantità + 25.347 (margine medio di budget 50,693 euro); effetto mix - 5.247; effetto prezzo - 48.000; effetto costo variabile unitario 0; differenza residua del ponte 0.
+Effetto mix per linea: A - 11.721, B + 14.065, C - 7.591 (C al mix di budget: 2.148,84 unità).
+Sezione dei ricavi, da non sommare al ponte: sulla linea B lo scostamento di ricavo è + 22.800 euro (1.368.000 contro 1.345.200) e quello di margine è - 22.800.
