@@ -1,0 +1,41 @@
+FILE DI ESERCITAZIONE - Paragrafo 19.5, «Il primo flusso: il reporting gestionale mensile» (chiusura di marzo)
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+A CHE COSA SERVONO
+Sono gli otto file che la richiesta del primo flusso cita, più la tabella «budget_mensile» che la richiesta dà per già caricata nel progetto. Il libro precisa che l'impresa guida non ha estrazioni reali di marzo e che i file di marzo che accompagnano il libro sono di esercitazione: sono costruiti per tornare sui numeri del paragrafo. Marzo 2026, esercizio in corso; entità unica.
+
+FILE (righe di dati)
+venduto_marzo.csv (1.286) - id_riga, data, documento, cliente, canale, prodotto, quantita, prezzo_netto, importo. 504 documenti; importo = quantità x prezzo netto su ogni riga. id_riga è l'identificativo univoco della riga; cliente è il cliente codificato.
+struttura_marzo.csv (386) - movimento_id, data, centro, conto, importo. Partitario dei costi della struttura del mese, con date dal 2 al 31 marzo 2026 e gli stessi codici di conto e di centro del lavoro 1 (6403 = lavorazioni esterne e straordinari di reparto; CC10 Reparto, CC20 Gestione ordini, CC30 Consegne, CC40 Assistenza tecnica, CC50 Amministrazione).
+ore_reparto_marzo.csv (44) - rilevazione_id, data, reparto, ore_totali_rilevate. Due rilevazioni per giorno lavorativo.
+capacita_esterna_marzo.csv (3) - documento, ore_esterne_consuntivate, costo. Tre documenti a 28 euro l'ora.
+note_credito_marzo.csv (2) - documento, causa, importo (segno negativo).
+progressivo_febbraio.csv (6) - mese, linea, quantita, ricavi_netti, costi_variabili: gennaio e febbraio per le tre linee.
+struttura_febbraio.csv (10) - mese, centro, importo: i costi della struttura di gennaio e febbraio per centro, capacità esterna compresa nel CC10.
+forecast_precedente.csv (72) - mese, voce, importo: l'ultima versione del forecast, dodici mesi per sei voci (ricavi_netti, costi_variabili, margine_contribuzione, struttura_base, capacita_esterna, risultato_operativo).
+budget_mensile.csv (180) - mese, linea, misura, valore. È la tabella «budget_mensile» del progetto, di cui la richiesta non descrive le colonne: si è scelto un formato «lungo», una riga per mese, linea e misura. Misure: quantita, ricavi_netti, costi_variabili, ore_macchina per linea; con linea TUTTE: struttura_base (ripartita secondo il calendario di budget e non in dodicesimi), capacita_esterna, ore_esterne.
+
+COME SI USANO
+1. Nel progetto (o in testa alla richiesta) vanno piano dei conti e dei centri (lavoro_01), tabella prodotti (prezzi netti di budget 180, 118 e 289; costi 117, 76 e 238; ore 1,5, 0,5 e 3,0) e budget_mensile.csv.
+2. Conversazione nuova; riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3; la richiesta del libro così com'è; si allegano gli otto file.
+3. Il margine del Conto Economico gestionale del mese che la richiesta chiede di confrontare, 88.270 euro per marzo, è già scritto nella richiesta: non serve aggiungerlo.
+
+CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
+Dal libro: 1.286 righe; venduto prima delle note 283.180 euro; note di credito per resi qualitativi - 650; ricavi netti 282.530; 1.870 unità (A 600, B 1.100, C 170) con prezzi netti dopo le note di 180, 114 e 289; margine 88.270; struttura 68.400 di cui 5.516 di capacità esterna e 62.884 di base; risultato 19.870; ore rilevate 1.947, teoriche 1.960, 197 ore esterne; budget del mese 283.800, 90.000, 69.200 (62.200 + 7.000), 20.800, 1.800 unità, 2.000 ore, 250 ore esterne; due righe con quantità negativa non collegate a una nota di credito; progressivo e previsione di chiusura (842.300, 262.900, 58.400; 3.375.300, 1.069.200, 816.200, 253.000).
+Costruiti per l'esercitazione: tutte le singole righe (documenti, clienti codificati, canali, date, prezzi di riga, rilevazioni orarie, movimenti del partitario con le loro date e la loro ripartizione fra i centri), la suddivisione delle note di credito in due documenti, la suddivisione delle 197 ore in tre documenti. Per ipotesi del caso le note di credito riguardano la linea A (lo dice la causa nel file): prima delle note la linea A vale 108.650 euro, dopo 108.000, cioè 180 euro per unità.
+progressivo_febbraio.csv e struttura_febbraio.csv sono gennaio e febbraio di par_19_2/previsione_chiusura/progressivo_3m.csv e struttura_consuntiva_3m.csv; budget_mensile.csv è lo stesso budget mensile di par_19_2/previsione_chiusura e di lavoro_09. Per ipotesi del caso le scorte di marzo restano invariate, quindi i volumi venduti coincidono con quelli prodotti.
+La previsione di chiusura non è in un file: la richiesta la fa calcolare nello scenario di prosecuzione, applicando ai ricavi e al margine di budget di ogni mese residuo di budget_mensile il rapporto fra consuntivo e budget del trimestre chiuso, stimando le ore dei mesi residui con il rapporto fra quantità consuntive e di budget del trimestre, linea per linea, e ricalcolando soltanto la capacità esterna sulle ore stimate, con la struttura base di budget.
+forecast_precedente.csv: il libro non ne riporta i valori. È costruito così: gennaio e febbraio a consuntivo, marzo-dicembre a budget (nell'anno ricavi 3.389.170, margine 1.086.530, risultato 266.730 euro). Il confronto con il forecast non ha quindi numeri del libro da ritrovare.
+Non riproducibile nei file: gli undici documenti registrati nel mese ma con data di consegna di febbraio, quindi forse di competenza del mese precedente, perché il venduto richiesto ha una sola colonna di data, con date tutte di marzo, e nessuna data di consegna. La decisione di gennaio sulla linea C e il verbale di marzo stanno nei verbali (Gemini Notebook) e non sono stati inventati.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Righe lette 1.286 = righe elaborate; somma 283.180; ponte dei ricavi 283.180 - 650 = 282.530, scarto zero.
+Prospetto di marzo (scostamento = consuntivo meno budget): ricavi 282.530 contro 283.800 (- 1.270); margine 88.270 contro 90.000 (- 1.730); margine 31,2% contro 31,7%; struttura 68.400 contro 69.200 (- 800), di cui capacità esterna 5.516 contro 7.000 (- 1.484, favorevole perché è un costo) e struttura base 62.884 contro 62.200 (+ 684, sfavorevole); risultato 19.870 contro 20.800 (- 930); volumi 1.870 contro 1.800; ore 1.947 contro 2.000; ore esterne 197 contro 250.
+Ponte del margine, espresso come impatto sul margine: quantità + 3.500 (margine medio di budget 50 euro), mix - 830, prezzo - 4.400, costo variabile 0; somma - 1.730.
+Ricavi per linea: B + 11.800 di volume e - 4.400 di prezzo, C - 8.670; somma - 1.270.
+Ore: 1.960 teoriche contro 1.947 rilevate, scarto 13 ore = 0,7%, esito WARN (tolleranza zero, FAIL oltre il 2%, cioè 39 ore); 197 ore esterne per 5.516 euro dal file delle lavorazioni esterne, uguali al conto 6403 del mese.
+Progressivo: 842.300 / 846.500, 262.900 / 268.000, 58.400 / 62.500.
+Previsione di chiusura nello scenario di prosecuzione: rapporti 0,995 sui ricavi e 0,981 sul margine; 3.375.300 di ricavi, 1.069.200 di margine, struttura 816.200, risultato 253.000 contro 269.900 (- 16.900 = - 20.700 di margine + 3.800 di struttura).
+
+VERIFICA
+python3 verifica.py
