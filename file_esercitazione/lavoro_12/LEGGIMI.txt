@@ -1,0 +1,19 @@
+LAVORO 12 - Governare prezzi e sconti
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19.
+
+Per questo lavoro NON servono file.
+La richiesta chiede allo strumento di costruire un'applicazione web con parametri modificabili, e i valori iniziali sono tutti scritti nella richiesta. Il blocco standard è quello «adattato a un'applicazione che non riceve file».
+Il paragrafo «Dati» del libro parla di un file del venduto per riga di documento, con listino, sconto, prezzo netto e quantità: quel file serve prima, per verificare la dispersione degli sconti e scegliere i valori da inserire, e non entra nell'applicazione, che lavora sui parametri. Per questo qui non c'è un file da allegare. Chi vuole guardare la dispersione sull'impresa guida può usare par_19_2/modello_excel/venduto.csv, il venduto 2025 riga per riga (prezzo netto = importo netto riga diviso quantità).
+
+Come usarla
+1. Si apre una conversazione nuova con lo strumento.
+2. In testa si incolla il Protocollo universale del paragrafo 19.3.
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 12, così come è scritta nel libro.
+4. Nell'applicazione si lascia la linea B ai valori iniziali, sconto aggiuntivo zero, e si imposta il margine totale obiettivo a 478.800 euro.
+
+Numeri da ritrovare nel collaudo (tutti dal libro)
+- Cascata linea B: 120 - 4 - 1,20 - 0,80 = 114 euro.
+- Volume necessario: 478.800 / 38 = 12.600 unità, contro una domanda massima di 12.000.
+- Margine non recuperato: (12.600 - 12.000) x 38 = 22.800 euro.
+- Margine massimo ottenibile a 114 euro: 12.000 x 38 = 456.000 euro.
+- Avvisi attesi: linea A senza divisione dei 4 euro fra premio e altre concessioni; linea C senza componenti della cascata.
