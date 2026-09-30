@@ -1,0 +1,36 @@
+LAVORO 8 - COSTRUIRE E CONTROLLARE IL BUDGET OPERATIVO
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19, lavoro 8.
+
+A COSA SERVONO
+Sono i sei file che la «Richiesta da consegnare allo strumento» del lavoro 8 cita. Servono a fare il collaudo sui numeri noti: si consegnano allo strumento e si controlla che la risposta ritrovi i numeri del libro.
+
+COME USARLI
+1. Si apre una conversazione nuova con lo strumento (il libro usa ChatGPT per questo lavoro).
+2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 8 così com'è, senza cambiarla.
+3. Si allegano i sei file: ipotesi_commerciali.csv, costi_variabili.csv, costi_struttura.csv, capacita.csv, tempi_ciclo.csv, consuntivo_corrente.csv.
+4. I due valori del Conto Economico gestionale dell'esercizio in corso che la richiesta chiede di confrontare, 3.386.000 euro di ricavi netti e 1.062.000 euro di margine, sono già scritti nella richiesta: non serve aggiungerli.
+5. Si confronta la risposta con i numeri da ritrovare qui sotto. Per ricontrollare i file si può eseguire «python3 verifica.py» nella cartella: rilegge i file e stampa PASS o FAIL per ogni numero.
+
+ANNI USATI NEI FILE
+Gli anni sono quelli del LEGGIMI generale: il 2025 è l'esercizio chiuso, con i valori del dataset master, e il 2026 è l'esercizio del budget. La richiesta del lavoro 8 chiama «esercizio in corso» l'esercizio che si sta chiudendo quando si prepara il budget, cioè il 2025, e «esercizio successivo» il 2026; nelle altre cartelle il 2026 è l'esercizio in corso. I file non contengono date.
+Il calendario mensile non è in questi file: la richiesta costruisce il budget dell'anno. Il budget 2026 ripartito per mese, che usano la previsione di chiusura del paragrafo 19.2 e il lavoro 9, è in lavoro_09/budget_anno.csv (lo stesso di par_19_2/previsione_chiusura/budget_anno.csv e di par_19_5/reporting_marzo/budget_mensile.csv).
+
+CHE COSA VIENE DAL LIBRO
+Volumi 8.000, 11.400 e 2.100 unità; prezzi netti 180, 118 e 289 euro; costi variabili 117, 76 e 238 euro; ore per unità 1,5, 0,5 e 3,0; capacità 21.000 ore; capacità esterna a 28 euro l'ora; struttura base 736.000 euro divisa nei tre centri del paragrafo 19.3 (570.000 attività commerciali e logistiche, 120.000 costi indiretti di produzione, 46.000 amministrazione), invariata; consuntivo dell'esercizio in corso uguale al dataset master (8.000 a 180, 12.000 a 114, 2.000 a 289); scorte finali uguali alle iniziali.
+
+CHE COSA È COSTRUITO PER L'ESERCITAZIONE
+- Le scorte in unità per linea (A 1.000, B 1.510, C 230). Il libro dà solo il totale di 286.500 euro al costo variabile e dice che le scorte non cambiano: le unità sono scelte in modo che 1.000 x 117 + 1.510 x 76 + 230 x 238 faccia esattamente 286.500 euro.
+- La colonna «funzione»: «direzione commerciale», come dice il libro.
+- Nel file dei costi della struttura, «mese_iniziale» = 1 e motivo «nessuna variazione prevista», perché la variazione è zero.
+
+NUMERI DA RITROVARE NEL COLLAUDO
+Esercizio in corso ricalcolato da consuntivo_corrente.csv: ricavi netti 3.386.000 euro e margine 1.062.000 euro, uguali ai valori della richiesta, differenza zero.
+Ricavi di budget 3.392.100 euro; costi variabili 2.302.200; margine di contribuzione 1.089.900 euro, pari al 32,1%; per linea: A 1.440.000 / 936.000 / 504.000, B 1.345.200 / 866.400 / 478.800, C 606.900 / 499.800 / 107.100.
+Ore richieste 24.000 (12.000, 5.700, 6.300) contro 21.000: 3.000 ore da acquistare per 84.000 euro, iscritti una sola volta.
+Margine per ora macchina: A 42, B 84, C 17 euro.
+Costi della struttura 820.000 euro (736.000 + 84.000); risultato operativo 269.900 euro.
+Con doppio conteggio dei 84.000 euro (errore da riconoscere): struttura 904.000 e risultato 185.900.
+Senza il recupero di 4 euro sul prezzo della linea B (45.600 euro): margine 1.044.300 e risultato 224.300, sotto i 242.000 dell'esercizio in corso.
+Margine di budget 27.900 euro sopra i 1.062.000 dell'esercizio in corso.
+Il volume della linea C, 2.100, supera di 100 unità la domanda massima di 2.000.
+Il libro non stampa i valori di pareggio, margine di sicurezza e leva operativa del budget: verifica.py non li controlla.

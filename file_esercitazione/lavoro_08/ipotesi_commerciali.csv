@@ -1,0 +1,4 @@
+linea,vendite_attese,scorte_iniziali,scorte_finali,prezzo_netto_atteso,funzione
+A,8000,1000,1000,180,direzione commerciale
+B,11400,1510,1510,118,direzione commerciale
+C,2100,230,230,289,direzione commerciale
