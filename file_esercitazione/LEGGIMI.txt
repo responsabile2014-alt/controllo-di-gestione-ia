@@ -1,0 +1,79 @@
+FILE DI ESERCITAZIONE DEL CAPITOLO 19
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+CHE COSA SONO
+Sono i file per provare le richieste del capitolo 19 sull'impresa guida del libro: si consegna la richiesta allo strumento insieme ai file e si controlla che la risposta ritrovi i numeri che il libro stampa. È il collaudo su numeri noti, da fare prima di usare le richieste sui dati della propria impresa.
+Sono dati di esercitazione. Il libro dà i totali (per esempio 3.386.000 euro di ricavi, 820.000 euro di costi della struttura, 4.812 righe di partitario), ma non le singole righe. Le righe sono state costruite in modo che, sommate, tornino esattamente sui totali del libro. Non c'è nessun dato reale: imprese, clienti e fornitori sono codici (CL-..., FOR-...), date e documenti sono inventati per l'esercitazione.
+Tutte le cartelle descrivono la stessa impresa e lo stesso caso: dove due cartelle usano gli stessi dati, i file sono identici o danno gli stessi numeri (lo controlla verifica_tutto.py).
+
+GLI ANNI
+Il libro non indica gli anni. Nei file si usano tre anni, uguali in tutte le cartelle:
+- 2025 = esercizio chiuso, quello del dataset master del paragrafo 19.3 (3.386.000 euro di ricavi, 1.062.000 di margine di contribuzione, 242.000 di risultato operativo, 24.000 ore macchina);
+- 2026 = esercizio in corso: il budget del lavoro 8 (3.392.100 euro di ricavi, 269.900 di risultato), il primo trimestre, il mese di marzo e i forecast;
+- 2024 = esercizio precedente a quello chiuso (serve solo al lavoro 2, che chiede ventiquattro mesi).
+Il lavoro 10, il consuntivo finale del lavoro 9 e il cruscotto del lavoro 15 confrontano il budget 2026 con i valori del dataset master, come se l'esercizio di budget si fosse chiuso così: è la convenzione del paragrafo 19.3 («Budget e consuntivo»). Per la stessa convenzione il secondo flusso del paragrafo 19.5, che il libro esegue alla fine dell'esercizio di budget, usa i clienti con i valori dell'esercizio chiuso 2025.
+
+COME SI USANO
+1. Si apre una conversazione nuova con lo strumento (o un progetto, per i lavori che il libro fa in un progetto).
+2. In testa si incolla il testo del riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3.
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del libro così com'è, senza cambiarla: i nomi dei file e delle colonne sono già quelli della richiesta, e i valori che la richiesta dice «che ti fornisco» (per esempio 3.386.000, 1.062.000 e 88.270 euro) sono quasi sempre già scritti nella richiesta stessa; quando non lo sono (lavoro 9), il LEGGIMI.txt della cartella dice che cosa scrivere in fondo al messaggio.
+4. Si allegano i file della cartella del lavoro e si invia.
+5. Si confronta la risposta con i «Numeri da ritrovare nel collaudo» del LEGGIMI.txt della cartella.
+Ogni cartella con file ha un LEGGIMI.txt, che dice che cosa viene dal libro e che cosa è costruito, e quando serve che cosa scrivere a parte nel messaggio, e un verifica.py, che rilegge i file e stampa PASS o FAIL per ogni numero del libro (python3 verifica.py dalla cartella). I file sono CSV UTF-8, separatore virgola, punto per i decimali, intestazione alla prima riga, nessuna riga di totale.
+Nella radice, python3 verifica_tutto.py esegue tutti i verifica.py e poi i controlli di coerenza fra le cartelle, e stampa il riepilogo.
+
+LE CARTELLE E I FILE
+lavoro_01 - Lavoro 1, classificare i costi: partitario_costi.csv, saldi_conti.csv, piano_conti.csv, piano_centri.csv, LEGGIMI.txt, verifica.py.
+lavoro_02 - Lavoro 2, stimare il comportamento di un costo: manutenzione_24m.csv, note_mesi.txt, LEGGIMI.txt, verifica.py.
+lavoro_03 - Lavoro 3, riclassificare il Conto Economico a margine: bilancio_verifica.csv, mappatura_conti.csv, rettifiche.csv, LEGGIMI.txt, verifica.py.
+lavoro_04 - Lavoro 4, allocare i costi indiretti: costi_indiretti.csv, ore_centri.csv, volumi.csv, LEGGIMI.txt, verifica.py.
+lavoro_05 - Lavoro 5, costruire il modello per attività: costi_commerciali.csv, raccordo_struttura.csv, ordini.csv, consegne.csv, interventi.csv, capacita_driver.csv, LEGGIMI.txt, verifica.py.
+lavoro_06 - Lavoro 6, misurare il costo di servizio: clienti.csv, LEGGIMI.txt, verifica.py.
+lavoro_07 - Lavoro 7, confrontare costo pieno e margine sulla stessa decisione: linee.csv, LEGGIMI.txt, verifica.py.
+lavoro_08 - Lavoro 8, costruire e controllare il budget operativo: ipotesi_commerciali.csv, costi_variabili.csv, costi_struttura.csv, capacita.csv, tempi_ciclo.csv, consuntivo_corrente.csv, LEGGIMI.txt, verifica.py.
+lavoro_09 - Lavoro 9, aggiornare il forecast di chiusura: consuntivo_9m.csv, costi_struttura_mensili.csv, budget_anno.csv, portafoglio.csv, previsioni_commerciali.csv, azioni.csv, forecast_precedenti.csv, LEGGIMI.txt, verifica.py.
+lavoro_10 - Lavoro 10, leggere gli scostamenti: budget_consuntivo.csv, LEGGIMI.txt, verifica.py.
+lavoro_11 - Lavoro 11, acquistare capacità esterna o rinunciare al volume: solo LEGGIMI.txt (nessun file, vedi sotto).
+lavoro_12 - Lavoro 12, governare prezzi e sconti: solo LEGGIMI.txt (nessun file, vedi sotto).
+lavoro_13 - Lavoro 13, comporre il mix quando una risorsa è satura: solo LEGGIMI.txt (nessun file, vedi sotto).
+lavoro_14 - Lavoro 14, calcolare il pareggio, il margine di sicurezza e la leva operativa: solo LEGGIMI.txt (nessun file, vedi sotto).
+lavoro_15 - Lavoro 15, alimentare i KPI e il cruscotto: schede_kpi.csv, conto_economico.csv, venduto.csv, ore_reparto.csv, consegne.csv, kpi_precedente.csv, LEGGIMI.txt, verifica.py.
+par_19_2 - Paragrafo 19.2, strumenti per il controller: LEGGIMI.txt e verifica.py (esegue quelli delle sottocartelle), più quattro sottocartelle:
+  par_19_2/prima_richiesta - la prima richiesta: partitario_costi.csv, LEGGIMI.txt, verifica.py;
+  par_19_2/modello_excel - ChatGPT, primo esempio, il modello Excel: venduto.csv, costi.csv, ore.csv, LEGGIMI.txt, verifica.py;
+  par_19_2/esplorazione_venduto - ChatGPT, secondo esempio, esplorare un'estrazione: venduto_trimestre_corrente.csv, venduto_trimestre_precedente.csv, parametri_anomalie.csv, LEGGIMI.txt, verifica.py;
+  par_19_2/previsione_chiusura - Claude, secondo esempio, la previsione di chiusura: progressivo_3m.csv, struttura_consuntiva_3m.csv, struttura_budget_anno.csv, budget_anno.csv, ordini_acquisiti.csv, ipotesi_scenario.csv, capacita_mensile.csv, LEGGIMI.txt, verifica.py.
+par_19_5 - Paragrafo 19.5, processi completi: LEGGIMI.txt e verifica.py (esegue quelli delle sottocartelle), più due sottocartelle:
+  par_19_5/reporting_marzo - primo flusso, il reporting gestionale di marzo: venduto_marzo.csv, struttura_marzo.csv, ore_reparto_marzo.csv, capacita_esterna_marzo.csv, note_credito_marzo.csv, progressivo_febbraio.csv, struttura_febbraio.csv, forecast_precedente.csv, budget_mensile.csv (la tabella «budget_mensile» del progetto), LEGGIMI.txt, verifica.py;
+  par_19_5/redditivita_clienti - secondo flusso, la redditività per cliente e per canale: clienti_esercizio.csv, LEGGIMI.txt, verifica.py.
+Nella radice: questo LEGGIMI.txt e verifica_tutto.py.
+
+GLI STESSI DATI IN PIÙ CARTELLE
+- Il partitario dei costi della struttura 2025 è un solo file: lavoro_01/partitario_costi.csv, par_19_2/prima_richiesta/partitario_costi.csv e par_19_2/modello_excel/costi.csv sono identici.
+- Le consegne 2025 sono un solo file: lavoro_05/consegne.csv e lavoro_15/consegne.csv sono identici.
+- I clienti 2025 sono gli stessi in lavoro_06/clienti.csv e par_19_5/redditivita_clienti/clienti_esercizio.csv (qui con la colonna settore in più), e i loro ordini, consegne e ore di assistenza sono quelli dei file del lavoro 5.
+- Il venduto 2025 è uno solo: lavoro_15/venduto.csv ha le stesse righe di par_19_2/modello_excel/venduto.csv, con le colonne della richiesta del lavoro 15; l'ultimo trimestre è par_19_2/esplorazione_venduto/venduto_trimestre_precedente.csv.
+- Il venduto 2025 e i clienti 2025 tornano anche cliente per cliente: sommando le righe di par_19_2/modello_excel/venduto.csv per codice cliente si ritrovano i ricavi netti di ogni cliente di lavoro_06/clienti.csv e di clienti_esercizio.csv, e le quantità per 117, 76 e 238 euro ne danno i costi variabili di prodotto. Ogni riga ha un prezzo netto non superiore al listino (200, 120 e 305 euro) e dentro l'intervallo abituale di parametri_anomalie.csv; ogni documento ha un solo cliente e il canale del cliente. Quindi il venduto ritrova anche i gruppi del libro, paragrafo 19.5: i clienti X e Y, i 32 clienti intermedi, i 184 clienti minori (340.000 euro di ricavi e 136.000 di margine di prodotto, il 40,0%) e i due canali (459.000 e 603.000 euro di margine). Nel canale diretto i 184 minori pagano in media i prezzi più alti sulle due linee che comprano, A e B, come dice il libro («comprano ai prezzi più alti del canale»); nessun cliente ha più consegne (lavoro_05/consegne.csv) delle unità che ha comprato nel venduto.
+- Le ore macchina mensili 2025 sono una sola serie, la stessa in par_19_2/modello_excel/ore.csv, lavoro_15/ore_reparto.csv e nei mesi 2025 di lavoro_02/manutenzione_24m.csv: 1.945, 1.965, 2.070, 2.030, 2.095, 2.055, 2.135, 1.800, 2.070, 2.080, 1.955 e 1.800 ore, cioè 24.000 nell'anno. Ogni mese supera le 1.750 ore della capacità ordinaria mensile: 1.750 ore interne al mese (21.000 nell'anno) e 3.000 ore esterne. Sono anche le ore richieste dai volumi del venduto, mese per mese. Le ore esterne di ogni mese sono anche le ore scritte nelle descrizioni dei movimenti del conto 6403 del partitario dello stesso mese (195, 215, 320, 280, 345, 305, 385, 50, 320, 330, 205 e 50).
+- Il costo mensile 2025 del centro Manutenzione è lo stesso in lavoro_02/manutenzione_24m.csv e in lavoro_04/costi_indiretti.csv.
+- Il budget mensile 2026 è uno solo: lavoro_09/budget_anno.csv, par_19_2/previsione_chiusura/budget_anno.csv e par_19_5/reporting_marzo/budget_mensile.csv hanno le stesse quantità per mese e linea, e la stessa struttura di budget per mese. Torna esatto sul libro: 846.500 euro di ricavi, 268.000 di margine e 62.500 di risultato nel primo trimestre; marzo con 600, 1.000 e 200 unità; l'anno con i totali del lavoro 8.
+- Il consuntivo 2026 dei mesi da 1 a 3 è lo stesso in lavoro_09, in par_19_2/previsione_chiusura, in par_19_5/reporting_marzo (progressivo_febbraio.csv e struttura_febbraio.csv per gennaio e febbraio, i file di marzo per marzo) e nel trimestre corrente di par_19_2/esplorazione_venduto; le righe di marzo del trimestre corrente sono quelle di par_19_5/reporting_marzo/venduto_marzo.csv.
+
+CHE COSA NON C'È, E PERCHÉ
+- Documenti per Gemini Notebook. Le richieste che lavorano con Gemini Notebook (i tre esempi del paragrafo 19.2, il primo e il quarto passaggio della relazione trimestrale al consiglio, la revisione e l'archiviazione nel primo flusso del paragrafo 19.5, i verbali citati nei lavori) usano bilanci, relazioni, report mensili, verbali e piani d'azione. Sono documenti, non tabelle, e il libro non ne dà il contenuto: non sono stati inventati.
+- Applicazioni senza file. Alcune richieste fanno costruire allo strumento un'applicazione che non riceve file, con i valori iniziali già scritti nella richiesta: il simulatore del mix del paragrafo 19.2 (Claude, primo esempio), il terzo passaggio della relazione trimestrale al consiglio, il simulatore delle politiche di servizio del secondo flusso del paragrafo 19.5 e il lavoro 12. Per queste non serve nessun file.
+- Lavori da 11 a 14. Le loro richieste contengono già tutti i dati e vietano di aggiungerne altri, quindi le cartelle hanno solo il LEGGIMI.txt con il modo d'uso e i numeri del collaudo (il lavoro 12 è un'applicazione, vedi sopra).
+- La verifica dell'effetto a distanza di un trimestre del paragrafo 19.5: il libro non scrive una richiesta propria e non nomina un file.
+
+LIMITI NOTI
+- Budget del primo trimestre. Il margine di budget del trimestre, 268.000 euro, non si ottiene con quantità intere ai prezzi e costi di budget (i margini unitari 63, 42 e 51 euro sono multipli di 3, 268.000 no). Per tornare esatti sul libro alcune quantità di budget hanno decimali (linea A di gennaio e dicembre, linea B di febbraio e dicembre) e alcuni importi escono con frazioni di centesimo; l'anno torna comunque a 8.000, 11.400 e 2.100 unità.
+- Struttura di budget per centro. Il libro dice che la quota di marzo dei costi indiretti di produzione è 10.000 euro (2.000 ore di budget per 5,00 euro). Per costruire gli altri mesi si è usata la stessa regola (ore di budget del mese per 5,00 euro, 120.000 euro nell'anno): è una scelta dei file, non un dato del libro. Anche la ripartizione degli altri centri per mese è di esercitazione.
+- Costi del lavoro 4 e del lavoro 5. costi_indiretti.csv del lavoro 4 e costi_commerciali.csv del lavoro 5 sono estrazioni proprie, con i nomi dei conti e i centri che quelle richieste usano (Manutenzione, Programmazione e qualità, Lavorazione; Gestione ordini, Consegne, Assistenza tecnica). Danno gli stessi saldi per conto del partitario del lavoro 1, ma non sono le stesse righe (e i movimenti mensili del lavoro 4 non coincidono, conto per conto, con i mesi del partitario): il libro non dice che siano lo stesso file.
+- Capacità esterna per mese nell'esercizio chiuso. Nel conto 6403 del partitario 2025 le ore del mese sono le ore esterne del mese, ma gli euro del mese non sono le ore per 28 euro: in ogni mese straordinari (26 euro l'ora) e lavorazioni esterne (29 euro l'ora) pesano in modo diverso, e i 28 euro sono la media dell'anno (3.000 ore, 84.000 euro). Per questo, e perché il libro stampa il Conto Economico dell'esercizio intero e non quello dei singoli mesi, il modello Excel del paragrafo 19.2 si collauda sul progressivo gennaio-dicembre 2025 (vedi par_19_2/modello_excel/LEGGIMI.txt).
+- Ordini e fatture. I 12.000 ordini di lavoro_05/ordini.csv sono il driver del modello per attività; non sono collegati uno per uno ai 2.464 documenti del venduto 2025.
+- Dati costruiti che il libro non stampa. Alcuni valori servono solo a far funzionare una richiesta e non hanno un numero del libro da ritrovare: il Conto Economico dei nove mesi e il totale del portafoglio del lavoro 9, il forecast precedente del reporting di marzo, i saldi 2024 del lavoro 2. Ogni LEGGIMI.txt li elenca.
+- Nel reporting di marzo non si possono riprodurre gli undici documenti registrati nel mese ma con data di consegna di febbraio, perché il venduto richiesto ha una sola colonna di data, con date tutte di marzo, e nessuna data di consegna. La puntualità di consegna del lavoro 15 (88,5%) è un'ipotesi del caso e non si ricava da nessun file.
+
+Nota sugli ordini. Per ipotesi del caso (libro, paragrafo 19.5 e capitolo 10) il driver «ordini» conta tutte le pratiche gestite dall'ufficio ordini: gli ordini d'acquisto e le richieste che non portano a una consegna di prodotto, come modifiche, annullamenti e richieste di documentazione. Per questo i 184 clienti minori hanno 3.000 ordini ma meno unità acquistate nel venduto (par_19_2/modello_excel/venduto.csv): non è un errore dei file. Le consegne invece riguardano solo prodotto consegnato: per ogni cliente sono al massimo quante le unità comprate.
+
+Come aprire i file CSV in Excel italiano. I file usano la virgola come separatore e il punto per i decimali. Con un doppio clic Excel italiano li mette spesso tutti nella colonna A e le formule danno zero. Si aprono invece con l'importazione da testo o CSV di Excel, indicando la virgola come separatore dei campi e il punto come separatore dei decimali; dopo l'importazione si controlla che =CONTA.NUMERI sulla colonna degli importi dia lo stesso numero delle righe. Per le somme in euro vale la tolleranza di un centesimo, come nel libro.
