@@ -1,0 +1,20 @@
+LAVORO 14 - Calcolare il pareggio, il margine di sicurezza e la leva operativa
+Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19.
+
+Per questo lavoro NON servono file.
+Tutti i dati sono nella «Descrizione dei dati» della richiesta, che vieta di aggiungerne altri. Il file .xlsx citato nella richiesta non si consegna allo strumento: è il file di calcolo, con le formule nelle celle, che lo strumento deve restituire. Le prove del libro (26 e 27 settembre 2026) sono state fatte con il protocollo in testa e nessun file.
+
+Come usarla
+1. Si apre una conversazione nuova con lo strumento.
+2. In testa si incolla il Protocollo universale del paragrafo 19.3.
+3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 14, così come è scritta nel libro.
+4. Si controlla che la risposta dichiari in quale tratto cadono pareggio, consuntivo e obiettivo, e si confrontano i numeri qui sotto.
+
+Numeri da ritrovare nel collaudo (tutti dal libro)
+- Fatturato di pareggio: 2.346.606 euro a domanda piena; 2.254.591 euro entro capacità.
+- Margine di sicurezza: 30,7% a domanda piena; 27,2% entro capacità.
+- Leva operativa: 1,61 sopra soglia a domanda piena; 3,68 in riduzione e 1,54 in aumento a mix costante per il mix entro capacità.
+- Fatturato necessario per 350.000 euro: 4.323.662 euro.
+- Verifica dell'obiettivo: 1.356.092 - 736.000 - 270.092 = 350.000 euro.
+- Soglia di capacità a mix costante (domanda piena): 2.962.750 euro di fatturato.
+- Errore tipico da non ritrovare: leva 4,39 (820.000 euro trattati come interamente fissi).
