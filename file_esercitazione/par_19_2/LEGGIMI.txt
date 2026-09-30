@@ -1,0 +1,19 @@
+FILE DI ESERCITAZIONE - Paragrafo 19.2, «Strumenti per il controller»
+Libro: «Controllo di gestione con l'intelligenza artificiale», Tania Cilio
+
+Ogni sottocartella contiene i file di una richiesta, un LEGGIMI.txt e un verifica.py. Il verifica.py di questa cartella esegue tutti gli altri (python3 verifica.py).
+Anni: l'esercizio chiuso è il 2025, l'esercizio in corso (budget, primo trimestre, marzo, forecast) è il 2026. Sono anni neutri scelti per l'esercitazione, gli stessi di tutte le cartelle.
+Uso generale: conversazione nuova; in testa il riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3; sotto, la richiesta del libro così com'è; si allegano i file della cartella.
+
+RICHIESTE DEL PARAGRAFO E FILE
+1. La prima richiesta - prima_richiesta/ (partitario_costi.csv, copia identica del file del lavoro 1).
+2. ChatGPT, primo esempio: il modello Excel - modello_excel/ (venduto.csv, costi.csv, ore.csv dell'esercizio chiuso, per il collaudo del modello sul progressivo gennaio-dicembre 2025).
+3. ChatGPT, secondo esempio: esplorare un'estrazione - esplorazione_venduto/ (venduto_trimestre_corrente.csv, venduto_trimestre_precedente.csv, parametri_anomalie.csv).
+4. Claude, primo esempio: il simulatore del mix - nessun file. È un'applicazione che non riceve file: i valori iniziali sono scritti nella richiesta. Collaudo: 8.000 unità di A, 12.000 di B e 1.000 di C, 21.000 ore, 1.011.000 euro di margine, 51.000 di margine rinunciato contro 84.000 di capacità esterna (33.000 a favore della riduzione di C), risultato 275.000.
+5. Claude, secondo esempio: la previsione di chiusura - previsione_chiusura/ (i sette file della richiesta, fra cui capacita_mensile.csv).
+6. Gemini Notebook, primo esempio (il margine nel tempo), 7. secondo esempio (che cosa avevamo promesso), 8. terzo esempio (i materiali per il consiglio) - NESSUN FILE. Queste richieste lavorano su documenti: bilanci e relazioni di cinque esercizi, report mensili, verbali, piani d'azione, prospetti del trimestre. Non sono dati tabellari e il libro non ne dà il contenuto: non sono stati inventati.
+9. Le tre insieme: la relazione trimestrale al consiglio - nessun file proprio. Il primo e il quarto passaggio sono documentali (Gemini Notebook, come sopra, non costruiti). Il secondo passaggio lavora sulle estrazioni del trimestre: si possono usare i file di previsione_chiusura ed esplorazione_venduto, ma il libro non stampa numeri di collaudo per questo passaggio. Il terzo passaggio è un'applicazione senza file.
+
+DUE NOTE SUI DATI
+- Il venduto dell'esercizio chiuso (modello_excel/venduto.csv) torna sui totali per linea e per canale del libro e anche cliente per cliente su par_19_5/redditivita_clienti/clienti_esercizio.csv: le righe di ogni cliente sommano ai suoi ricavi netti e, con i costi variabili unitari 117, 76 e 238 euro, ai suoi costi variabili di prodotto. Tutti i prezzi netti di riga stanno fra il costo variabile e il listino (200, 120 e 305 euro), e nel canale diretto i 184 clienti minori pagano in media i prezzi più alti sulle due linee che comprano. Lo controlla verifica_tutto.py nella radice.
+- Il budget del primo trimestre (846.500 di ricavi e 268.000 di margine) non si ottiene con quantità intere ai prezzi di budget: vedi il LEGGIMI di previsione_chiusura. Per tornare esattamente sul libro alcune quantità di budget hanno decimali. Il budget mensile 2026 è uno solo in tutto il caso: lo stesso in previsione_chiusura/budget_anno.csv, in lavoro_09/budget_anno.csv e in par_19_5/reporting_marzo/budget_mensile.csv.
