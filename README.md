@@ -2,6 +2,17 @@
 
 Libro di Tania Cilio. Qui si trovano i materiali che accompagnano il libro, tutti costruiti sugli stessi numeri dell'impresa guida.
 
+## Come scaricare tutto
+
+1. In questa pagina premi il pulsante verde **Code**, sopra l'elenco dei file, e scegli **Download ZIP**.
+2. Apri il file ZIP scaricato ed estrai la cartella (su Windows: tasto destro sul file, poi «Estrai tutto»; su Mac basta un doppio clic).
+3. Lavora sempre sulla cartella estratta, non dentro lo ZIP: contiene la web app, il file Excel, il file Word e la cartella file_esercitazione.
+
+## Da dove partire
+
+1. **La prima richiesta** (capitolo 19, paragrafo 19.2): il testo è nel libro, il file da allegare è nella cartella [file_esercitazione/par_19_2/prima_richiesta](file_esercitazione/par_19_2/prima_richiesta). Leggi il LEGGIMI.txt della cartella: la risposta giusta ritrova 4.812 righe e 820.000 euro.
+2. **Poi il lavoro 1** (Classificare i costi): copia dal file Word il Protocollo universale e la Richiesta 1 e allega i quattro file della cartella [file_esercitazione/lavoro_01](file_esercitazione/lavoro_01).
+
 ## I materiali
 
 | Materiale | File | Che cosa contiene |
