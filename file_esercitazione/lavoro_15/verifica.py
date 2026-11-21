@@ -101,8 +101,24 @@ for k, (st, sc, scp) in attesi.items():
     chk(f"Scostamento {k}", sc, round(v - ob, nd), "lavoro 15, elenco degli scostamenti e degli stati")
     if scp is not None:
         chk(f"Scostamento % {k}", scp, round((v - ob) / ob * 100, 1), "lavoro 15, elenco degli scostamenti e degli stati")
-for k, ob in [("Ricavi netti", 3392100), ("Margine di contribuzione", 1089900), ("Risultato operativo", 269900)]:
-    chk(f"Obiettivo {k} (budget lavoro 8)", ob, float(S[k]["obiettivo"]), "lavoro 15, elenco degli indicatori")
+# obiettivi, soglie e direzione delle schede (lavoro 15, elenco degli indicatori). Per ricavi, margine e risultato
+# il libro dà le soglie in percentuale sull'obiettivo (- 1% e - 3%; - 2% e - 5%; - 5% e - 10%): la scheda le riporta in euro.
+def fg(x):
+    return "%.10g" % float(x)
+SCHEDE = [("Ricavi netti", 3392100, round(3392100 * 0.99), round(3392100 * 0.97)),
+          ("Margine di contribuzione", 1089900, round(1089900 * 0.98), round(1089900 * 0.95)),
+          ("Margine percentuale", round(1089900 / 3392100 * 100, 2), 31.5, 30.5),
+          ("Risultato operativo", 269900, round(269900 * 0.95), round(269900 * 0.90)),
+          ("Margine per ora macchina", 45, 43, 40),
+          ("Margine di sicurezza", 20.0, 15.0, 10.0),
+          ("Puntualità di consegna", 95.0, 92.0, 90.0)]
+for k, ob, am, cm in SCHEDE:
+    s = S[k]
+    chk(f"Scheda {k}: obiettivo / attenzione / critica / direzione", " / ".join([fg(ob), fg(am), fg(cm), "CRESCENTE"]),
+        " / ".join([fg(s["obiettivo"]), fg(s["attenzione_min"]), fg(s["critica_min"]), s["direzione_desiderata"]]), "lavoro 15, elenco degli indicatori")
+s = S["Saturazione della capacità"]
+chk("Scheda Saturazione della capacità: obiettivo / attenzione oltre / critica oltre / direzione", "85-95 / 95 / 100 / RANGE",
+    " / ".join([s["obiettivo"], fg(s["attenzione_max"]), fg(s["critica_max"]), s["direzione_desiderata"]]), "lavoro 15, elenco degli indicatori")
 # saturazione: scheda con sole soglie superiori
 s = S["Saturazione della capacità"]
 chk("Saturazione: scheda RANGE senza soglie inferiori (non calcolabile per la richiesta)", "si",

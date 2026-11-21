@@ -1,7 +1,7 @@
 LAVORO 10 - LEGGERE GLI SCOSTAMENTI
 Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19, lavoro 10.
 
-A COSA SERVE
+A CHE COSA SERVE
 budget_consuntivo.csv è il file che la richiesta del lavoro 10 cita. Ha lo stesso contenuto del file usato nella prova reale del 26 settembre 2026 descritta nel libro: tre righe, una per linea, con i numeri del libro e nessun valore nuovo.
 
 COME USARLO

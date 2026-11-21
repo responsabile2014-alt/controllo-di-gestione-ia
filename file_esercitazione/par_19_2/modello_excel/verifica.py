@@ -87,6 +87,7 @@ for ch, rv, mg, mp in (("diretto", 1220000, 459000, D("37.6")), ("distributori",
     controlla("margine percentuale canale " + ch, mp, (rr - cc) / rr * 100, "libro, capitolo 8 e paragrafo 19.5", passo=D("0.1"))
 # prezzi di riga: mai sopra il listino; per linea il diretto sopra la media della linea e i distributori sotto (libro, capitolo 8)
 LIST = {"A": 200, "B": 120, "C": 305}
+controlla("righe con sconto_percentuale diverso da (1 - importo / (quantità x listino)) x 100 oltre 0,005 punti", 0, sum(1 for x in v if int(x["quantita"]) != 0 and abs((1 - n(x["importo_netto_riga"]) / (int(x["quantita"]) * n(x["prezzo_listino"]))) * 100 - n(x["sconto_percentuale"])) > D("0.005")), "LEGGIMI della cartella: sconto calcolato dall'importo e arrotondato a due decimali")
 controlla("righe con prezzo netto sopra il listino", 0, sum(1 for x in v if n(x["importo_netto_riga"]) > int(x["quantita"]) * LIST[x["codice_prodotto"]] and int(x["quantita"]) > 0), "libro, capitolo 8: listini 200, 120 e 305 euro")
 for l in "ABC":
     pm = {}

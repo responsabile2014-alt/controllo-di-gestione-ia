@@ -2,7 +2,7 @@ LAVORO 7 - CONFRONTARE COSTO PIENO E MARGINE SULLA STESSA DECISIONE
 File di esercitazione per il libro «Controllo di gestione con l'intelligenza artificiale» (Tania Cilio), capitolo 19, lavoro 7.
 
 A CHE COSA SERVE
-È il file «linee.csv» che la richiesta del lavoro 7 cita. È lo stesso file, identico byte per byte, usato nella prova reale del 27 settembre 2026 descritta nel libro.
+È il file «linee.csv» che la richiesta del lavoro 7 cita. Ha lo stesso contenuto del file usato nella prova reale del 27 settembre 2026 descritta nel libro: tre righe, una per linea, con i numeri del libro e nessun valore nuovo.
 
 I FILE
 linee.csv: linea, volume, prezzo_netto_unitario, costo_variabile_unitario, ore_macchina_per_unita, costi_indiretti_allocati. 3 righe, una per linea.

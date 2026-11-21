@@ -19,7 +19,7 @@ COME SI USA
 
 CHE COSA VIENE DAL LIBRO E CHE COSA È COSTRUITO
 Dal libro: il numero di righe (4.812), il totale (820.000 euro), i dieci conti con i loro saldi e i loro centri (elenco «Dati in entrata e risultato» del lavoro 1): 74.000, 46.000, 84.000, 186.000, 54.000, 138.000, 42.000, 118.000, 32.000 e 46.000 euro; le 3.000 ore di capacità esterna a 28 euro l'ora di media.
-Costruiti per l'esercitazione: i singoli movimenti, cioè date, descrizioni, codici fornitore e importi riga per riga, che sommano esattamente ai saldi del libro. Fornitori e clienti sono solo codici (FOR-..., CL-...).
+Costruiti per l'esercitazione: i singoli movimenti, cioè date, descrizioni, codici fornitore e importi riga per riga, che sommano esattamente ai saldi del libro. Fornitori e clienti sono solo codici (FOR-..., CL-...). Due coppie di movimenti (MOV-002028 e MOV-002029, MOV-002877 e MOV-002878) sono uguali in tutto tranne movimento_id: non sono duplicati, perché la chiave è movimento_id, che è univoco; se lo strumento le segnala, la risposta giusta è un avviso da verificare, non un'esclusione.
 
 NUMERI DA RITROVARE NEL COLLAUDO
 La risposta giusta mostra il codice e poi i tre confronti: 4.812 righe contro 4.812; 820.000 euro contro gli 820.000 letti nell'estrazione e contro gli 820.000 dei costi della struttura del Conto Economico gestionale; differenza zero in tutti e tre.

@@ -61,6 +61,7 @@ controlla("budget annuale: margine di contribuzione", 1089900, sum(Mb.values()),
 controlla("budget annuale: unita", 21500, sum(bq(x) for x in bu), "libro, paragrafo 19.2")
 controlla("budget annuale: ore macchina", 24000, sum(Hb.values()), "libro, paragrafo 19.2")
 controlla("capacita ordinaria annua (capacita_mensile.csv)", 21000, sum(cap.values()), "libro, paragrafo 19.2")
+controlla("capacità ordinaria di ogni mese: 1.750 ore in 12 mesi su 12", 12, sum(1 for m in range(1, 13) if cap.get(m) == 1750), "libro, paragrafo 19.2: 21.000 ore l'anno, 1.750 al mese")
 controlla("budget: ore esterne", 3000, sum(max(D(0), Hb[m] - cap[m]) for m in Hb), "libro, paragrafo 19.2")
 controlla("budget: capacita esterna", 84000, sum(Eb.values()), "libro, paragrafo 19.2")
 controlla("budget: struttura base (struttura_budget_anno.csv)", 736000, sum(Bb.values()), "libro, paragrafo 19.2")

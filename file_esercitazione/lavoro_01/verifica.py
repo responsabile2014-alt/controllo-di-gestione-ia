@@ -24,7 +24,7 @@ tot = sum(D(x[5]) for x in part)
 check("totale del partitario", D(820000), tot, "lavoro 1 del capitolo 19")
 check("totale uguale ai costi della struttura del CE gestionale", D(820000), tot, "lavoro 1 del capitolo 19")
 check("movimento_id univoci", 4812, len({x[0] for x in part}), "lavoro 1 del capitolo 19")
-check("un solo esercizio (anni presenti nelle date)", "2025", ",".join(sorted({x[1][:4] for x in part})), "lavoro 1 del capitolo 19")
+check("un solo esercizio (anni presenti nelle date)", "2025", ",".join(sorted({x[1][:4] for x in part})), "lavoro 1 del capitolo 19: un solo esercizio; l'anno 2025 non è nel libro, è quello scelto per l'esercitazione, vedi LEGGIMI")
 
 per_conto = {}
 per_centro = {}
@@ -55,7 +55,7 @@ check("costi di capacità", D(566000), tot - driver, "lavoro 1 del capitolo 19")
 tipi = {k[0]: k[2] for k in centri}
 nomec = {k[0]: k[1] for k in centri}
 check("movimenti con centro assente o fuori dal piano dei centri", 0, sum(1 for x in part if x[4] not in tipi), "lavoro 1 del capitolo 19")
-comm = sum(v for c, v in per_centro.items() if tipi[c] == "commerciale e logistico")
+comm = sum(v for c, v in per_centro.items() if tipi.get(c) == "commerciale e logistico")
 check("tre attività commerciali e logistiche (ordini, consegne, assistenza)", D(570000), comm, "lavoro 1 del capitolo 19")
 check("costi indiretti di produzione (ammortamento + produzione indiretta)", D(120000), per_nome["Ammortamento impianti di reparto"] + per_nome["Retribuzioni della produzione indiretta"], "lavoro 1 del capitolo 19")
 check("amministrazione", D(46000), per_centro["CC50"], "lavoro 1 del capitolo 19")

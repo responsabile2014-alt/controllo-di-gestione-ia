@@ -17,10 +17,11 @@ tc = {r["linea"]: float(r["ore_macchina_per_unita"]) for r in leggi("tempi_ciclo
 cons = {r["linea"]: r for r in leggi("consuntivo_corrente.csv")}
 
 esiti = []
-def controlla(descr, atteso, valore, fonte, tol=0.5):
+def controlla(descr, atteso, valore, fonte, tol=0.005):
     ok = abs(atteso - valore) <= tol
     esiti.append(ok)
-    print(f"{'PASS' if ok else 'FAIL'} | {descr} | atteso {atteso:,.2f} ({fonte}) | dai file {valore:,.2f}")
+    fa = ("%.2f" % atteso).rstrip("0").rstrip("."); fv = ("%.2f" % valore).rstrip("0").rstrip(".")
+    print(f"{'PASS' if ok else 'FAIL'} | {descr} | atteso {fa} ({fonte}) | dai file {fv}")
 
 linee = ["A", "B", "C"]
 q = {l: float(ip[l]["vendite_attese"]) for l in linee}
@@ -38,10 +39,11 @@ controlla("Righe ipotesi_commerciali.csv (una per linea)", 3, len(ip), "tre line
 controlla("Volume linea A", 8000, q["A"], "tabella Ipotesi di budget")
 controlla("Volume linea B", 11400, q["B"], "tabella Ipotesi di budget")
 controlla("Volume linea C", 2100, q["C"], "tabella Ipotesi di budget")
-controlla("Unita vendute a budget", 21500, sum(q.values()), "Ricalcolo di controllo, punto 1")
-controlla("Prezzo A / B / C (somma di controllo 180+118+289)", 587, sum(p.values()), "tabella Ipotesi di budget")
-controlla("Costo variabile A / B / C (somma 117+76+238)", 431, sum(cv.values()), "tabella Ipotesi di budget")
-controlla("Ore per unita A / B / C (somma 1,5+0,5+3,0)", 5.0, sum(tc.values()), "tabella Ipotesi di budget", 1e-9)
+controlla("Unità vendute a budget", 21500, sum(q.values()), "Ricalcolo di controllo, punto 1")
+for l, pr, c_, t_ in [("A", 180, 117, 1.5), ("B", 118, 76, 0.5), ("C", 289, 238, 3.0)]:
+    controlla(f"Prezzo netto linea {l}", pr, p[l], "tabella Ipotesi di budget")
+    controlla(f"Costo variabile unitario linea {l}", c_, cv[l], "tabella Ipotesi di budget")
+    controlla(f"Ore per unità linea {l}", t_, tc[l], "tabella Ipotesi di budget", 1e-9)
 controlla("Produzione = vendite (scorte finali uguali alle iniziali)", 0, sum(abs(prod[l] - q[l]) for l in linee), "Ricalcolo di controllo, punto 3")
 controlla("Scorte al costo variabile", 286500, sum(si[l] * cv[l] for l in linee), "par. 19.3, saldi medi: scorte 286.500 euro")
 for l, r_, c_, m_, o_ in [("A", 1440000, 936000, 504000, 12000), ("B", 1345200, 866400, 478800, 5700), ("C", 606900, 499800, 107100, 6300)]:
@@ -57,19 +59,19 @@ controlla("Margine % sui ricavi (32,1)", 32.1, round(MC / R * 100, 1), "Lavoro 8
 for l, v in [("A", 63), ("B", 42), ("C", 51)]:
     controlla(f"Margine unitario di budget linea {l}", v, p[l] - cv[l], "tabella Ipotesi di budget", 1e-9)
 struttura_base = sum(float(r["importo_esercizio_in_corso"]) + float(r["variazione_attesa"]) for r in st)
-controlla("Struttura base di budget (esclusa capacita esterna)", 736000, struttura_base, "prospetto di budget")
+controlla("Struttura base di budget (esclusa capacità esterna)", 736000, struttura_base, "prospetto di budget")
 controlla("Variazione totale struttura base vs esercizio in corso", 0, sum(float(r["variazione_attesa"]) for r in st), "struttura invariata")
-controlla("Centro attivita commerciali e logistiche", 570000, float(st[0]["importo_esercizio_in_corso"]), "par. 19.3")
+controlla("Centro attività commerciali e logistiche", 570000, float(st[0]["importo_esercizio_in_corso"]), "par. 19.3")
 controlla("Centro costi indiretti di produzione", 120000, float(st[1]["importo_esercizio_in_corso"]), "par. 19.3")
 controlla("Centro amministrazione", 46000, float(st[2]["importo_esercizio_in_corso"]), "par. 19.3")
 capo = float(cap["capacita_ordinaria"]); costo_h = float(cap["costo_capacita_aggiuntiva"])
-controlla("Ore richieste dal mix di budget", 24000, H, "Verifica di fattibilita")
-controlla("Capacita ordinaria", 21000, capo, "Verifica di fattibilita")
+controlla("Ore richieste dal mix di budget", 24000, H, "Verifica di fattibilità")
+controlla("Capacità ordinaria", 21000, capo, "Verifica di fattibilità")
 mancanti = max(0, H - capo)
-controlla("Ore mancanti", 3000, mancanti, "Verifica di fattibilita")
-controlla("Costo capacita esterna", 84000, mancanti * costo_h, "Verifica di fattibilita")
+controlla("Ore mancanti", 3000, mancanti, "Verifica di fattibilità")
+controlla("Costo capacità esterna", 84000, mancanti * costo_h, "Verifica di fattibilità")
 for l, v in [("A", 42), ("B", 84), ("C", 17)]:
-    controlla(f"Margine per ora macchina linea {l}", v, (p[l] - cv[l]) / tc[l], "Verifica di fattibilita")
+    controlla(f"Margine per ora macchina linea {l}", v, (p[l] - cv[l]) / tc[l], "Verifica di fattibilità")
 strutt_tot = struttura_base + mancanti * costo_h
 controlla("Costi della struttura di budget", 820000, strutt_tot, "Lavoro 8 in breve")
 controlla("Risultato operativo di budget", 269900, MC - strutt_tot, "Lavoro 8 in breve")
