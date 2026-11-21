@@ -64,7 +64,7 @@ quota = {k: STRUTTURA * x["ric"] / ricavi for k, x in L.items()}
 controlla("Quota di struttura A", 297696, "libro, lavoro 7 del capitolo 19", round(quota["A"]))
 controlla("Quota di struttura B", 282812, "libro, lavoro 7 del capitolo 19", round(quota["B"]))
 controlla("Quota di struttura C", 119492, "libro, lavoro 7 del capitolo 19", round(quota["C"]))
-controlla("Somma delle quote di struttura", 700000, "libro, lavoro 7 del capitolo 19", round(sum(quota.values()), 2))
+print(f"INFO | somma delle quote di struttura arrotondate all'euro: {sum(round(v) for v in quota.values())} (nel libro 297.696 + 282.812 + 119.492 = 700.000; può scostarsi di 1 euro per i soli arrotondamenti, qualunque sia il file)")
 ris = {k: x["mdc"] - x["ind"] - quota[k] for k, x in L.items()}
 controlla("Risultato a costo pieno A", 146304, "libro, lavoro 7 del capitolo 19", round(ris["A"]))
 controlla("Risultato a costo pieno B", 143188, "libro, lavoro 7 del capitolo 19", round(ris["B"]))

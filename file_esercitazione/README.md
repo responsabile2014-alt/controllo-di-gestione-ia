@@ -14,6 +14,8 @@ Serve Python 3.7 o successivo, con la sola libreria standard. Dalla cartella che
 python3 verifica_tutto.py
 ```
 
+Su Windows, se il comando `python3` non esiste, si usa `python verifica_tutto.py` oppure `py verifica_tutto.py`.
+
 Il comando esegue i verifica.py di tutte le cartelle e i controlli di coerenza fra le cartelle, e stampa PASS o FAIL per ogni numero e il riepilogo finale.
 
 © 2026 Tania Cilio. Tutti i diritti riservati.

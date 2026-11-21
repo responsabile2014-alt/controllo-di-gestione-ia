@@ -69,3 +69,5 @@ check("ogni osservazione anomala compare nel file delle note", True, all(m in me
 check("osservazioni oltre due errori standard", "2024-08,2025-07", ",".join(anom), "costruzione del caso, LEGGIMI")
 check("mesi di ore massime e minime (metodo dei livelli)", "2025-07,2024-08", mesi[imax] + "," + mesi[imin], "costruzione del caso, LEGGIMI")
 print(f"\nRiepilogo: {sum(esiti)} PASS, {len(esiti)-sum(esiti)} FAIL")
+import sys
+sys.exit(0 if all(esiti) else 1)

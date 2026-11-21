@@ -496,5 +496,6 @@ print("=" * 78)
 n_ok = sum(esiti); n_ko = len(esiti) - n_ok
 print(f"COERENZA FRA CARTELLE: {n_ok} PASS, {n_ko} FAIL")
 print(f"VERIFICHE DELLE CARTELLE: {tot_pass} PASS, {tot_fail} FAIL, cartelle con problemi {len(cartelle_ko)}")
-print(f"TOTALE: {tot_pass + n_ok} PASS, {tot_fail + n_ko} FAIL")
+print(f"TOTALE: {tot_pass + n_ok} PASS, {tot_fail + n_ko} FAIL, cartelle con errori: {len(cartelle_ko)}")
+print("ESITO: " + ("tutti i controlli superati" if not (tot_fail or n_ko or cartelle_ko) else "NON SUPERATO: vedere le righe FAIL e le cartelle con errori"))
 sys.exit(1 if (tot_fail or n_ko or cartelle_ko) else 0)

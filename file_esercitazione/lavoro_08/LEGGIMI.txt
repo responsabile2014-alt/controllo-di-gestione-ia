@@ -1,7 +1,7 @@
 LAVORO 8 - COSTRUIRE E CONTROLLARE IL BUDGET OPERATIVO
-Libro: «Controllo di gestione con l'intelligenza artificiale», capitolo 19, lavoro 8.
+File di esercitazione per il libro «Controllo di gestione con l'intelligenza artificiale» (Tania Cilio), capitolo 19, lavoro 8.
 
-A COSA SERVONO
+A CHE COSA SERVONO
 Sono i sei file che la «Richiesta da consegnare allo strumento» del lavoro 8 cita. Servono a fare il collaudo sui numeri noti: si consegnano allo strumento e si controlla che la risposta ritrovi i numeri del libro.
 
 COME USARLI

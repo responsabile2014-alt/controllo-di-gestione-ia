@@ -100,3 +100,5 @@ check("debiti verso fornitori", D(-360000), saldo["2101"], "paragrafo 19.3")
 check("immobilizzazioni tecniche nette", D(516900), saldo["1101"], "paragrafo 19.3")
 check("capitale investito operativo a fine anno", D(1090000), saldo["1301"] + saldo["1201"] + saldo["1101"] + saldo["2101"], "paragrafo 19.3")
 print(f"\nRiepilogo: {sum(esiti)} PASS, {len(esiti)-sum(esiti)} FAIL")
+import sys
+sys.exit(0 if all(esiti) else 1)

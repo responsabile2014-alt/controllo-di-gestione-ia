@@ -54,8 +54,8 @@ controlla("Ricavi di budget", 3392100, R, "Lavoro 8 in breve")
 controlla("Costi variabili di budget", 2302200, CV, "prospetto di budget")
 controlla("Margine di contribuzione di budget", 1089900, MC, "Lavoro 8 in breve")
 controlla("Margine % sui ricavi (32,1)", 32.1, round(MC / R * 100, 1), "Lavoro 8 in breve", 1e-9)
-mc_da_unitari = sum(q[l] * (p[l] - cv[l]) for l in linee)
-controlla("Margine ricalcolato dai margini unitari = somma margini per linea", MC, mc_da_unitari, "Controlli obbligatori")
+for l, v in [("A", 63), ("B", 42), ("C", 51)]:
+    controlla(f"Margine unitario di budget linea {l}", v, p[l] - cv[l], "tabella Ipotesi di budget", 1e-9)
 struttura_base = sum(float(r["importo_esercizio_in_corso"]) + float(r["variazione_attesa"]) for r in st)
 controlla("Struttura base di budget (esclusa capacita esterna)", 736000, struttura_base, "prospetto di budget")
 controlla("Variazione totale struttura base vs esercizio in corso", 0, sum(float(r["variazione_attesa"]) for r in st), "struttura invariata")
@@ -92,3 +92,5 @@ controlla("Volume C proposto oltre la domanda massima di 2.000", 100, q["C"] - f
 controlla("Linee prive di ipotesi di prezzo o volume", 0, sum(1 for l in linee if not ip[l]["vendite_attese"] or not ip[l]["prezzo_netto_atteso"]), "Controlli obbligatori")
 
 print(f"\nTotale: {sum(esiti)} PASS, {len(esiti) - sum(esiti)} FAIL")
+import sys
+sys.exit(0 if all(esiti) else 1)

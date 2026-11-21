@@ -5,7 +5,7 @@ A CHE COSA SERVONO
 Sono i tre file che la richiesta cita: il venduto del trimestre corrente, il venduto del trimestre precedente e le soglie per etichettare le anomalie.
 
 FILE
-venduto_trimestre_corrente.csv - 2.084 righe, gennaio-marzo 2026 (primo trimestre dell'esercizio in corso).
+venduto_trimestre_corrente.csv - 2.084 righe, gennaio-marzo 2026 (primo trimestre dell'esercizio in corso): 400 righe a gennaio, 398 a febbraio e 1.286 a marzo. Marzo ha molte più righe perché il libro ne indica 1.286 per quel mese (paragrafo 19.5), mentre gennaio e febbraio sono costruiti con righe più grandi: l'importo medio di riga è circa 700 euro a gennaio e febbraio e 220 a marzo, i documenti 222, 225 e 504. È un effetto della costruzione dei file, non un'anomalia da cercare.
 venduto_trimestre_precedente.csv - 1.089 righe, ottobre-dicembre 2025 (ultimo trimestre dell'esercizio chiuso).
 Colonne di entrambi, nell'ordine della richiesta: id_riga (identificativo univoco della riga documento), data_documento, numero_documento, codice_cliente, canale, codice_prodotto, quantita, prezzo_listino, sconto_percentuale, importo_netto_riga.
 parametri_anomalie.csv - 8 righe. Colonne: parametro, ambito, valore_minimo, valore_massimo, unita, descrizione. Contiene: intervallo abituale del prezzo netto per prodotto (A 140-200, B 105-120, C 270-305 euro); scarto massimo dello sconto del cliente sulla media del suo canale (5 punti); quota massima della quantità di un prodotto nei tre documenti più grandi (30%); importo oltre il quale un documento è anomalo (15.000 euro); regola dei codici nuovi.
@@ -18,14 +18,15 @@ Dal libro: i listini 200, 120 e 305 euro; il trimestre corrente torna sul progre
 Costruiti per l'esercitazione: tutte le singole righe, i documenti, i clienti per riga, le date, le soglie di parametri_anomalie.csv e le anomalie inserite perché lo strumento abbia qualcosa da trovare:
 - quattro unità della linea B a 99-100 euro, sotto l'intervallo abituale, nel documento FT-2026-09002 del cliente CL-150;
 - il documento FT-2026-09001 del distributore CL-231, oltre 15.000 euro;
-- tre codici cliente che compaiono per la prima volta, CL-259, CL-260 e CL-261 (altri codici del canale diretto risultano nuovi solo perché non hanno comprato nel trimestre precedente);
+- tre codici cliente che non compaiono mai nel 2025, CL-259, CL-260 e CL-261. Con la regola di parametri_anomalie.csv (codice presente nel trimestre corrente e assente nel precedente) lo strumento ne elenca 25: questi tre più 22 clienti del canale diretto che avevano comprato nel 2025 ma non nell'ultimo trimestre;
 - due righe a quantità zero con importo zero;
-- due righe con quantità negativa nel trimestre corrente (le due righe di marzo di cui parla il paragrafo 19.5) e due nel trimestre precedente (documenti RS-).
+- due righe con quantità negativa nel trimestre corrente (le due righe di marzo di cui parla il paragrafo 19.5) e due nel trimestre precedente (documenti RS-). Attenzione: nel trimestre corrente le due righe negative non stanno in documenti di reso, ma dentro due fatture ordinarie, FT-2026-01218 e FT-2026-01339, che hanno anche righe positive. La richiesta parla di «documenti di reso»: se lo strumento esclude le sole due righe, il lordo è 843.360,00 euro e i resi - 410,00; se esclude i due documenti interi, il totale diventa 842.366,00 euro. La lettura giusta è la prima, per riga.
 Nessun codice prodotto nuovo. L'importo netto di riga fa fede; lo sconto in percentuale è ricavato dall'importo e arrotondato a due decimali.
 
 NUMERI DA RITROVARE NEL COLLAUDO
 Il libro non stampa un risultato per questa richiesta: l'esempio dei «quattro euro su 1.800 unità» è un esempio e non va cercato in questi file.
 Controlli che devono tornare: righe lette 2.084 (corrente) e 1.089 (precedente); somma delle righe per prodotto uguale al totale delle righe; somma dei ricavi per canale uguale al totale; resi dichiarati a parte (corrente: 2 righe per - 410,00 euro; precedente: 2 righe per - 626,96 euro); due righe a quantità zero nel corrente.
+Anomalie con le soglie del file: prezzi fuori intervallo 3 righe (4 unità della linea B, 398,50 euro di ricavo e 81,50 di sconto, documento FT-2026-09002); documenti oltre 15.000 euro 1 (FT-2026-09001, 15.962,14 euro); codici cliente nuovi 25, di cui 3 mai visti nel 2025; nessun cliente con sconto oltre 5 punti sopra la media del suo canale (lo scarto più alto è 4,47 punti, CL-128); nessun prodotto con più del 30% della quantità nei tre documenti più grandi (il massimo è 15,8%, linea C); nessun codice prodotto nuovo. Totale lordo 843.360,00 euro, resi - 410,00, netto 842.950,00.
 Totale netto del trimestre corrente: 842.950 euro, cioè 842.300 + 650 di note di credito non comprese nel venduto. Trimestre precedente: 827.427,74 euro.
 
 VERIFICA

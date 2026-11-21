@@ -75,3 +75,5 @@ for x in part:
 check("ore di capacità esterna nelle descrizioni", 3000, ore, "lavoro 1 del capitolo 19")
 check("84.000 euro diviso le ore = costo medio orario", D(28), per_nome["Lavorazioni esterne e straordinari di reparto"] / ore, "lavoro 1 del capitolo 19")
 print(f"\nRiepilogo: {sum(esiti)} PASS, {len(esiti)-sum(esiti)} FAIL")
+import sys
+sys.exit(0 if all(esiti) else 1)

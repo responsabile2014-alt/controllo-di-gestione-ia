@@ -20,7 +20,7 @@ az = leggi("azioni.csv")
 fcp = leggi("forecast_precedenti.csv")
 
 esiti = []
-def controlla(descr, atteso, valore, fonte, tol=0.5):
+def controlla(descr, atteso, valore, fonte, tol=0.005):
     ok = abs(atteso - valore) <= tol
     esiti.append(ok)
     print(f"{'PASS' if ok else 'FAIL'} | {descr} | atteso {atteso:,.2f} ({fonte}) | dai file {valore:,.2f}")
@@ -174,3 +174,5 @@ controlla("Ore macchina del budget annuo", 24000, sum(f(x["quantita"]) * f(x["or
 controlla("Ore macchina di budget di marzo", 2000, sum(f(x["quantita"]) * f(x["ore_macchina_per_unita"]) for x in bud if x["mese"] == "3"), "capitolo 14", tol=0.01)
 
 print(f"\nTotale: {sum(esiti)} PASS, {len(esiti) - sum(esiti)} FAIL")
+import sys
+sys.exit(0 if all(esiti) else 1)

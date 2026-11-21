@@ -13,10 +13,10 @@ Libro di Tania Cilio. Qui si trovano i materiali che accompagnano il libro, tutt
 
 ## Come si usano
 
-- **Web app:** si apre il file index.html nel browser. Se il repository è pubblicato con GitHub Pages, la web app si apre direttamente dall'indirizzo del sito.
+- **Web app:** si apre direttamente, anche dal telefono, all'indirizzo https://responsabile2014-alt.github.io/controllo-di-gestione-ia/ (non serve scaricare nulla). In alternativa si scarica il file index.html e lo si apre nel browser: funziona anche senza rete.
 - **File Excel:** si apre con Excel o con LibreOffice. Si comincia dal foglio «Guida».
 - **File Word:** si copia la richiesta che serve, con il Protocollo universale in testa (per le richieste sul bilancio pubblico anche la regola generale e, dove il file lo indica, il testo del collaudo in fondo), e si confronta la risposta con il collaudo.
-- **File di esercitazione:** si allegano allo strumento i file della cartella del lavoro; per ricontrollarli, dalla cartella file_esercitazione: `python3 verifica_tutto.py`.
+- **File di esercitazione:** si allegano allo strumento i file della cartella del lavoro; per ricontrollarli, dalla cartella file_esercitazione: `python3 verifica_tutto.py` (su Windows, se il comando python3 non esiste: `python verifica_tutto.py` oppure `py verifica_tutto.py`).
 
 I dati dell'impresa guida e il bilancio di esempio sono costruiti per l'esercitazione e non corrispondono a nessuna società reale.
 

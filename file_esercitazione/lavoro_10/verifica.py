@@ -9,7 +9,7 @@ with open(os.path.join(CARTELLA, "budget_consuntivo.csv"), encoding="utf-8", new
     righe = list(csv.DictReader(fh))
 
 esiti = []
-def controlla(descr, atteso, valore, fonte, tol=0.5):
+def controlla(descr, atteso, valore, fonte, tol=0.005):
     ok = abs(atteso - valore) <= tol
     esiti.append(ok)
     print(f"{'PASS' if ok else 'FAIL'} | {descr} | atteso {atteso:,.2f} ({fonte}) | dai file {valore:,.2f}")
@@ -50,7 +50,7 @@ controlla("Effetto quantita", 25347, round(E_q), "Lavoro 10 in breve")
 controlla("Effetto mix", -5247, round(E_mix), "Lavoro 10 in breve")
 controlla("Effetto prezzo", -48000, round(E_p), "Lavoro 10 in breve")
 controlla("Effetto costo variabile unitario", 0, round(E_c), "Lavoro 10 in breve")
-controlla("Differenza residua del ponte", 0, (E_q + E_mix + E_p + E_c) - (MCa - MCb), "prova del 26/09/2026", 1e-6)
+print("INFO | differenza residua del ponte: %.6f (con le quattro formule è zero per costruzione, qualunque sia il file)" % ((E_q + E_mix + E_p + E_c) - (MCa - MCb)))
 controlla("Effetto mix linea A", -11721, round(o["A"]["e_mix"]), "prova del 26/09/2026")
 controlla("Effetto mix linea B", 14065, round(o["B"]["e_mix"]), "prova del 26/09/2026")
 controlla("Effetto mix linea C", -7591, round(o["C"]["e_mix"]), "prova del 26/09/2026")
@@ -69,3 +69,5 @@ controlla("Ricavi totali di budget", 3392100, sum(o[l]["qb"] * o[l]["pb"] for l 
 controlla("Ricavi totali consuntivi", 3386000, sum(o[l]["qa"] * o[l]["pa"] for l in L), "par. 19.3")
 
 print(f"\nTotale: {sum(esiti)} PASS, {len(esiti) - sum(esiti)} FAIL")
+import sys
+sys.exit(0 if all(esiti) else 1)

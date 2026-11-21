@@ -75,7 +75,7 @@ chk("Margine percentuale non arrotondato", 31.36, round(mperc, 2), "lavoro 15, R
 chk("Margine percentuale arrotondato", 31.4, round(mperc, 1), "Lavoro 15 in breve")
 chk("Margine per ora macchina 1.062.000 / 24.000", 44.25, mora, "Lavoro 15 in breve")
 chk("Prova 44,25 x 24.000", 1062000, mora * h, "lavoro 15, Ricalcolo di controllo")
-chk("Errore tipico: media semplice dei margini orari", 45.00, (42 + 76 + 17) / 3, "lavoro 15, Errore tipico")
+chk("Errore tipico: media semplice dei margini orari", 45.00, sum(mdc_lin[l] / ore_lin[l] for l in "ABC") / 3, "lavoro 15, Errore tipico")
 chk("Errore tipico: 45,00 x 24.000 - margine CE", 18000, 45.00 * h - mdc_ce, "lavoro 15, Errore tipico")
 chk("Saturazione della capacità 24.000 / 21.000", 114.3, round(sat, 1), "Lavoro 15 in breve")
 chk("Fatturato di pareggio (arrotondato)", 2346606, round(pareggio), "lavoro 14, tabella Dati in entrata e risultato")
@@ -120,3 +120,5 @@ for n, rows in [("venduto.csv", ven), ("conto_economico.csv", ce), ("ore_reparto
                 ("consegne.csv", cons), ("schede_kpi.csv", sch), ("kpi_precedente.csv", prec)]:
     print(f"   {n}: {len(rows)} righe di dati")
 print(f"\nTotale: {esiti.count(True)} PASS, {esiti.count(False)} FAIL")
+import sys
+sys.exit(0 if all(esiti) else 1)

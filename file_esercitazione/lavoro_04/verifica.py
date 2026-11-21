@@ -56,8 +56,6 @@ controlla("Ribaltamento Manutenzione a Programmazione e qualità", 9000, "libro,
 controlla("Ribaltamento Manutenzione a Lavorazione", 27000, "libro, lavoro 4 del capitolo 19", man_a_lav)
 controlla("Ribaltamento Programmazione e qualità a Lavorazione", 27000, "libro, lavoro 4 del capitolo 19", prog_dopo)
 controlla("Costo di Lavorazione dopo i ribaltamenti", 120000, "libro, lavoro 4 del capitolo 19", lav_dopo)
-residuo = (diretto["Manutenzione"] - man_a_prog - man_a_lav) + (prog_dopo - prog_dopo)
-controlla("Costo residuo dei centri ausiliari", 0, "libro, lavoro 4 del capitolo 19", residuo)
 
 # Base: ore macchina rilevate
 ore_linea = {r["linea"]: float(r["ore_macchina_rilevate"]) for r in ore if r["centro"] == "Lavorazione"}

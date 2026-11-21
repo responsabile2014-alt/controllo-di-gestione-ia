@@ -13,7 +13,7 @@ interventi.csv: intervento_id, codice_cliente, ore_intervento, data. 2.729 righe
 capacita_driver.csv: attivita, driver, capacita_pratica_annua, fonte_stima. 3 righe.
 verifica.py: script che rilegge i file e confronta ogni numero con il libro.
 Formato: CSV UTF-8, separatore virgola, punto decimale, intestazione alla prima riga, nessuna riga di totale.
-Esercizio del caso: anno 2025 (anno neutro scelto per l'esercitazione, il libro dice soltanto «esercizio chiuso»). Le date cadono nei giorni lavorativi del 2025.
+Esercizio del caso: anno 2025 (anno neutro scelto per l'esercitazione, il libro dice soltanto «esercizio chiuso»). Le date di ordini, consegne e interventi cadono nei giorni lavorativi del 2025; i movimenti di costo portano invece la data di fine mese o di inizio trimestre, anche quando non è un giorno lavorativo (mercoledì 1 gennaio, sabato 31 maggio, domenica 31 agosto, domenica 30 novembre).
 
 COME USARLI
 1. Si apre una conversazione nuova con lo strumento (per questo lavoro il libro indica Claude, dentro un progetto).
