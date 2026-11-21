@@ -75,6 +75,12 @@ for l, v in [("A", 42), ("B", 84), ("C", 17)]:
 strutt_tot = struttura_base + mancanti * costo_h
 controlla("Costi della struttura di budget", 820000, strutt_tot, "Lavoro 8 in breve")
 controlla("Risultato operativo di budget", 269900, MC - strutt_tot, "Lavoro 8 in breve")
+pareggio = struttura_base / (MC / R)
+controlla("Fatturato di pareggio (arrotondato all'euro)", 2290656, round(pareggio), "Lavoro 8 in breve")
+controlla("Ore al pareggio sotto la capacità ordinaria (1 = sì)", 1, 1 if pareggio * H / R < capo else 0, "Lavoro 8 in breve")
+controlla("Margine di sicurezza % (32,5)", 32.5, round((R - pareggio) / R * 100, 1), "Lavoro 8 in breve", 1e-9)
+controlla("Leva operativa sopra soglia (1,55)", 1.55, round((MC - costo_h * H) / (MC - strutt_tot), 2), "Lavoro 8 in breve", 1e-9)
+controlla("Leva sbagliata con tutta la struttura fissa (4,04)", 4.04, round(MC / (MC - strutt_tot), 2), "errore da riconoscere", 1e-9)
 controlla("Doppio conteggio: struttura con 84.000 contati due volte", 904000, strutt_tot + mancanti * costo_h, "Ricalcolo, punto 2")
 controlla("Doppio conteggio: risultato con 84.000 contati due volte", 185900, MC - strutt_tot - mancanti * costo_h, "Ricalcolo, punto 2")
 pb_cons = float(cons["B"]["prezzo_netto"])

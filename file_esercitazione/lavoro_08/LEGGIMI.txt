@@ -33,4 +33,4 @@ Con doppio conteggio dei 84.000 euro (errore da riconoscere): struttura 904.000 
 Senza il recupero di 4 euro sul prezzo della linea B (45.600 euro): margine 1.044.300 e risultato 224.300, sotto i 242.000 dell'esercizio in corso.
 Margine di budget 27.900 euro sopra i 1.062.000 dell'esercizio in corso.
 Il volume della linea C, 2.100, supera di 100 unità la domanda massima di 2.000.
-Il libro non stampa i valori di pareggio, margine di sicurezza e leva operativa del budget: verifica.py non li controlla.
+Pareggio, margine di sicurezza e leva del budget (punto 6 della richiesta): fatturato di pareggio 2.290.656 euro, cioè 736.000 / (1.089.900 / 3.392.100), raggiunto con circa 16.207 ore, sotto le 21.000; margine di sicurezza 32,5%; leva operativa sopra soglia 1,55, cioè (1.089.900 - 28 x 24.000) / 269.900, calcolata come nel capitolo 9. Errore da riconoscere: la leva 4,04, che si ottiene trattando come fissi tutti gli 820.000 euro.
