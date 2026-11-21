@@ -14,7 +14,7 @@ Come si usa
 2. In testa si incolla il testo del riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3.
 3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 2 così com'è.
 4. Si allegano i due file.
-5. In fondo al messaggio si scrivono i valori che la richiesta dice «che ti indico»: costo del centro Manutenzione in contabilità, 2024 32.600 euro e 2025 36.000 euro; tolleranza sullo scarto della ricostruzione, scelta da chi fa la prova (il libro non la fissa; per esempio 2%). Poi si invia.
+5. La richiesta ha due spazi da compilare fra parentesi quadre, «[scrivi qui …]»: nel punto 7 la tolleranza sullo scarto della ricostruzione (il libro propone come esempio 2%) e nei «Controlli obbligatori» il costo del centro Manutenzione in contabilità, 2024 32.600 euro e 2025 36.000 euro. Si scrivono al posto delle parentesi, poi si invia.
 
 Che cosa viene dal libro e che cosa è costruito
 Dal libro: ventiquattro osservazioni mensili distinte e consecutive; il costo del centro Manutenzione dell'ultimo esercizio, 36.000 euro (capitolo 5 e lavoro 2); la capacità ordinaria di 21.000 ore, cioè circa 1.750 ore al mese, e le 24.000 ore richieste dai volumi.

@@ -22,8 +22,8 @@ Come si usa
 1. Si apre una conversazione nuova, oppure si lavora in un progetto in cui il protocollo è già caricato.
 2. In testa si incolla il testo del riquadro «Protocollo da incollare in testa alla richiesta» del paragrafo 19.3.
 3. Sotto si incolla la «Richiesta da consegnare allo strumento» del lavoro 3 così com'è.
-4. Si allegano i tre file e si invia.
-5. I due valori che la richiesta chiede di confrontare, 3.386.000 euro di ricavi netti della contabilità generale e 1.062.000 euro di margine di contribuzione del Conto Economico gestionale approvato, sono già scritti nella richiesta: non serve aggiungerli. La tolleranza sui conti non mappati la sceglie chi fa la prova e la scrive in fondo al messaggio.
+4. Si allegano i tre file.
+5. I due valori che la richiesta chiede di confrontare, 3.386.000 euro di ricavi netti della contabilità generale e 1.062.000 euro di margine di contribuzione del Conto Economico gestionale approvato, sono già scritti nella richiesta: non serve aggiungerli. La tolleranza sui conti non mappati si scrive al posto dello spazio fra parentesi quadre delle «Regole da applicare» (il libro propone come esempio 1 euro). Poi si invia.
 
 Che cosa viene dal libro e che cosa è costruito
 Dal libro: ricavi netti 3.386.000 euro; listini 200, 120 e 305 euro e prezzi netti 180, 114 e 289 euro sulle 8.000, 12.000 e 2.000 unità, quindi ricavi lordi 3.650.000 euro e riduzioni di prezzo 264.000; per la linea A 16 euro di sconto commerciale (128.000 euro) e 4 euro di premio di fine anno e altre concessioni (32.000 euro); costi variabili 2.324.000; costi della struttura 820.000 di cui 84.000 di capacità esterna; i dieci conti della struttura con i loro importi (lavoro 1); acquisti 2.190.000 euro e personale 880.000 euro, con le quote di struttura 224.000 e 438.000; ammortamenti 74.000; crediti 646.600, scorte 286.500, immobilizzazioni nette 516.900 e debiti verso fornitori 360.000 euro a fine esercizio (paragrafo 19.3, saldi medi).

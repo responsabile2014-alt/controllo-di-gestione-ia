@@ -35,7 +35,7 @@ NUMERI DA RITROVARE NEL COLLAUDO
 Tariffe di 20,00 euro per ordine, 30,00 euro per consegna e 20,00 euro per ora di assistenza.
 Costo attribuito ai clienti 570.000 euro, capacità inutilizzata zero.
 570.000 euro nel modello più 250.000 euro fuori perimetro danno 820.000 euro.
-Nessun conto assegnato a due attività.
+Nessun conto assegnato per intero a due attività. Nessun conto è diviso fra più attività, quindi non ci sono percentuali da sommare a 100%.
 Variante del libro: con una capacità pratica di 12.500 ordini la tariffa scende a 19,20 euro, ai clienti vanno 230.400 euro e 9.600 euro restano come capacità inutilizzata.
 
 Nota sugli ordini. Per ipotesi del caso (libro, paragrafo 19.5 e capitolo 10) il driver «ordini» conta tutte le pratiche gestite dall'ufficio ordini: gli ordini d'acquisto e le richieste che non portano a una consegna di prodotto, come modifiche, annullamenti e richieste di documentazione. Per questo i 184 clienti minori hanno 3.000 ordini ma meno unità acquistate nel venduto (par_19_2/modello_excel/venduto.csv): non è un errore dei file.

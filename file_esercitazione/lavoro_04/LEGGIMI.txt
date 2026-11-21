@@ -18,10 +18,10 @@ COME USARLI
 2. In testa si incolla il Protocollo universale del paragrafo 19.3, poi la richiesta del lavoro 4 così come è stampata nel libro.
 3. La richiesta dice che nel progetto sono già presenti alcune informazioni. Non sono file: si scrivono nelle istruzioni del progetto, o in testa alla richiesta, con i valori del libro:
    piano dei centri: Manutenzione ausiliario, Programmazione e qualità ausiliario, Lavorazione produttivo;
-   ordine dei ribaltamenti a cascata: prima Manutenzione (25% a Programmazione e qualità, 75% a Lavorazione, sulle ore di intervento), poi Programmazione e qualità (interamente a Lavorazione);
+   matrice delle basi tra centri e ordine dei ribaltamenti a cascata: prima Manutenzione (base ore di intervento: 25% a Programmazione e qualità, 75% a Lavorazione), poi Programmazione e qualità (interamente a Lavorazione);
    base di Lavorazione: ore macchina, comprese per convenzione le 3.000 ore coperte da straordinari e lavorazioni esterne;
    tabella prodotti con i tempi di ciclo: A 1,5 ore per unità, B 0,5, C 3,0.
-   La soglia dello scarto fra ore rilevate e ore teoriche la sceglie chi fa la prova (la richiesta dice «la soglia che ti indico»).
+   Per lo scarto fra ore rilevate e ore teoriche non c'è niente da scegliere: la richiesta fissa tolleranza zero e FAIL oltre il 2% (PASS solo con scarto zero, WARN fino al 2%).
 4. Si caricano i tre file CSV e si confronta la risposta con i numeri da ritrovare qui sotto.
 5. Per controllare i file, dalla cartella: python3 verifica.py
 
@@ -34,4 +34,5 @@ NUMERI DA RITROVARE NEL COLLAUDO
 Coefficiente di 5,00 euro per ora macchina, cioè 120.000 diviso 24.000.
 Linea A 60.000 euro, cioè 7,50 per unità; linea B 30.000 euro, cioè 2,50; linea C 30.000 euro, cioè 15,00.
 Ribaltamenti: Manutenzione 9.000 a Programmazione e qualità e 27.000 a Lavorazione; Programmazione e qualità 27.000 a Lavorazione; Lavorazione dopo i ribaltamenti 120.000; nessun costo residuo nei centri ausiliari.
+Scarto fra ore rilevate e ore teoriche: zero ore, 0%, esito PASS.
 Errore tipico da riconoscere: sulle unità prodotte il coefficiente diventa 5,4545 euro, il prospetto quadra ancora a 120.000 e la linea C riceve 19.091 euro in meno.
