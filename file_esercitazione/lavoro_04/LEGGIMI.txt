@@ -36,3 +36,6 @@ Linea A 60.000 euro, cioè 7,50 per unità; linea B 30.000 euro, cioè 2,50; lin
 Ribaltamenti: Manutenzione 9.000 a Programmazione e qualità e 27.000 a Lavorazione; Programmazione e qualità 27.000 a Lavorazione; Lavorazione dopo i ribaltamenti 120.000; nessun costo residuo nei centri ausiliari.
 Scarto fra ore rilevate e ore teoriche: zero ore, 0%, esito PASS.
 Errore tipico da riconoscere: sulle unità prodotte il coefficiente diventa 5,4545 euro, il prospetto quadra ancora a 120.000 e la linea C riceve 19.091 euro in meno.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

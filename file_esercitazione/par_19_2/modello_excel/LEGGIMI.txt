@@ -44,3 +44,6 @@ Controlli: 4.433 righe di venduto, 4.812 righe di costi per 820.000 euro, 48 rig
 
 VERIFICA
 python3 verifica.py
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

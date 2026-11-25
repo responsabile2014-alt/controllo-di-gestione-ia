@@ -29,3 +29,6 @@ Ricostruzione dei dodici mesi 2025, con lo scarto dichiarato in percentuale: con
 Osservazioni oltre due errori standard: 2024-08 e 2025-07, entrambe nel file delle note.
 Intervallo di ore osservato: da 900 a 2.135 ore al mese sui 24 mesi, da 1.400 a 2.135 ore senza il 2024-08; fuori dall'intervallo della stima usata la stima non è verificata. Ricalcolo di controllo sui soli primi dodici mesi: i coefficienti cambiano molto (senza il 2024-08, costo variabile 0,3957 euro per ora contro 1,1966 sui 23 mesi), quindi con questi dati la relazione va dichiarata non stabile.
 I coefficienti delle stime non sono numeri del libro: verifica.py li stampa come INFO, per confrontarli con quelli dello strumento.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

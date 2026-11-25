@@ -19,3 +19,6 @@ Numeri da ritrovare nel collaudo (tutti dal libro)
 - Risultato operativo: 275.000 euro contro 242.000 della domanda piena.
 - Mix composto per margine unitario: 834.000 euro, cioè 177.000 euro in meno.
 - Prezzo di indifferenza della capacità esterna: 17 euro l'ora.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

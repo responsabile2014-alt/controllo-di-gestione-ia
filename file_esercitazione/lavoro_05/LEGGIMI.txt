@@ -39,3 +39,6 @@ Nessun conto assegnato per intero a due attività. Nessun conto è diviso fra pi
 Variante del libro: con una capacità pratica di 12.500 ordini la tariffa scende a 19,20 euro, ai clienti vanno 230.400 euro e 9.600 euro restano come capacità inutilizzata.
 
 Nota sugli ordini. Per ipotesi del caso (libro, paragrafo 19.5 e capitolo 10) il driver «ordini» conta tutte le pratiche gestite dall'ufficio ordini: gli ordini d'acquisto e le richieste che non portano a una consegna di prodotto, come modifiche, annullamenti e richieste di documentazione. Per questo i 184 clienti minori hanno 3.000 ordini ma meno unità acquistate nel venduto (par_19_2/modello_excel/venduto.csv): non è un errore dei file.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

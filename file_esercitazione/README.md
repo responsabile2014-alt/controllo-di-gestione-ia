@@ -18,4 +18,6 @@ Su Windows, se il comando `python3` non esiste, si usa `python verifica_tutto.py
 
 Il comando esegue i verifica.py di tutte le cartelle e i controlli di coerenza fra le cartelle, e stampa PASS o FAIL per ogni numero e il riepilogo finale.
 
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+
 © 2026 Tania Cilio. Tutti i diritti riservati.

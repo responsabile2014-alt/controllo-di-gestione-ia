@@ -24,3 +24,6 @@ Margini di contribuzione: A 504.000, B 456.000, C 102.000; totale 1.062.000 euro
 Quote di struttura sui ricavi: A 297.696, B 282.812, C 119.492; totale 700.000 euro.
 Risultati a costo pieno: A +146.304, B +143.188, C -47.492 euro; somma 242.000 euro. Linea C: quasi -24 euro per unità (-23,75).
 Eliminando la linea C: 6.000 ore macchina liberate; risultato operativo 140.000 euro se la struttura resta invariata, 224.000 euro se si evitano gli 84.000 euro di capacità esterna.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

@@ -39,3 +39,6 @@ Previsione di chiusura nello scenario di prosecuzione: rapporti 0,995 sui ricavi
 
 VERIFICA
 python3 verifica.py
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

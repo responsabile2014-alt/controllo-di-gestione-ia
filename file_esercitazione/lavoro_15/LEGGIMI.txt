@@ -47,3 +47,6 @@ Numeri da ritrovare nel collaudo
 - Quadrature: margine dal venduto = margine del conto economico = 1.062.000 euro; somma dei margini per linea = 1.062.000; ore ricalcolate 24.000 contro ore rilevate 24.000.
 - Non calcolabili: saturazione della capacità (la scheda ha direzione RANGE ma non le soglie inferiori) e puntualità di consegna (manca la formula), perché le loro schede sono incomplete.
 - Il 114,3%, cioè 24.000 / 21.000, non è un valore che lo strumento deve calcolare: è la lettura del controller sulle sole soglie superiori (critico, oltre il 100%).
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

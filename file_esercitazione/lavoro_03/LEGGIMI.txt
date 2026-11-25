@@ -39,3 +39,6 @@ Incidenze sui ricavi: costi variabili 68,6%, costi della struttura 24,2%, risult
 Totale delle rettifiche: zero. Conti non mappati: nessuno, totale zero. Nessun conto in due classi.
 Ricavi netti contro contabilità generale e margine contro Conto Economico gestionale approvato: differenza zero.
 Se i 32.000 euro di premi e concessioni della linea A finissero sotto la riga del margine, il margine percentuale salirebbe al 32,0%: è l'errore che la regola 1 della richiesta impedisce.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

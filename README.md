@@ -31,4 +31,6 @@ Libro di Tania Cilio. Qui si trovano i materiali che accompagnano il libro, tutt
 
 I dati dell'impresa guida e il bilancio di esempio sono costruiti per l'esercitazione e non corrispondono a nessuna società reale.
 
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+
 © 2026 Tania Cilio. Tutti i diritti riservati.

@@ -35,3 +35,6 @@ Costi di capacità: 566.000 euro. 254.000 più 566.000 fa 820.000.
 Movimenti non classificabili e senza centro valido: nessuno.
 Righe che sembrano doppie: due coppie di movimenti del conto 6403 (MOV-002028 e MOV-002029, MOV-002877 e MOV-002878) hanno stessa data, descrizione, centro e importo, e nei trasporti su vendite 170 coppie vettore-numero di DDT compaiono più di una volta nell'anno (346 movimenti). Non sono duplicati: la chiave è movimento_id, che è univoco. Se lo strumento le segnala in Fase 0, la risposta giusta è un avviso da verificare, non un'esclusione: escludendole, righe e totale non tornano più.
 Dentro gli 820.000: 570.000 euro delle tre attività commerciali e logistiche, 120.000 di costi indiretti di produzione, 46.000 di amministrazione, 84.000 di capacità acquistata all'esterno.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

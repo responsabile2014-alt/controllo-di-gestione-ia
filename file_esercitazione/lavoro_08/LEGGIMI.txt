@@ -34,3 +34,6 @@ Senza il recupero di 4 euro sul prezzo della linea B (45.600 euro): margine 1.04
 Margine di budget 27.900 euro sopra i 1.062.000 dell'esercizio in corso.
 Il volume della linea C, 2.100, supera di 100 unità la domanda massima di 2.000.
 Pareggio, margine di sicurezza e leva del budget (punto 6 della richiesta): fatturato di pareggio 2.290.656 euro, cioè 736.000 / (1.089.900 / 3.392.100), raggiunto con circa 16.207 ore, sotto le 21.000; margine di sicurezza 32,5%; leva operativa sopra soglia 1,55, cioè (1.089.900 - 28 x 24.000) / 269.900, calcolata come nel capitolo 9. Errore da riconoscere: la leva 4,04, che si ottiene trattando come fissi tutti gli 820.000 euro.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

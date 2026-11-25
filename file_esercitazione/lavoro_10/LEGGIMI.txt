@@ -24,3 +24,6 @@ Effetto quantità + 25.347 (margine medio di budget 50,693 euro); effetto mix - 
 Effetto mix per linea: A - 11.721, B + 14.065, C - 7.591 (C al mix di budget: 2.148,84 unità).
 Sezione dei ricavi, da non sommare al ponte: sulla linea B lo scostamento di ricavo è + 22.800 euro (1.368.000 contro 1.345.200) e quello di margine è - 22.800.
 Con le formule del punto 6: linea A effetto volume 0 ed effetto prezzo 0; linea B effetto volume + 70.800 ed effetto prezzo - 48.000; linea C effetto volume - 28.900 ed effetto prezzo 0. Totale - 6.100 euro, cioè 3.386.000 contro 3.392.100.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.

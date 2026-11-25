@@ -45,3 +45,6 @@ NUMERI DA RITROVARE NEL COLLAUDO
 - A esercizio chiuso, contro 3.386.000: versioni di giugno, luglio, agosto e settembre sopra il consuntivo del 4,0%, 2,8%, 1,9% e 0,7%; errore medio assoluto 2,3%; tutte e quattro con lo stesso segno.
 - Marzo: risultato 19.870 contro 20.800 (- 930). Primo trimestre: risultato 58.400 contro 62.500 di budget.
 - Rifacendo con questi file lo scenario di prosecuzione del paragrafo 19.2: 100 ore esterne in meno nei nove mesi residui (2.800 euro), struttura dei nove mesi 611.700, ricavi 3.375.300, margine 1.069.200, struttura 816.200, risultato 253.000 (numeri del libro, al centinaio; senza arrotondare 99,71 ore). La richiesta del lavoro 9 non chiede questo scenario: verifica.py lo rifà solo per controllare che i file siano coerenti con il paragrafo 19.2.
+
+I nomi di prodotti e servizi citati, fra cui ChatGPT, Claude, Gemini Notebook, Excel, Word, PowerPoint, LibreOffice, Python, Windows e Mac, sono marchi dei rispettivi titolari. Il libro e questi materiali non sono affiliati a tali titolari, né da essi sponsorizzati o approvati.
+© 2026 Tania Cilio. Tutti i diritti riservati.
